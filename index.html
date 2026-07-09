@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="format-detection" content="telephone=no"><title>Mobile Suit Production Command PASS 42C Playable Fallback</title><style>
+:root{--bg:#030a11;--panel:#071827;--panel2:#0b2133;--line:#2d8bd6;--line2:rgba(94,180,255,.58);--text:#eef7ff;--muted:#9dafbe;--yellow:#ffd84f;--green:#77ff72;--pink:#ff4fb9;--blue:#73d7ff;--red:#ff516e;--gap:5px;--pad:6px}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#cfcfcf;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;}body{position:fixed;inset:0}button,input{font:inherit}button{border:0}.phone{width:min(430px,100vw);height:100vh;height:100dvh;margin:0 auto;background:linear-gradient(180deg,#04101b,#020910);border:1px solid rgba(86,176,255,.65);border-radius:16px;box-shadow:0 0 0 2px rgba(0,0,0,.92),0 0 18px rgba(0,70,140,.38);padding:calc(env(safe-area-inset-top,0px) + 3px) 5px calc(env(safe-area-inset-bottom,0px) + 3px);overflow:hidden;display:grid;grid-template-rows:40px 38px 30px minmax(0,1fr);gap:var(--gap)}.home-phone{grid-template-rows:40px minmax(0,1fr)}.end-phone{grid-template-rows:40px 38px 30px minmax(0,1fr)}.card{background:linear-gradient(180deg,rgba(13,38,58,.92),rgba(4,16,27,.98));border:1px solid var(--line2);border-radius:10px;box-shadow:0 0 0 1px rgba(0,0,0,.42) inset;overflow:hidden;min-width:0;min-height:0}.brand{display:grid;grid-template-columns:36px minmax(0,1fr);align-items:center;padding:4px 8px;gap:7px;border-radius:12px}.star{width:28px;height:28px;filter:drop-shadow(0 0 4px rgba(255,216,79,.35))}.title{font-size:13px;font-weight:950;letter-spacing:.45px;line-height:.95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.subtitle{font-size:7.1px;letter-spacing:.85px;color:#9fdcff;font-weight:850;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.hud .box{padding:5px 6px;border-radius:9px;display:flex;flex-direction:column;justify-content:center}.label{font-size:7.8px;color:#bdcbd8;font-weight:950;letter-spacing:.9px;text-transform:uppercase;line-height:1}.value{font-size:13.4px;font-weight:950;line-height:1.05;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cash{color:var(--green)}.rep{color:var(--pink)}.cp,.blue{color:var(--blue)}.yellow{color:var(--yellow)}.green{color:var(--green)!important}.red{color:var(--red)!important}.muted{color:var(--muted)}.capacity-box{display:grid!important;grid-template-columns:1fr 22px;align-items:center}.capacity-box svg{width:22px;height:22px;opacity:.9}.tabs{display:grid;grid-template-columns:1fr 1.08fr 1fr;padding:0;overflow:hidden;border-radius:9px}.tabs button{display:grid;place-items:center;height:100%;font-size:10.4px;font-weight:950;letter-spacing:.25px;color:#b7c3ce;border-right:1px solid rgba(80,160,230,.35);background:transparent;white-space:nowrap}.tabs button:last-child{border-right:0}.tabs button.active{background:linear-gradient(180deg,#ffe66b,#f0b52f);color:#060b10;box-shadow:0 0 9px rgba(255,216,79,.24) inset}.tabs button.disabled{opacity:.35}.pages{min-height:0;overflow:hidden}.page{height:100%;min-height:0;overflow:hidden;display:grid}.cmd{grid-template-rows:minmax(0,1fr) 58px 48px;gap:var(--gap)}.main{padding:7px;display:grid;grid-template-columns:38% minmax(0,1fr);grid-template-rows:24px minmax(0,1fr);gap:5px}.section-title{grid-column:1/-1;font-size:13.2px;font-weight:950;letter-spacing:.15px;line-height:1;display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0}.section-title .text{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.badge{font-size:10.1px;font-weight:900;padding:4px 7px;border:1px solid var(--line2);border-radius:7px;background:rgba(4,14,25,.75);white-space:nowrap;flex:0 0 auto}.leftcol{min-height:0;display:grid;grid-template-rows:96px minmax(0,1fr);gap:5px}.sprite-box{display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,rgba(41,146,218,.15) 1px,transparent 1px),linear-gradient(rgba(41,146,218,.15) 1px,transparent 1px);background-size:15px 15px;border:1px solid rgba(88,177,255,.55);border-radius:8px;overflow:hidden}.mech{width:78px;height:78px;image-rendering:pixelated;display:block}.stats{border:1px solid rgba(88,177,255,.5);border-radius:8px;overflow:hidden;min-height:0;display:grid;grid-template-rows:repeat(5,1fr)}.stat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;padding:4px 6px;border-bottom:1px solid rgba(103,188,255,.18);font-size:10.2px;line-height:1;min-width:0;align-items:center}.stat:last-child{border-bottom:0}.stat span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#d4e3ef}.stat b{font-size:11.6px;white-space:nowrap}.rightcol{min-height:0;min-width:0;display:grid;grid-template-rows:34px minmax(0,1fr) 42px 30px;gap:4px}.unit-head{border-bottom:1px solid rgba(110,190,255,.34);padding:0 0 4px;overflow:hidden}.unit-name{font-size:13.1px;font-weight:950;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.unit-tag{font-size:8.9px;color:#b9c7d3;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}.policy{display:grid;grid-template-rows:repeat(3,1fr);gap:4px;min-height:0}.slider-card{border:1px solid rgba(92,172,240,.43);border-radius:8px;padding:4px 6px;background:rgba(6,18,30,.74);overflow:hidden;min-height:0;display:grid;grid-template-rows:15px 1fr 12px;align-content:stretch}.slider-head{display:flex;align-items:center;justify-content:space-between;font-size:10.2px;font-weight:950;line-height:1;min-width:0}.slider-head span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hint{font-size:7.7px;color:#a9b7c4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;align-self:center}input[type=range]{width:100%;height:12px;margin:0;accent-color:#ffd84f}.invest{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border:1px solid rgba(92,172,240,.43);border-radius:8px;padding:4px 5px;background:rgba(6,18,30,.74)}.inv{display:grid;grid-template-rows:10px minmax(0,1fr);place-items:center;border-right:1px solid rgba(92,172,240,.27);font-size:8.2px;color:#c4d3df;line-height:1;min-width:0}.inv:last-child{border-right:0}.inv input{width:100%;height:22px;min-width:0;border:1px solid rgba(115,215,255,.45);border-radius:5px;background:#07121d;color:white;text-align:center;font-size:13px;font-weight:900;padding:0}.rnd{border:1px solid rgba(92,172,240,.38);border-radius:7px;padding:3px 6px;font-size:8px;line-height:1.08;overflow:hidden}.rnd b{font-size:9.1px;color:var(--yellow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.available{display:grid;grid-template-columns:74px minmax(0,1fr);gap:5px;padding:6px}.avail-info{font-size:8.2px;line-height:1.12;overflow:hidden}.avail-info b{display:block;font-size:10.1px;color:var(--yellow);line-height:1.05;margin-bottom:2px}.unit-row{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;min-width:0}.unit-card{display:grid;place-items:center;text-align:center;border:1px dashed rgba(136,187,230,.48);border-radius:7px;min-width:0;color:#9eabb6;font-size:7.4px;line-height:1;padding:2px;overflow:hidden;background:rgba(5,17,28,.72)}.unit-card.active{border:2px solid var(--yellow);color:white;background:rgba(255,216,79,.09)}.unit-card .mini,.mini{width:23px;height:23px;image-rendering:pixelated}.unit-card b{font-size:7.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%}.unit-card small{font-size:6.9px;color:#d2d7dc}.lock{font-size:15px;line-height:1;opacity:.75;margin-bottom:1px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.btn{height:100%;border:1px solid rgba(129,207,255,.65);border-radius:11px;display:grid;place-items:center;font-size:12px;font-weight:950;letter-spacing:.05px;background:linear-gradient(180deg,#176dba,#0b3972);color:white;text-decoration:none}.btn.confirm{background:linear-gradient(180deg,#c12b67,#80133f);border-color:#ff6b9f}.btn span{color:var(--yellow);margin-right:6px}.brief{grid-template-rows:74px minmax(0,1fr) 48px 48px;gap:var(--gap)}.hero{padding:8px;display:grid;grid-template-columns:minmax(0,1fr) 56px;align-items:center;gap:7px}.hero h2{margin:0;font-size:15px;line-height:1}.hero p{margin:4px 0 0;color:#b2c1d0;font-size:9.6px;line-height:1.15}.hero .mech{width:54px;height:54px}.intel{padding:7px;display:grid;grid-template-rows:24px minmax(0,1fr);gap:5px}.intel-list{display:grid;grid-template-rows:repeat(3,1fr);gap:5px}.intel-item{border:1px solid rgba(92,172,240,.32);border-radius:7px;padding:5px 6px;font-size:9.6px;line-height:1.12;overflow:hidden}.intel-item b{color:var(--yellow)}.brief-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.brief-summary .card{padding:6px}.brief-summary .value{font-size:11.7px}.report{grid-template-rows:64px minmax(0,1fr) 74px 48px;gap:var(--gap)}.result-head{padding:8px 10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}.big-number{font-size:18px;font-weight:950;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.news{padding:7px;display:grid;grid-template-rows:24px minmax(0,1fr);gap:5px}.news-lines{display:grid;grid-template-rows:repeat(4,1fr);gap:5px}.news-line{border:1px solid rgba(92,172,240,.28);border-radius:7px;padding:4px 6px;font-size:8.8px;line-height:1.08;overflow:hidden}.news-line b{color:var(--yellow)}.rank-row{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.rank{display:grid;grid-template-columns:26px minmax(0,1fr);align-items:center;gap:4px;padding:4px}.rank.you-rank{border-color:rgba(255,216,79,.9)}.rank-mech{width:26px;height:26px;image-rendering:pixelated}.company{min-width:0;line-height:1}.company b{font-size:10px;color:var(--yellow)}.company strong{display:block;font-size:8.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.company small{display:block;font-size:7.4px;color:#b8c7d4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.start-panel{padding:12px;display:grid;gap:9px;align-content:center}.start-panel h2{font-size:18px;margin:0;color:var(--yellow)}.field{width:100%;height:42px;border:1px solid var(--line2);border-radius:10px;background:#07121d;color:white;padding:0 10px;font-weight:850}.bot-label{font-size:12px;font-weight:900}.start-panel p{font-size:10px;line-height:1.2}.marker{position:fixed;right:7px;bottom:5px;font-size:9px;color:#375f7c;font-weight:900;pointer-events:none}.end-page{grid-template-rows:minmax(0,1fr) 48px;gap:var(--gap)}pre{white-space:pre-wrap;font-size:10px;line-height:1.2}
+@media (min-height:780px){.phone{max-height:760px;margin-top:calc((100dvh - min(760px,100dvh))/2)}}
+</style></head><body><div id="app"><main class="phone home-phone"><header class="card brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div><div class="title">MOBILE SUIT<br>PRODUCTION COMMAND</div><div class="subtitle">PASS 42C PLAYABLE FALLBACK</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P42C FALLBACK</div></div>
+<svg width="0" height="0" style="position:absolute;overflow:hidden">
+<symbol id="ball-symbol" viewBox="0 0 32 32"><rect x="14" y="2" width="4" height="4" fill="#111"/><rect x="13" y="5" width="6" height="2" fill="#1e252e"/><rect x="10" y="7" width="12" height="2" fill="#05070b"/><rect x="8" y="9" width="16" height="3" fill="#05070b"/><rect x="6" y="12" width="20" height="9" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="8" width="10" height="1" fill="#f3efe2"/><rect x="9" y="10" width="14" height="3" fill="#f3efe2"/><rect x="7" y="13" width="18" height="8" fill="#f3efe2"/><rect x="9" y="21" width="14" height="3" fill="#f3efe2"/><rect x="12" y="25" width="8" height="1" fill="#f3efe2"/><rect x="8" y="14" width="4" height="6" fill="#c8d0d6"/><rect x="20" y="14" width="4" height="6" fill="#6f7b86"/><rect x="13" y="12" width="6" height="4" fill="#05070b"/><rect x="14" y="13" width="4" height="2" fill="#7cc7ff"/><rect x="9" y="18" width="14" height="1" fill="#e23a34"/><rect x="3" y="16" width="5" height="2" fill="#05070b"/><rect x="2" y="17" width="2" height="4" fill="#313944"/><rect x="24" y="16" width="5" height="2" fill="#05070b"/><rect x="28" y="17" width="2" height="4" fill="#313944"/><rect x="1" y="20" width="4" height="2" fill="#05070b"/><rect x="27" y="20" width="4" height="2" fill="#05070b"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#145bd8"/><rect x="18" y="28" width="2" height="3" fill="#145bd8"/></symbol>
+<symbol id="zaku-symbol" viewBox="0 0 32 32"><rect x="11" y="4" width="10" height="3" fill="#172d1a"/><rect x="8" y="7" width="16" height="3" fill="#071209"/><rect x="6" y="10" width="20" height="12" fill="#071209"/><rect x="8" y="23" width="16" height="4" fill="#071209"/><rect x="9" y="8" width="14" height="3" fill="#62855c"/><rect x="7" y="11" width="18" height="10" fill="#76a36d"/><rect x="9" y="22" width="14" height="4" fill="#5c7d58"/><rect x="11" y="14" width="10" height="4" fill="#1d2a23"/><rect x="15" y="14" width="2" height="4" fill="#ff5573"/><rect x="3" y="13" width="4" height="8" fill="#4c6650"/><rect x="25" y="13" width="4" height="8" fill="#4c6650"/><rect x="11" y="27" width="4" height="3" fill="#3d5142"/><rect x="17" y="27" width="4" height="3" fill="#3d5142"/></symbol>
+<symbol id="gm-symbol" viewBox="0 0 32 32"><rect x="10" y="5" width="12" height="3" fill="#111822"/><rect x="7" y="8" width="18" height="4" fill="#111822"/><rect x="6" y="12" width="20" height="13" fill="#111822"/><rect x="9" y="8" width="14" height="4" fill="#d8e0e8"/><rect x="8" y="12" width="16" height="12" fill="#c8d2dc"/><rect x="11" y="14" width="10" height="4" fill="#111822"/><rect x="12" y="15" width="8" height="2" fill="#57caff"/><rect x="7" y="19" width="18" height="2" fill="#ef4b4b"/><rect x="3" y="14" width="4" height="8" fill="#8794a2"/><rect x="25" y="14" width="4" height="8" fill="#8794a2"/><rect x="12" y="25" width="3" height="5" fill="#2b6de0"/><rect x="17" y="25" width="3" height="5" fill="#2b6de0"/></symbol>
+</svg><script>const GameData = (() => {
+  const MAX_ROUNDS = 12;
+  const START_FUNDS = 1000;
+  const BASE_POOL = 100;
+  const BASE_PRICE = 8;
+  const BASE_COST = 6;
+  const START_CAPACITY = 27;
+  const EXPANSION_COST_PER_UNIT = 20;
+  const SCRAP_RATE = 0.25;
+
+  const UNIT_TYPES = [
+    { id: 'z1', tier:0, cpCost:1, baseCost:3.0, basePrice:5.2, rnd:'low', price:'low', name:'RB-79 Ball', tag:'โลงศพอวกาศ ต้นทุนต่ำ ผลิตได้จำนวนมาก', primary:'#d7d2c6', visor:'#7cc7ff', hornColor:'#9aa0a6', horn:'ball', kind:'ball' },
+    { id: 'z4', tier:1, cpCost:2, baseCost:7.0, basePrice:11.0, rnd:'mid', price:'low', name:'หุ่นรุ่นผลิตจำนวนมาก', tag:'ซาคุมาตรฐาน ใช้ได้ทุกสมรภูมิ', primary:'#4a7a3e', visor:'#c0392b', hornColor:'#33502a', horn:'mono' },
+    { id: 'z5', tier:1, cpCost:2, baseCost:8.5, basePrice:13.0, rnd:'mid', price:'mid', name:'กุ๊กวัน', tag:'รุ่นจู่โจมมาตรฐาน สมดุลราคาและสมรรถนะ', primary:'#6b4c3a', visor:'#c0392b', hornColor:'#432f24', horn:'mono' },
+    { id: 'z6', hidden:true, tier:2, cpCost:3, baseCost:12.0, basePrice:18.0, rnd:'mid', price:'high', name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชา ใช้กำลังผลิตมากขึ้น', primary:'#7d3c98', visor:'#ffd54f', hornColor:'#4e2761', horn:'mono' },
+    { id: 'z7', tier:2, cpCost:3, baseCost:13.0, basePrice:19.5, rnd:'high', price:'low', name:'หุ่นอาร์เอ็กซ์ รุ่นทดสอบ', tag:'ต้นแบบเทคโนโลยีใหม่ ต้นทุนสูง', primary:'#e8e8e8', visor:'#2ecc71', hornColor:'#c0392b', horn:'vfin' },
+    { id: 'z8', tier:3, cpCost:4, baseCost:17.0, basePrice:26.0, rnd:'high', price:'mid', name:'หุ่นอาร์เอ็กซ์ รุ่นเอซ', tag:'รุ่นสมรรถนะสูง ผลิตได้ไม่มาก', primary:'#dfe6f0', visor:'#4a6fa5', hornColor:'#b0bfd6', horn:'vfin' },
+    { id: 'z9', hidden:true, tier:4, cpCost:6, baseCost:25.0, basePrice:40.0, rnd:'high', price:'high', name:'หุ่นอาร์เอ็กซ์ รุ่นลิมิเต็ด', tag:'รุ่นพิเศษผลิตจำกัด ใช้ Capacity สูงมาก', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', horn:'vfin' },
+  ];
+
+  const TECH_TIERS = [
+    { level:0, name:'พื้นฐาน', rpRequired:0, unlockIds:['z1'] },
+    { level:1, name:'Mobile Suit Mass Production', rpRequired:60, unlockIds:['z4','z5'] },
+    { level:2, name:'Commander Platform', rpRequired:140, unlockIds:['z7'] },
+    { level:3, name:'Ace Frame', rpRequired:240, unlockIds:['z8'] },
+  ];
+
+  const EVENTS = [
+    {
+      id:'frontline-surge', icon:'▲', tone:'good', priority:5,
+      name: 'แนวรบปะทุกะทันหัน',
+      summary: 'คำสั่งซื้อฉุกเฉินเพิ่มขึ้นทั่วตลาด',
+      desc: 'แนวรบร้อนระอุ กองทัพเร่งสั่งซื้อโมบิลสูท ตลาดรวมขยายตัว +50%',
+      effect: 'Demand +50%', advice: 'เร่งผลิตได้ ถ้าเงินสดและกำลังผลิตพอ',
+      poolMult: 1.5, repAll: 0
+    },
+    {
+      id:'temporary-truce', icon:'▼', tone:'bad', priority:4,
+      name: 'สงบศึกชั่วคราว',
+      summary: 'คำสั่งซื้อหดตัว กองทัพชะลอรับมอบ',
+      desc: 'การรบสงบลงชั่วคราว คำสั่งซื้อรวมของตลาดลดลง -40%',
+      effect: 'Demand -40%', advice: 'ลดกำลังผลิตหรือเน้นราคาเพื่อกันของค้าง',
+      poolMult: 0.6, repAll: 0
+    },
+    {
+      id:'rare-mineral-shortage', icon:'⚠', tone:'warn', priority:5,
+      name: 'ขาดแคลนแร่หายาก',
+      summary: 'วัตถุดิบหลักขาดตลาด ต้นทุนทุกบริษัทเพิ่มขึ้น',
+      desc: 'เหมืองแร่ในเขตอาณานิคมส่งมอบล่าช้า ต้นทุนผลิตทุกบริษัทเพิ่ม 25%',
+      effect: 'Cost +25%', advice: 'ระวังตั้งราคาต่ำเกินทุน และชะลอแผนเสี่ยง',
+      poolMult: 0.85, repAll: 0, costMult: 1.25
+    },
+    {
+      id:'space-pirates', icon:'☠', tone:'bad', priority:5,
+      name: 'โจรสลัดอวกาศบุกเส้นทางขนส่ง',
+      summary: 'สินค้าทุกบริษัทมีโอกาสเสียหายระหว่างส่งมอบ',
+      desc: 'กลุ่มโจรสลัดอวกาศโจมตีเส้นทางลูนาร์ สินค้าที่ผลิตแล้วเสียหายเฉลี่ย 20% ก่อนส่งมอบ',
+      effect: 'Delivery Loss 20%', advice: 'อย่าผลิตเกินตัวมากเกินไป เพราะอาจขายได้ไม่ครบ',
+      poolMult: 1.05, repAll: 0, damageChance: 0.20
+    },
+    {
+      id:'ace-pilot-trend', icon:'★', tone:'good', priority:3,
+      name: 'ข่าววงใน: ความต้องการของกองทัพ',
+      summary: 'มีข่าวว่ากองทัพกำลังสนใจหุ่นบางรุ่นเป็นพิเศษ',
+      desc: 'ข่าวจากสายข่าวระบุว่ากองทัพกำลังสนใจหุ่นบางรุ่นเป็นพิเศษ แต่ข้อมูลอาจคลาดเคลื่อนได้ตามคุณภาพเครือข่ายข่าวกรองของบริษัท',
+      effect: 'Insider Intel', advice: 'ข่าววงในไม่แม่นยำ 100% ใช้ประกอบการตัดสินใจเท่านั้น',
+      poolMult: 1
+    },
+    {
+      id:'factory-audit', icon:'!', tone:'warn', priority:4,
+      name: 'ตรวจสอบสายการผลิต',
+      summary: 'บริษัทที่ผลิตมากที่สุดเสี่ยงเสียชื่อเสียง',
+      desc: 'หน่วยตรวจสอบกองทัพจับตาโรงงานที่เร่งผลิตเกินมาตรฐาน บริษัทที่ผลิตมากที่สุดเสียชื่อเสียง',
+      effect: 'Most Production Rep -10', advice: 'อย่าเร่งผลิตสุดตัวถ้าไม่จำเป็น',
+      poolMult: 1, penaltyMostProduced: -10
+    },
+    {
+      id:'annual-expo', icon:'◆', tone:'good', priority:3,
+      name: 'งานแถลงเทคโนโลยีประจำปี',
+      summary: 'ตลาดคึกคักและทุกบริษัทได้ชื่อเสียงเพิ่ม',
+      desc: 'งานแสดงเทคโนโลยีอาวุธทำให้ตลาดคึกคัก ทุกบริษัทได้ชื่อเสียงเพิ่ม',
+      effect: 'Demand +25%, Rep +2', advice: 'เหมาะกับการโชว์รุ่นคุณภาพหรือเพิ่ม PR',
+      poolMult: 1.25, repAll: 2
+    },
+    {
+      id:'stable-market', icon:'●', tone:'info', priority:2,
+      name: 'ตลาดทรงตัว',
+      summary: 'ไม่มีเหตุการณ์พิเศษ การแข่งขันขึ้นกับแผนของแต่ละบริษัท',
+      desc: 'ไม่มีเหตุการณ์พิเศษ ทุกอย่างเป็นไปตามปกติ',
+      effect: 'Normal Market', advice: 'เล่นตามกลยุทธ์หลักของบริษัทได้เลย',
+      poolMult: 1, repAll: 0
+    },
+  ];
+
+
+  const SPECIAL_EVENTS = [
+    { id:'amuro-bay', tier:2, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z7','z8','z9'], targetLabel:'ตระกูลอาร์เอ็กซ์', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
+      pitch:'นักบินระดับตำนานสนใจหุ่นตระกูลอาร์เอ็กซ์ของบริษัทคุณ' },
+    { id:'zaza-impossible', tier:2, name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', unitIds:['z4'], targetLabel:'ดาวตกสีแดง / Commander Type', priceBonus:0.15, duration:3, baseWeight:10, startRound:5, pricePct:0.16,
+      pitch:'นักบินชื่อดังชื่นชอบดาวตกสีแดงและต้องการเป็นพรีเซ็นเตอร์' },
+    { id:'rookie-pilot', tier:1, name:'นักบินดาวรุ่ง', role:'นักบินเอซ', unitIds:['z5','z6'], targetLabel:'กุ๊กวัน / กุ๊กทู', priceBonus:0.08, duration:3, baseWeight:14, startRound:3, pricePct:0.10,
+      pitch:'นักบินดาวรุ่งกำลังมองหาบริษัทที่กล้าดันหุ่นสายกุ๊ก' },
+    { id:'military-reviewer', tier:1, name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', unitIds:['z1'], targetLabel:'RB-79 Ball' , priceBonus:0.07, duration:3, baseWeight:14, startRound:3, pricePct:0.08,
+      pitch:'นักรีวิวภาคสนามสนใจทำแคมเปญให้ RB-79 Ball' },
+    { id:'legend-test-pilot', tier:3, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'อาร์เอ็กซ์รุ่นเอซ / ลิมิเต็ด', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
+      pitch:'นักบินทดสอบระดับตำนานพร้อมยกระดับภาพลักษณ์ของหุ่นอาร์เอ็กซ์รุ่นสูง' }
+  ];
+
+  function getSpecialEventById(id) { return SPECIAL_EVENTS.find(e => e.id === id); }
+  function activeUnitContractBonus(player, unitId) {
+    const contracts = (player && player.activeContracts) || [];
+    return contracts.filter(c => c.remaining > 0 && c.unitIds && c.unitIds.includes(unitId)).reduce((sum,c)=> sum + (c.priceBonus || 0), 0);
+  }
+
+  const BOT_NAMES = ['Anaheim', 'Zeonic', 'MIP Works', 'Luna Steel'];
+
+  function band(v) { return v < 34 ? 'low' : v < 67 ? 'mid' : 'high'; }
+  function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+  function tierForTechLevel(level) { return TECH_TIERS[Math.max(0, Math.min(TECH_TIERS.length - 1, Number(level || 0)))] || TECH_TIERS[0]; }
+  function unlockedUnitIds(player) {
+    const maxLevel = Math.max(...TECH_TIERS.map(t => t.level));
+    const level = Math.max(0, Math.min(maxLevel, Number((player && player.techLevel) || 0)));
+    return TECH_TIERS.filter(t => t.level <= level).flatMap(t => t.unlockIds);
+  }
+  function unlockedUnits(player) {
+    const ids = new Set(unlockedUnitIds(player));
+    return UNIT_TYPES.filter(u => !u.hidden && ids.has(u.id));
+  }
+  function nextTechTier(player) {
+    const maxLevel = Math.max(...TECH_TIERS.map(t => t.level));
+    const level = Math.max(0, Math.min(maxLevel, Number((player && player.techLevel) || 0)));
+    return TECH_TIERS.find(t => t.level === level + 1) || null;
+  }
+  function getUnit(_qualityOrRnd, priceStrategy, unitId = null, player = null) {
+    if (unitId) return UNIT_TYPES.find(u => u.id === unitId) || UNIT_TYPES[0];
+    const available = player ? unlockedUnits(player) : UNIT_TYPES;
+    const priceBand = band(priceStrategy || 50);
+    return available.find(u => u.price === priceBand) || available[Math.min(available.length - 1, 0)] || UNIT_TYPES[0];
+  }
+  function qualityCostMultiplier(quality = 50) {
+    const q = clamp(Number(quality || 0), 0, 100) / 100;
+    return 1 + 0.15 * Math.pow(q, 1.6);
+  }
+  function qualityPerformanceChance(quality = 50) {
+    const q = clamp(Number(quality || 0), 0, 100);
+    return Math.round(q * 0.20) / 100;
+  }
+  function qualityVariant(unit, quality = 50) {
+    const q = clamp(Number(quality || 0), 0, 100);
+    let u = { ...unit };
+
+    // Quality 70%+ turns the current production model into its high-quality secret variant.
+    // These variants are NOT separate tech unlocks and should not appear in Available Production.
+    if (q >= 70) {
+      if (unit.kind === 'ball') {
+        u = { ...u, name:'RB-79K Ball Kai', tag:'โลงศพอวกาศรุ่นปรับปรุงจากสายการผลิตคุณภาพสูง', primary:'#f2e9cf', visor:'#8df7ff' };
+      } else if (unit.id === 'z4') {
+        u = { ...u, name:'ดาวตกสีแดง', tag:'รุ่น Commander คุณภาพสูงจากสายการผลิตระดับ Elite', primary:'#c0392b', visor:'#ffd54f', hornColor:'#7a1f14' };
+      } else if (unit.id === 'z5') {
+        u = { ...u, name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชาจากสายการผลิตคุณภาพสูง', primary:'#a64fe0', visor:'#ffd54f', hornColor:'#4e2761' };
+      } else if (unit.horn === 'vfin') {
+        u = { ...u, name: `${unit.name} รุ่นทอง`, tag:'รุ่นคุณภาพสูงจากสายการผลิตระดับ Ace', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f' };
+      }
+    }
+    u.variantQuality = q;
+    u.variantTier = q >= 70 ? 'high' : 'standard';
+    return u;
+  }
+
+  function utilizationMultiplier(prodPct) {
+    const p = Math.max(0, prodPct) / 100;
+    const sweet = 0.9;
+    const diff = p - sweet;
+    if (diff >= 0) return 1 + Math.pow(diff / 0.1, 2) * 0.15;
+    return 1 + Math.pow(Math.abs(diff) / 0.4, 1.5) * 0.25;
+  }
+  function volumeDiscount(units) {
+    if (units <= 0) return 1;
+    return 1 / (1 + Math.log(1 + units) * 0.035);
+  }
+  function unitEconomics(quality, priceStrategy, costMult = 1, prodPct = 90, productionUnits = 0, unitId = null, player = null) {
+    const unit = getUnit(quality, priceStrategy, unitId, player);
+    const utilMult = utilizationMultiplier(prodPct);
+    const scaleMult = volumeDiscount(productionUnits);
+    const qMult = qualityCostMultiplier(quality);
+    const unitCost = Math.round((unit.baseCost || BASE_COST) * costMult * utilMult * scaleMult * qMult * 10) / 10;
+    const pricePolicy = 0.78 + (clamp(priceStrategy || 50, 0, 100) / 100) * 0.62;
+    const unitPrice = Math.round((unit.basePrice || BASE_PRICE) * pricePolicy * 10) / 10;
+    return { unitCost, unitPrice, margin: Math.round((unitPrice - unitCost) * 10) / 10, utilMult: Math.round(utilMult * 100) / 100, scaleMult: Math.round(scaleMult * 100) / 100, qualityCostMult: Math.round(qMult*100)/100, cpCost: unit.cpCost || 1 };
+  }
+  function unitToFocus(unitId) {
+    const u = UNIT_TYPES.find(x => x.id === unitId) || UNIT_TYPES[0];
+    const priceMap = { low: 22, mid: 50, high: 78 };
+    return { unitId:u.id, quality: 50, priceStrategy: priceMap[u.price] || 50 };
+  }
+
+  function rpFromInvestment(amount) {
+    const a = Math.max(0, Number(amount || 0));
+    if (a <= 0) return 0;
+    // Diminishing return: enough to unlock all tech around Q8 with steady investment,
+    // around Q6 with heavy focus, while still making small R&D budgets meaningful.
+    return Math.min(120, Math.round(32 * Math.pow(a / 100, 0.82)));
+  }
+  function botDecision(funds, capacity, event = null, player = null) {
+    const rep = Number((player && player.reputation) || 0);
+    const cash = Math.max(0, Number(funds || 0));
+    const cap = Math.max(1, Number(capacity || START_CAPACITY));
+    const invQty = inventoryTotals(player || {}).qty || 0;
+    const available = unlockedUnits(player || { techLevel:0 });
+
+    let quality = 38 + Math.random() * 30;
+    let priceStrategy = 42 + Math.random() * 24;
+    let preferred = null;
+    if (event && event.id === 'ace-pilot-trend' && event.rumorUnitId && Math.random() < 0.62) {
+      const ids = new Set(available.map(u=>u.id));
+      if (ids.has(event.rumorUnitId)) preferred = event.rumorUnitId;
+      const target = unitToFocus(event.rumorUnitId);
+      priceStrategy = target.priceStrategy + (Math.random() - 0.5) * 16;
+    }
+    if (!preferred) {
+      const sorted = [...available].sort((a,b)=>{
+        const score = (b.basePrice-b.baseCost)/(b.cpCost||1) - (a.basePrice-a.baseCost)/(a.cpCost||1);
+        return score + (Math.random()-0.5)*2;
+      });
+      preferred = (event && event.poolMult < 0.8) ? sorted.find(u=>u.cpCost<=2)?.id || sorted[0].id : sorted[0].id;
+    }
+    if (event && event.costMult > 1.1) priceStrategy += 10 + Math.random() * 8;
+    if (event && event.poolMult < 0.8) priceStrategy -= 8 + Math.random() * 10;
+    if (event && event.poolMult >= 1.2) quality += 5 + Math.random() * 8;
+    quality = Math.round(clamp(quality, 12, 92));
+    priceStrategy = Math.round(clamp(priceStrategy, 12, 88));
+    const unit = getUnit(quality, priceStrategy, preferred, player);
+
+    let prodPct = 78 + Math.random() * 22;
+    if (event && event.poolMult >= 1.2) prodPct += 10 + Math.random() * 12;
+    if (event && event.poolMult < 0.8) prodPct -= 16 + Math.random() * 10;
+    if (event && event.damageChance) prodPct -= 4 + Math.random() * 8;
+    if (invQty > cap * 0.25) prodPct -= 10;
+    if (cash < 260) prodPct -= 10;
+    prodPct = Math.round(clamp(prodPct, 45, 118));
+
+    let production = Math.floor((cap * prodPct / 100) / Math.max(1, unit.cpCost || 1));
+    const econ = unitEconomics(quality, priceStrategy, (event && event.costMult) || 1, prodPct, production, unit.id, player);
+    let plannedCost = production * econ.unitCost;
+
+    if (plannedCost > cash * 0.78) {
+      const affordableUnits = Math.max(1, Math.floor((cash * 0.72) / Math.max(1, econ.unitCost)));
+      const cpUse = affordableUnits * Math.max(1, unit.cpCost || 1);
+      prodPct = Math.round(clamp((cpUse / cap) * 100, 25, 105));
+      production = Math.floor((cap * prodPct / 100) / Math.max(1, unit.cpCost || 1));
+      plannedCost = Math.round(production * econ.unitCost);
+    }
+
+    const lobbyBase = event && event.id === 'ace-pilot-trend' ? 0.045 : 0.028;
+    const lobby = Math.round(clamp(cash * (lobbyBase + rep / 5200) * (0.75 + Math.random() * 0.6), 0, Math.min(50, cash * 0.09)));
+
+    let factoryInvest = 0;
+    let rndInvest = 0;
+    const next = nextTechTier(player || {});
+    const spareCash = cash - plannedCost - lobby;
+    const personality = (player && player.aiStyle) || (Math.random() < 0.33 ? 'research' : Math.random() < 0.66 ? 'mass' : 'balanced');
+    if (next && spareCash > 180 && personality !== 'mass') rndInvest = Math.round(clamp(spareCash * (personality === 'research' ? 0.16 : 0.08), 0, Math.min(140, spareCash*0.24)));
+    if (spareCash - rndInvest > 420 && cap < 65 && Math.random() < (personality === 'mass' ? 0.58 : 0.34)) {
+      factoryInvest = Math.round(clamp((spareCash-rndInvest) * (0.08 + Math.random() * 0.10), 0, Math.min(90, (spareCash-rndInvest) * 0.20)));
+    }
+
+    return { unitId: unit.id, quality, priceStrategy, prodPct, production, lobby, factoryInvest, rndInvest };
+  }
+  function pickMarketEvent() {
+    const total = EVENTS.reduce((s,e)=>s+(e.priority||1),0);
+    let roll = Math.random()*total;
+    for (const e of EVENTS) { roll -= (e.priority||1); if (roll <= 0) return {...e}; }
+    return {...EVENTS[EVENTS.length-1]};
+  }
+
+  function getEventById(id) { return EVENTS.find(e=>e.id===id) || EVENTS[EVENTS.length-1]; }
+
+  function getInventoryBatches(player, unitId) {
+    const inv = (player && player.inventory) || {};
+    const batches = inv[unitId] || [];
+    return Array.isArray(batches) ? batches.map(b => ({...b, qty: Math.max(0, Math.round(b.qty || 0)), unitCost: Number(b.unitCost || 0)})).filter(b => b.qty > 0) : [];
+  }
+  function inventoryTotals(player) {
+    const inv = (player && player.inventory) || {};
+    let qty = 0, value = 0;
+    Object.values(inv).forEach(batches => (Array.isArray(batches) ? batches : []).forEach(b => {
+      qty += Math.max(0, Math.round(b.qty || 0));
+      value += Math.max(0, Math.round(b.qty || 0)) * Number(b.unitCost || 0);
+    }));
+    return { qty, value: Math.round(value * 10) / 10 };
+  }
+  function inventoryRate(player) {
+    const totals = inventoryTotals(player);
+    if (totals.qty <= 0) return 0;
+    const capacity = Math.max(1, player.capacity || START_CAPACITY);
+    const step = Math.max(1, capacity * 0.10);
+    return Math.ceil(totals.qty / step) / 100;
+  }
+  function inventoryHoldingCost(player) {
+    const totals = inventoryTotals(player);
+    const rate = inventoryRate(player);
+    return { ...totals, rate, cost: Math.round(totals.value * rate * 10) / 10 };
+  }
+  function consumeInventoryFIFO(batches, need) {
+    const used = [];
+    const left = [];
+    let remaining = Math.max(0, Math.round(need || 0));
+    for (const batch of batches) {
+      const qty = Math.max(0, Math.round(batch.qty || 0));
+      if (qty <= 0) continue;
+      if (remaining <= 0) { left.push({...batch, qty}); continue; }
+      const take = Math.min(qty, remaining);
+      used.push({...batch, qty: take});
+      remaining -= take;
+      const rest = qty - take;
+      if (rest > 0) left.push({...batch, qty: rest});
+    }
+    return { used, left, taken: used.reduce((s,b)=>s+b.qty,0) };
+  }
+  function resolveRound(players, submissions, forcedEvent = null) {
+    const event = forcedEvent ? (typeof forcedEvent === 'string' ? {...getEventById(forcedEvent)} : {...getEventById(forcedEvent.id), ...forcedEvent}) : pickMarketEvent();
+    const costMult = event.costMult || 1;
+    const pool = BASE_POOL * (event.poolMult || 1);
+    const rows = players.map(p => {
+      const sub = submissions[p.id];
+      const baseUnit = getUnit(sub.quality ?? sub.rndFocus, sub.priceStrategy, sub.unitId, p);
+      const unit = qualityVariant(baseUnit, sub.quality ?? sub.rndFocus ?? 50);
+      const econ = unitEconomics(sub.quality ?? sub.rndFocus ?? 50, sub.priceStrategy, costMult, sub.prodPct, sub.production, baseUnit.id, p);
+      const currentStockBatches = getInventoryBatches(p, unit.id);
+      const currentStock = currentStockBatches.reduce((s,b)=>s+b.qty,0);
+      const priceAppeal = (100 - sub.priceStrategy) / 100;
+      const qualityAppeal = (sub.quality ?? sub.rndFocus ?? 50) / 100;
+      const availableSignal = sub.production + currentStock * 0.6;
+      const appeal = Math.max(0.0001, availableSignal * (0.4 + priceAppeal) + sub.lobby * 2 + qualityAppeal * 35 + p.reputation * 0.3);
+      return { player: p, sub, unit, econ, appeal, currentStockBatches, currentStock };
+    });
+    const crowdKeyFor = (r) => `${r.unit.id}::q${Number(r.sub.quality ?? r.sub.rndFocus ?? 50) >= 70 ? 'high' : 'std'}`;
+    const crowdCounts = rows.reduce((m,r)=>{ const key = crowdKeyFor(r); m[key] = (m[key] || 0) + 1; return m; }, {});
+    const crowdMultFor = (count) => count <= 1 ? 1 : count === 2 ? 0.90 : count === 3 ? 0.80 : 0.70;
+    const totalAppeal = rows.reduce((s, r) => s + r.appeal, 0) || 1;
+    const results = rows.map(r => {
+      const share = r.appeal / totalAppeal;
+      const crowdKey = crowdKeyFor(r);
+      const crowdCount = crowdCounts[crowdKey] || 1;
+      const crowdMult = crowdMultFor(crowdCount);
+      const contractsWon = share * pool;
+      const adjustedContractsWon = contractsWon * crowdMult;
+      const freshDeliverable = Math.max(0, Math.round(r.sub.production * (1 - (event.damageChance || 0))));
+      const availableUnits = r.currentStock + freshDeliverable;
+      const unitsSold = Math.round(Math.min(adjustedContractsWon, availableUnits));
+      const fromStock = Math.min(unitsSold, r.currentStock);
+      const stockUse = consumeInventoryFIFO(r.currentStockBatches, fromStock);
+      const soldFresh = Math.max(0, unitsSold - stockUse.taken);
+      const leftoverFresh = Math.max(0, freshDeliverable - soldFresh);
+      const leftoverBatches = [...stockUse.left];
+      if (leftoverFresh > 0) leftoverBatches.push({ qty: leftoverFresh, unitCost: r.econ.unitCost, round: 0 });
+      const endingInventory = { ...((r.player && r.player.inventory) || {}) };
+      if (leftoverBatches.length) endingInventory[r.unit.id] = leftoverBatches;
+      else delete endingInventory[r.unit.id];
+      const tempPlayer = { ...r.player, inventory: endingInventory };
+      const holding = inventoryHoldingCost(tempPlayer);
+      const matchedPreferred = !!(event.preferredUnitId && event.preferredUnitId === r.unit.id);
+      const marketBonus = matchedPreferred ? 0.10 : 0;
+      const contractBonus = activeUnitContractBonus(r.player, r.unit.id);
+      const revenue = unitsSold * r.econ.unitPrice * (1 + marketBonus + contractBonus);
+      const productionCost = r.sub.production * r.econ.unitCost;
+      const perfChance = qualityPerformanceChance(r.sub.quality ?? r.sub.rndFocus ?? 50);
+      const perfTriggered = unitsSold > 0 && Math.random() < perfChance;
+      const performanceBonus = perfTriggered ? Math.round(revenue * (0.05 + Math.random()*0.10)) : 0;
+      const cost = productionCost + r.sub.lobby + (r.sub.factoryInvest || 0) + (r.sub.rndInvest || 0) + holding.cost;
+      const profit = revenue + performanceBonus - cost;
+      const repDelta = (share * 100 - 100 / rows.length) * 0.6 + (event.repAll || 0) + (perfTriggered ? 1.5 : 0);
+      return { ...r, share, contractsWon, adjustedContractsWon, crowdKey, crowdCount, crowdMult, unitsSold, fromStock: stockUse.taken, soldFresh, freshDeliverable, leftoverFresh, leftoverBatches, endingInventory, inventoryQty: holding.qty, inventoryValue: holding.value, inventoryRate: holding.rate, inventoryCost: holding.cost, revenue, productionCost, cost, profit, repDelta, matchedPreferred, marketBonus, contractBonus, performanceBonus, perfTriggered };
+    });
+    if (event.boostTop) [...results].sort((a,b) => b.share - a.share)[0].repDelta += event.boostTop;
+    if (event.penaltyMostProduced) [...results].sort((a,b) => b.sub.production - a.sub.production)[0].repDelta += event.penaltyMostProduced;
+    return { event, results };
+  }
+
+  return { MAX_ROUNDS, START_FUNDS, BASE_POOL, BASE_PRICE, BASE_COST, START_CAPACITY, EXPANSION_COST_PER_UNIT, SCRAP_RATE, UNIT_TYPES, TECH_TIERS, EVENTS, SPECIAL_EVENTS, BOT_NAMES, getUnit, unitEconomics, qualityVariant, qualityPerformanceChance, rpFromInvestment, unlockedUnits, unlockedUnitIds, nextTechTier, botDecision, pickMarketEvent, getEventById, getSpecialEventById, inventoryTotals, inventoryRate, inventoryHoldingCost, resolveRound };
+})();
+
+
+(function(){
+'use strict';
+const KEY = 'mspc-pass42-save';
+const $ = (sel, root=document) => root.querySelector(sel);
+const app = $('#app');
+const safeStorage = (() => {
+  try { const k='__mspc_test__'; localStorage.setItem(k,'1'); localStorage.removeItem(k); return localStorage; }
+  catch(e){ const mem={}; return { getItem:k=>mem[k]||null, setItem:(k,v)=>{mem[k]=String(v)}, removeItem:k=>{delete mem[k]} }; }
+})();
+let state = {
+  screen:'home', phase:'briefing', name:'', botCount:2, round:1,
+  players:[], currentEvent:null, lastReport:null, history:[], notices:[],
+  decision:{unitId:'z1', quality:50, priceStrategy:50, prodPct:70, lobby:0, factoryInvest:0, rndInvest:0}
+};
+function esc(s){return String(s ?? '').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function fmt(n){return Math.round(Number(n)||0).toLocaleString('en-US');}
+function clamp(n,min,max){return Math.max(min,Math.min(max,Number(n)||0));}
+function save(){try{safeStorage.setItem(KEY, JSON.stringify(state));}catch(e){}}
+function load(){try{const s=JSON.parse(safeStorage.getItem(KEY)); if(s && s.players) state={...state,...s};}catch(e){} ensureState();}
+function ensureState(){
+  state.decision={unitId:'z1',quality:50,priceStrategy:50,prodPct:70,lobby:0,factoryInvest:0,rndInvest:0,...(state.decision||{})};
+  state.players=(state.players||[]).map((p,i)=>({...p,inventory:p.inventory||{},activeContracts:p.activeContracts||[],techLevel:Number(p.techLevel||0),rp:Number(p.rp||0),aiStyle:p.aiStyle||(i===1?'research':i===2?'mass':'balanced')}));
+  if(!state.phase) state.phase='briefing';
+}
+function me(){return state.players[0];}
+function reputationTitle(score){
+  const v=clamp(score,0,100);
+  if(v<10) return 'บริษัทใหม่'; if(v<25) return 'ดาวรุ่ง'; if(v<45) return 'น่าจับตา'; if(v<65) return 'ชั้นนำ'; if(v<85) return 'ผู้นำตลาด'; return 'ตำนาน';
+}
+function unitSymbol(unit){
+  const id = unit?.id || '';
+  if(id==='z1' || unit?.kind==='ball') return 'ball-symbol';
+  if(id==='z4' || id==='z5' || id==='z6') return 'zaku-symbol';
+  return 'gm-symbol';
+}
+function unitIcon(unit, cls='mech'){
+  return `<svg class="${cls}" viewBox="0 0 32 32"><use href="#${unitSymbol(unit)}"></use></svg>`;
+}
+function activeUnits(company=me()){return GameData.unlockedUnits(company||{techLevel:0});}
+function normalizeUnit(){ const ids=new Set(activeUnits().map(u=>u.id)); if(!ids.has(state.decision.unitId)) state.decision.unitId=activeUnits()[0]?.id||'z1'; }
+function cpBudget(company, prodPct){return Math.max(0, Math.floor((company.capacity||GameData.START_CAPACITY)*Math.max(0,Number(prodPct||0))/100));}
+function plannedUnits(company=me(), d=state.decision){ const u=GameData.getUnit(d.quality,d.priceStrategy,d.unitId,company); return Math.max(0, Math.floor(cpBudget(company,d.prodPct)/Math.max(1,u.cpCost||1))); }
+function marketAveragePercent(event){
+  const t={'frontline-surge':56,'temporary-truce':42,'rare-mineral-shortage':61,'space-pirates':52,'ace-pilot-trend':50,'factory-audit':48,'annual-expo':54,'stable-market':50};
+  return t[event?.id] || 50;
+}
+function prepareMarketEvent(round){
+  let ev = round<=1 ? {...GameData.getEventById('stable-market')} : GameData.pickMarketEvent();
+  if(ev.id==='ace-pilot-trend'){
+    const pool = GameData.UNIT_TYPES.filter(u=>!u.hidden && u.tier<=3);
+    const preferred = pool[Math.floor(Math.random()*pool.length)] || pool[0];
+    const accuracy = 0.55 + Math.min(0.25,(me()?.reputation||0)/180);
+    const rumor = Math.random()<accuracy ? preferred : (pool.filter(u=>u.id!==preferred.id)[Math.floor(Math.random()*Math.max(1,pool.length-1))] || preferred);
+    ev.preferredUnitId = preferred.id; ev.rumorUnitId = rumor.id;
+  }
+  return ev;
+}
+function applyResearch(company, invest){
+  let rp = Number(company.rp||0) + GameData.rpFromInvestment(invest||0);
+  let level = Number(company.techLevel||0);
+  const notices=[];
+  while(true){
+    const next = GameData.nextTechTier({techLevel:level});
+    if(!next || rp < next.rpRequired) break;
+    level += 1;
+    const unlocked = GameData.UNIT_TYPES.filter(u=>!u.hidden && next.unlockIds.includes(u.id));
+    notices.push({companyId:company.id, companyName:company.name, level, unlocked});
+  }
+  return {...company,rp:Math.round(rp),techLevel:level,techNotices:notices};
+}
+function inventoryValue(player, unitId){
+  const batches=(player?.inventory?.[unitId])||[];
+  const qty=batches.reduce((s,b)=>s+Math.max(0,Math.round(b.qty||0)),0);
+  const value=batches.reduce((s,b)=>s+Math.max(0,Math.round(b.qty||0))*Number(b.unitCost||0),0);
+  return {qty,value,avgCost:qty?value/qty:0};
+}
+function inventoryRows(player=me()){
+  return Object.entries(player?.inventory||{}).map(([unitId,batches])=>{
+    const unit=GameData.UNIT_TYPES.find(u=>u.id===unitId)||{name:unitId};
+    const stat=inventoryValue(player,unitId); return {...stat,unitId,unit};
+  }).filter(x=>x.qty>0);
+}
+function techProgress(company=me()){
+  const next=GameData.nextTechTier(company||{}); const level=Number(company?.techLevel||0); const rp=Number(company?.rp||0);
+  if(!next) return {label:`R&D Lv.${level}`, detail:'ปลดล็อกครบแล้ว', pct:100};
+  const names=GameData.UNIT_TYPES.filter(u=>!u.hidden && next.unlockIds.includes(u.id)).map(u=>u.name).join(' / ');
+  return {label:`R&D Lv.${level}: ${rp}/${next.rpRequired} RP`, detail:`อีก ${Math.max(0,next.rpRequired-rp)} RP ปลดล็อก ${names}`, pct:Math.max(0,Math.min(100,Math.round(rp/next.rpRequired*100)))};
+}
+function startGame(){
+  const name = ($('#companyName')?.value || 'OIL Heavy Industries').trim();
+  const count = clamp($('#botCount')?.value || 2,1,3);
+  const styles=['research','mass','balanced'];
+  const bots=Array.from({length:count},(_,i)=>({id:'bot'+i,name:`${GameData.BOT_NAMES[i]} [BOT]`,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:true,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:styles[i%styles.length]}));
+  state={screen:'game',phase:'briefing',name,botCount:count,round:1,history:[],lastReport:null,currentEvent:null,notices:[],players:[{id:'you',name,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:false,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:'player'},...bots],decision:{unitId:'z1',quality:50,priceStrategy:50,prodPct:70,lobby:0,factoryInvest:0,rndInvest:0}};
+  state.currentEvent=prepareMarketEvent(1); save(); render();
+}
+function setPhase(p){ if(p==='report' && !state.lastReport) return; state.phase=p; save(); render(); }
+function slider(label,key,min,max,hint){ const v=state.decision[key]; return `<div class="slider-card ${key}"><div class="slider-head"><span>${label}</span><b>${v}%</b></div><div class="hint">${hint}</div><input data-slider="${key}" type="range" min="${min}" max="${max}" value="${v}"></div>`; }
+function numberBox(label,key){ const v=state.decision[key]||0; return `<div class="inv"><span>${label}</span><input data-num="${key}" inputmode="numeric" type="number" min="0" max="9999" value="${v}"></div>`; }
+function bindCommon(){
+  document.querySelectorAll('[data-phase]').forEach(el=>el.onclick=()=>setPhase(el.dataset.phase));
+  document.querySelectorAll('[data-slider]').forEach(el=>{
+    el.oninput=()=>{ state.decision[el.dataset.slider]=Number(el.value); const b=el.closest('.slider-card')?.querySelector('.slider-head b'); if(b)b.textContent=el.value+'%'; updateCommandNumbers(); };
+    el.onchange=()=>{ save(); render(); };
+  });
+  document.querySelectorAll('[data-num]').forEach(el=>{
+    el.oninput=()=>{ state.decision[el.dataset.num]=clamp(el.value,0,9999); updateCommandNumbers(); };
+    el.onchange=()=>{ state.decision[el.dataset.num]=clamp(el.value,0,9999); save(); render(); };
+  });
+  document.querySelectorAll('[data-unit]').forEach(btn=>btn.onclick=()=>{state.decision.unitId=btn.dataset.unit; save(); render();});
+  const submit=$('#submitOrder'); if(submit) submit.onclick=submitRound;
+  const next=$('#nextQuarter'); if(next) next.onclick=nextQuarter;
+  const reset=$('#resetGame'); if(reset) reset.onclick=()=>{ if(confirm('เริ่มเกมใหม่?')){safeStorage.removeItem(KEY); location.reload();} };
+}
+function currentCalc(){
+  normalizeUnit(); const p=me(), d=state.decision, base=GameData.getUnit(d.quality,d.priceStrategy,d.unitId,p), unit=GameData.qualityVariant(base,d.quality);
+  const prod=plannedUnits(p,d), cpUse=prod*Math.max(1,base.cpCost||1), econ=GameData.unitEconomics(d.quality,d.priceStrategy,state.currentEvent?.costMult||1,d.prodPct,prod,base.id,p);
+  const upfront=Math.round((prod*econ.unitCost+d.lobby+d.factoryInvest+d.rndInvest)*10)/10;
+  const deliver=Math.round(prod*(1-(state.currentEvent?.damageChance||0))); const status=upfront>p.funds?'เงินสดไม่พอ':econ.margin<0?'ราคาต่ำกว่าทุน':d.prodPct>115?'OT สูง ต้นทุนบาน':'พร้อมยืนยัน';
+  return {p,d,base,unit,prod,cpUse,econ,upfront,deliver,status};
+}
+function updateCommandNumbers(){
+  const c=currentCalc();
+  const map={prod:`${c.prod} เครื่อง`,cp:`${c.cpUse}/${c.p.capacity} CP`,cost:`${c.econ.unitCost} Cr.`,price:`${c.econ.unitPrice} Cr.`,invest:`${fmt(c.upfront)} Cr.`,status:c.status};
+  Object.entries(map).forEach(([k,v])=>{ const el=$(`[data-live="${k}"]`); if(el) el.textContent=v; });
+}
+function submitRound(){
+  const p=me(), d=state.decision; normalizeUnit();
+  const submissions={}; submissions[p.id]={...d,production:plannedUnits(p,d)};
+  state.players.slice(1).forEach(bot=>submissions[bot.id]=GameData.botDecision(bot.funds,bot.capacity,state.currentEvent,bot));
+  const {event,results}=GameData.resolveRound(state.players,submissions,state.currentEvent);
+  const notices=[];
+  state.players=state.players.map(pl=>{
+    const r=results.find(x=>x.player.id===pl.id); let funds=Number(pl.funds||0)+r.profit; let debt=Number(pl.debt||0);
+    if(funds<0){debt+=-funds; funds=0;} if(debt>0 && funds>0){const pay=Math.min(funds,debt); debt-=pay; funds-=pay;} debt=Math.round(debt*1.08*100)/100;
+    let updated={...pl,inventory:r.endingInventory||{},funds:Math.round(funds),debt:Math.round(debt),reputation:Math.round((Number(pl.reputation||0)+r.repDelta)*10)/10,capacity:Math.max(1,(pl.capacity||GameData.START_CAPACITY)+Math.round((r.sub.factoryInvest||0)/GameData.EXPANSION_COST_PER_UNIT))};
+    updated=applyResearch(updated,r.sub.rndInvest||0); notices.push(...(updated.techNotices||[])); delete updated.techNotices; return updated;
+  });
+  state.notices=notices;
+  state.lastReport={event,results:results.map(r=>({playerId:r.player.id,name:r.player.name,unit:r.unit,share:r.share,production:r.sub.production,unitsSold:r.unitsSold,fromStock:r.fromStock,freshDeliverable:r.freshDeliverable,leftoverFresh:r.leftoverFresh,inventoryQty:r.inventoryQty,inventoryCost:r.inventoryCost,inventoryRate:r.inventoryRate,revenue:r.revenue,cost:r.cost,profit:r.profit,repDelta:r.repDelta,marketBonus:r.marketBonus||0,performanceBonus:r.performanceBonus||0,perfTriggered:!!r.perfTriggered,crowdCount:r.crowdCount||1,crowdMult:r.crowdMult||1,matchedPreferred:!!r.matchedPreferred}))};
+  state.history.push(state.lastReport); state.phase='report'; save(); render();
+}
+function nextQuarter(){
+  if(state.round>=GameData.MAX_ROUNDS){state.screen='end'; save(); render(); return;}
+  state.round++; state.phase='briefing'; state.currentEvent=prepareMarketEvent(state.round); state.lastReport=null;
+  state.decision={unitId:activeUnits(me())[0]?.id||'z1',quality:state.decision.quality,priceStrategy:state.decision.priceStrategy,prodPct:state.decision.prodPct,lobby:0,factoryInvest:0,rndInvest:0};
+  save(); render();
+}
+function topHTML(){ const p=me(); return `<header class="card brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div><div class="title">MOBILE SUIT<br>PRODUCTION COMMAND</div><div class="subtitle">CEO MOBILE SUIT MANUFACTURING SIM</div></div></header>
+<section class="hud">${p?`<div class="card box"><div class="label">QTR</div><div class="value">${String(state.round).padStart(2,'0')}/12</div></div><div class="card box"><div class="label">CASH</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card box"><div class="label">ชื่อเสียง</div><div class="value rep">${reputationTitle(p.reputation)}</div></div><div class="card box capacity-box"><div><div class="label">CAPACITY</div><div class="value cp">${p.capacity}</div></div>${unitIcon(GameData.UNIT_TYPES[0],'mini')}</div>`:''}</section>
+<nav class="card tabs"><button data-phase="briefing" class="${state.phase==='briefing'?'active':''}">1 BRIEFING</button><button data-phase="command" class="${state.phase==='command'?'active':''}">2 COMMAND</button><button data-phase="report" class="${state.phase==='report'?'active':''} ${!state.lastReport?'disabled':''}">3 REPORT</button></nav>`; }
+function renderHome(){
+  app.innerHTML=`<main class="phone home-phone"><header class="card brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div><div class="title">MOBILE SUIT<br>PRODUCTION COMMAND</div><div class="subtitle">PASS 42C PLAYABLE MOBILE UI</div></div></header><section class="card start-panel"><h2>ตั้งบริษัทผลิต Mobile Suit</h2><input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}"><label class="bot-label">จำนวนคู่แข่ง <b id="botNum">${state.botCount||2}</b></label><input id="botCount" type="range" min="1" max="3" value="${state.botCount||2}"><button id="startBtn" class="btn confirm">เริ่มเกม</button><button id="resetGame" class="btn">ล้างเซฟ</button><p class="muted">Static UI ถูกแทนด้วยเกมจริงแล้ว · 12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p></section></main><div class="marker">P42C PLAYABLE</div>`;
+  $('#botCount').oninput=e=>$('#botNum').textContent=e.target.value; $('#startBtn').onclick=startGame; const r=$('#resetGame'); if(r) r.onclick=()=>{safeStorage.removeItem(KEY); location.reload();};
+}
+function renderBriefing(){
+  const p=me(), ev=state.currentEvent || GameData.getEventById('stable-market'), inv=GameData.inventoryHoldingCost(p), tech=techProgress(p);
+  const rumor = ev.rumorUnitId ? GameData.UNIT_TYPES.find(u=>u.id===ev.rumorUnitId) : null;
+  const cards = ev.id==='ace-pilot-trend' ? [
+    ['ประเภทข่าว','ข่าววงใน','ข้อมูลอาจคลาดเคลื่อน'],['รายงานสายข่าว',rumor?rumor.name:'ไม่ทราบรุ่น','กองทัพอาจสนใจเป็นพิเศษ'],['ถ้าคาดถูก','โบนัสราคาขาย +10%','เฉลยหลังจบไตรมาส']
+  ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดเฉลี่ย ${marketAveragePercent(ev)}%`]];
+  return `<section class="page brief"><div class="card hero"><div><h2>BRIEFING</h2><p>${esc(ev.summary)}</p></div>${unitIcon(GameData.UNIT_TYPES[0])}</div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div><div class="actions"><button class="btn confirm" data-phase="command"><span>▶</span> ไป COMMAND</button></div></section>`;
+}
+function renderCommand(){
+  const c=currentCalc(), tech=techProgress(c.p), holding=GameData.inventoryHoldingCost(c.p);
+  const avail=GameData.UNIT_TYPES.filter(u=>!u.hidden);
+  const unlocked=new Set(GameData.unlockedUnitIds(c.p));
+  return `<section class="page cmd"><div class="card main"><div class="section-title"><span class="text">PRODUCTION COMMAND</span><span class="badge"><span data-live="prod">${c.prod} เครื่อง</span> · <span data-live="cp">${c.cpUse}/${c.p.capacity} CP</span></span></div><div class="leftcol"><div class="sprite-box">${unitIcon(c.unit)}</div><div class="stats"><div class="stat"><span>ใช้ Capacity</span><b>${c.base.cpCost} CP</b></div><div class="stat"><span>ผลิต</span><b data-live="prod">${c.prod} เครื่อง</b></div><div class="stat"><span>ต้นทุน/เครื่อง</span><b data-live="cost">${c.econ.unitCost} Cr.</b></div><div class="stat"><span>ขาย/เครื่อง</span><b data-live="price">${c.econ.unitPrice} Cr.</b></div><div class="stat"><span>คงเหลือ</span><b>${inventoryValue(c.p,c.unit.id).qty}</b></div></div></div><div class="rightcol"><div class="unit-head"><div class="unit-name">${esc(c.unit.name)}</div><div class="unit-tag">${esc(c.unit.tag)}</div></div><div class="policy">${slider('✨ คุณภาพ','quality',0,100,'70%+: มีโอกาสเป็น Variant')}${slider('💰 ราคา','priceStrategy',0,100,`ตลาดเฉลี่ย ${marketAveragePercent(state.currentEvent)}%`)}${slider('🏭 การผลิต','prodPct',0,150,'90% คือต้นทุน/เครื่องดีที่สุด')}</div><div class="invest">${numberBox('R&D','rndInvest')}${numberBox('โฆษณา','lobby')}${numberBox('โรงงาน','factoryInvest')}</div><div class="rnd"><b>${esc(tech.label)}</b>${esc(tech.detail)} · รอบนี้ +${GameData.rpFromInvestment(c.d.rndInvest)} RP</div></div></div><div class="card available"><div class="avail-info"><b>Available</b>${esc(tech.detail)}</div><div class="unit-row">${avail.map(u=>{const is=unlocked.has(u.id),active=c.base.id===u.id; return `<button class="unit-card ${active?'active':''}" ${is?`data-unit="${u.id}"`:"disabled"}>${is?unitIcon(u,'mini'):'<div class="lock">🔒</div>'}<b>${esc(u.name.replace('RB-79 ',''))}</b><small>${u.cpCost} CP</small></button>`}).join('')}</div></div><div class="actions"><button class="btn" data-phase="briefing"><span>◀</span> BRIEFING</button><button id="submitOrder" class="btn confirm"><span>▶</span> ยืนยันคำสั่ง</button></div></section>`;
+}
+function renderReport(){
+  const rep=state.lastReport;
+  if(!rep) return `<section class="page report"><div class="card news"><h2>ยังไม่มีรายงาน</h2><p>ยืนยันคำสั่งในหน้า Command ก่อน</p></div><div class="actions"><button class="btn confirm" data-phase="command">ไป COMMAND</button></div></section>`;
+  const sorted=[...rep.results].sort((a,b)=>b.share-a.share); const you=sorted.find(r=>r.playerId==='you')||sorted[0]; const rivals=sorted.filter(r=>r.playerId!=='you');
+  const profitClass=you.profit>=0?'green':'red';
+  return `<section class="page report"><div class="card result-head"><div><div class="label">ผลประกอบการ</div><div class="big-number ${profitClass}">${you.profit>=0?'+':''}${fmt(you.profit)} Cr.</div></div><div><div class="label">ยอดขาย</div><div class="big-number blue">${you.unitsSold}/${you.production}</div></div></div><div class="card news"><div class="section-title"><span class="text">REPORT</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="news-lines"><div class="news-line"><b>ตลาด:</b> ${esc(rep.event.name)} · ${esc(rep.event.effect||'Normal')}</div><div class="news-line"><b>บริษัทเรา:</b> ${esc(you.unit.name)} ขายได้ ${you.unitsSold} จาก ${you.production} เครื่อง</div><div class="news-line"><b>ส่วนแบ่ง:</b> ${Math.round(you.share*1000)/10}% · ${you.crowdCount>1?`ตลาดชน ${you.crowdCount} บริษัท`:'ไม่มีคู่แข่งผลิตรุ่นเดียวกัน'}</div><div class="news-line"><b>บทเรียน:</b> ${you.matchedPreferred?'อ่านข่าวถูก ได้โบนัสตลาด':'ปรับราคา/คุณภาพ/กำลังผลิตตามข่าวรอบหน้า'}</div></div></div><div class="rank-row">${sorted.slice(0,3).map((r,i)=>`<div class="card rank ${r.playerId==='you'?'you-rank':''}">${unitIcon(r.unit,'rank-mech')}<div class="company"><b>#${i+1}</b><strong>${esc(r.playerId==='you'?'บริษัทเรา':r.name.replace(' [BOT]',''))}</strong><small>${r.profit>=0?'+':''}${fmt(r.profit)} Cr. · ${Math.round(r.share*1000)/10}%</small></div></div>`).join('')}</div><div class="actions"><button class="btn" data-phase="command"><span>◀</span> COMMAND</button><button id="nextQuarter" class="btn confirm"><span>▶</span> ${state.round>=GameData.MAX_ROUNDS?'ดูผลจบเกม':'ไตรมาสถัดไป'}</button></div></section>`;
+}
+function renderEnd(){
+  const ranks=[...state.players].map(p=>({...p,score:p.funds+p.reputation*20-(p.debt||0)})).sort((a,b)=>b.score-a.score);
+  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="page end-page"><div class="card news"><div class="section-title"><span class="text">FINAL RANKING</span><span class="badge">END</span></div><div class="news-lines">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div><div class="actions"><button id="resetGame" class="btn confirm">เริ่มเกมใหม่</button></div></section></main><div class="marker">P42C PLAYABLE</div>`; bindCommon();
+}
+function renderGame(){
+  if(!state.currentEvent) state.currentEvent=prepareMarketEvent(state.round||1);
+  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P42C PLAYABLE</div>`;
+  bindCommon();
+}
+function render(){ ensureState(); if(state.screen==='end') return renderEnd(); if(!state.players.length || state.screen==='home') renderHome(); else renderGame(); }
+window.addEventListener('error', e=>{app.innerHTML=`<main class="phone"><section class="card start-panel"><h2 class="red">Game Error</h2><pre>${esc(e.message)}\n${esc(e.filename)}:${e.lineno}</pre><button id="resetGame" class="btn confirm">ล้างเซฟ</button></section></main>`; const b=$('#resetGame'); if(b)b.onclick=()=>{safeStorage.removeItem(KEY); location.reload();};});
+load(); render();
+})();
+</script></body></html>
