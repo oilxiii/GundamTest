@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="format-detection" content="telephone=no"><title>Mobile Suit Production Command PASS 43 Readability Market Share</title><style>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="format-detection" content="telephone=no"><title>Mobile Suit Production Command PASS 46 Original Assets Restore</title><style>
 :root{
   --bg:#050b13;
   --panel:#0b1a2a;
@@ -242,6 +242,33 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .summary-card .stat-label{font-size:var(--fs-xs)}
 .summary-card .stat-value{font-size:var(--fs-md)}
 
+
+/* ---------- SPECIAL REPORT / PILOT CONTRACT ---------- */
+.special-card{padding-bottom:var(--sp-3)}
+.special-card .news-lines{gap:7px}
+.special-offer-row{
+  display:grid;grid-template-columns:46px minmax(0,1fr);gap:9px;align-items:start;
+  border-color:rgba(255,216,79,.45)!important;background:rgba(255,216,79,.055)!important;
+}
+.pilot-portrait{
+  width:44px;height:44px;border:1px solid rgba(255,216,79,.85);border-radius:8px;
+  background:#04101a;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.45) inset;
+}
+.pilot-portrait.small{width:28px;height:28px;border-radius:6px;display:inline-grid;vertical-align:middle;margin-right:5px}
+.pilot-svg{width:38px;height:38px;image-rendering:pixelated}
+.pilot-portrait.small .pilot-svg{width:24px;height:24px}
+.offer-name{font-weight:900;color:#fff;font-size:var(--fs-sm);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.offer-role{font-size:var(--fs-2xs);color:var(--muted);font-weight:800;text-transform:uppercase;margin-top:1px}
+.offer-copy{font-size:var(--fs-xs);line-height:1.32;color:var(--text);margin-top:5px}
+.offer-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-top:7px}
+.mini-btn{
+  min-height:31px;border:1px solid var(--line-strong);border-radius:8px;background:var(--panel2);
+  color:#fff;font-size:var(--fs-2xs);font-weight:900;padding:5px 3px;
+}
+.mini-btn.primary{border-color:rgba(255,216,79,.9);background:linear-gradient(180deg,#ffe066,#c58a1f);color:#231901}
+.mini-btn.danger{border-color:rgba(255,84,112,.75);background:#30111c;color:#ffdce5}
+.contract-line{display:flex;align-items:center;gap:5px}
+
 /* ---------- REPORT ---------- */
 .result-head{padding:var(--sp-3);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
 .result-block{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -268,7 +295,41 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .company b{font-size:var(--fs-xs);color:var(--gold);display:block}
 .company strong{display:block;font-size:var(--fs-xs);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .company small{display:block;font-size:8.6px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.variant-glow{filter:drop-shadow(0 0 5px rgba(255,216,79,.35))}
+.variant-glow{filter:none}
+
+/* ---------- competitor intelligence ---------- */
+.rival-intel{padding-bottom:var(--sp-3)}
+.rival-intel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:var(--sp-2) var(--sp-3) 0}
+.rival-intel-card{display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px;align-items:center;padding:8px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:var(--r-sm);min-width:0}
+.rival-intel-card:last-child:nth-child(odd){grid-column:1/-1}
+.rival-intel-card .rank-mech{width:32px;height:32px}
+.rival-intel-main{min-width:0}
+.rival-intel-company{font-size:var(--fs-xs);font-weight:900;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rival-intel-unit{font-size:var(--fs-xs);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.rival-intel-stats{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:5px}
+.rival-intel-stat{background:rgba(0,0,0,.18);border-radius:6px;padding:4px 5px;min-width:0}
+.rival-intel-stat span{display:block;font-size:7.8px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rival-intel-stat b{display:block;font-size:var(--fs-xs);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+
+/* ---------- 8-player / AI difficulty ---------- */
+select.field{appearance:none;-webkit-appearance:none;background:#07121d;color:#fff}
+.rival-accordion{display:flex;flex-direction:column;gap:6px;padding:var(--sp-2) var(--sp-3) var(--sp-3)}
+.rival-detail{border:1px solid var(--line);border-radius:var(--r-sm);background:rgba(255,255,255,.02);overflow:hidden}
+.rival-detail summary{list-style:none;display:grid;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 9px;cursor:pointer}
+.rival-detail summary::-webkit-details-marker{display:none}
+.rival-detail .rank-mech{width:28px;height:28px}
+.rival-summary-name{font-size:var(--fs-xs);font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rival-summary-share{font-size:var(--fs-xs);font-weight:900;color:var(--blue)}
+.rival-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 9px 9px}
+.rival-detail-body>div{background:rgba(0,0,0,.18);border-radius:6px;padding:5px 6px;min-width:0}
+.rival-detail-body span{display:block;font-size:7.8px;color:var(--muted)}
+.rival-detail-body b{display:block;font-size:var(--fs-xs);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;text-transform:capitalize}
+.rank-row.rank-all{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rank-row.rank-all .rank{display:grid;grid-template-columns:28px minmax(0,1fr);text-align:left;padding:7px;align-items:center}
+.rank-row.rank-all .rank-mech{grid-row:1;grid-column:1}
+.rank-row.rank-all .company{grid-row:1;grid-column:2}
+@media(max-height:700px){.start-panel{gap:8px;padding:12px 14px}.field{height:40px}.rank-row.rank-all{gap:5px}}
 
 /* ---------- HOME / END ---------- */
 .start-panel{padding:18px 16px;display:flex;flex-direction:column;gap:12px;margin:auto var(--sp-3)}
@@ -283,7 +344,79 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 @media (min-height:780px){.phone{max-height:none;margin-top:0}}
 
-</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">MSPC</div></div>
+
+/* PASS 58: compact one-line leaderboard */
+.rank-all{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.rank-inline{
+  padding:8px 10px;
+}
+.rank-inline.user-company{
+  border:2px solid var(--gold);
+  background:rgba(255,216,79,.08);
+}
+.rank-line{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) auto;
+  gap:8px;
+  align-items:center;
+}
+.rank-left{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+}
+.rank-num{
+  font-size:10px;
+  color:var(--gold);
+  font-weight:900;
+}
+.rank-mid{min-width:0}
+.rank-company{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.you-badge{
+  flex:0 0 auto;
+  font-size:8px;
+  font-weight:900;
+  padding:2px 5px;
+  border-radius:999px;
+  background:rgba(255,216,79,.18);
+  color:var(--gold);
+}
+.rank-intel{
+  margin-top:2px;
+  font-size:9.5px;
+  line-height:1.3;
+  color:var(--muted);
+  white-space:normal;
+}
+.rank-intel .price{color:var(--green);font-weight:800}
+.rank-intel .ad{color:var(--gold);font-weight:800}
+.rank-share{
+  font-size:13px;
+  font-weight:900;
+  color:var(--blue);
+  white-space:nowrap;
+}
+.report .actions{
+  position:sticky;
+  bottom:0;
+  z-index:30;
+}
+
+</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P60 PIE NAME</div></div>
 <svg width="0" height="0" style="position:absolute;overflow:hidden">
 <symbol id="ball-symbol" viewBox="0 0 32 32"><rect x="14" y="2" width="4" height="4" fill="#111"/><rect x="13" y="5" width="6" height="2" fill="#1e252e"/><rect x="10" y="7" width="12" height="2" fill="#05070b"/><rect x="8" y="9" width="16" height="3" fill="#05070b"/><rect x="6" y="12" width="20" height="9" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="8" width="10" height="1" fill="#f3efe2"/><rect x="9" y="10" width="14" height="3" fill="#f3efe2"/><rect x="7" y="13" width="18" height="8" fill="#f3efe2"/><rect x="9" y="21" width="14" height="3" fill="#f3efe2"/><rect x="12" y="25" width="8" height="1" fill="#f3efe2"/><rect x="8" y="14" width="4" height="6" fill="#c8d0d6"/><rect x="20" y="14" width="4" height="6" fill="#6f7b86"/><rect x="13" y="12" width="6" height="4" fill="#05070b"/><rect x="14" y="13" width="4" height="2" fill="#7cc7ff"/><rect x="9" y="18" width="14" height="1" fill="#e23a34"/><rect x="3" y="16" width="5" height="2" fill="#05070b"/><rect x="2" y="17" width="2" height="4" fill="#313944"/><rect x="24" y="16" width="5" height="2" fill="#05070b"/><rect x="28" y="17" width="2" height="4" fill="#313944"/><rect x="1" y="20" width="4" height="2" fill="#05070b"/><rect x="27" y="20" width="4" height="2" fill="#05070b"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#145bd8"/><rect x="18" y="28" width="2" height="3" fill="#145bd8"/></symbol>
 <symbol id="ball-kai-symbol" viewBox="0 0 32 32"><rect x="13" y="1" width="6" height="3" fill="#101418"/><rect x="12" y="4" width="8" height="2" fill="#1f2a34"/><rect x="10" y="6" width="12" height="2" fill="#05070b"/><rect x="8" y="8" width="16" height="3" fill="#05070b"/><rect x="5" y="11" width="22" height="10" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="7" width="10" height="1" fill="#24262b"/><rect x="9" y="9" width="14" height="3" fill="#24262b"/><rect x="7" y="12" width="18" height="9" fill="#24262b"/><rect x="9" y="21" width="14" height="3" fill="#24262b"/><rect x="12" y="25" width="8" height="1" fill="#24262b"/><rect x="7" y="13" width="4" height="7" fill="#4a4e56"/><rect x="21" y="13" width="4" height="7" fill="#17181c"/><rect x="12" y="11" width="8" height="5" fill="#05070b"/><rect x="14" y="12" width="5" height="2" fill="#8df7ff"/><rect x="8" y="18" width="16" height="1" fill="#ff4b4b"/><rect x="4" y="11" width="3" height="4" fill="#253142"/><rect x="25" y="11" width="3" height="4" fill="#253142"/><rect x="2" y="16" width="6" height="2" fill="#05070b"/><rect x="24" y="16" width="6" height="2" fill="#05070b"/><rect x="1" y="18" width="4" height="4" fill="#1e2833"/><rect x="27" y="18" width="4" height="4" fill="#1e2833"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#1e7cff"/><rect x="18" y="28" width="2" height="3" fill="#1e7cff"/><rect x="5" y="22" width="3" height="2" fill="#ffd84f"/><rect x="24" y="22" width="3" height="2" fill="#ffd84f"/></symbol>
@@ -291,7 +424,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 <symbol id="gm-symbol" viewBox="0 0 32 32"><rect x="10" y="5" width="12" height="3" fill="#111822"/><rect x="7" y="8" width="18" height="4" fill="#111822"/><rect x="6" y="12" width="20" height="13" fill="#111822"/><rect x="9" y="8" width="14" height="4" fill="#d8e0e8"/><rect x="8" y="12" width="16" height="12" fill="#c8d2dc"/><rect x="11" y="14" width="10" height="4" fill="#111822"/><rect x="12" y="15" width="8" height="2" fill="#57caff"/><rect x="7" y="19" width="18" height="2" fill="#ef4b4b"/><rect x="3" y="14" width="4" height="8" fill="#8794a2"/><rect x="25" y="14" width="4" height="8" fill="#8794a2"/><rect x="12" y="25" width="3" height="5" fill="#2b6de0"/><rect x="17" y="25" width="3" height="5" fill="#2b6de0"/></symbol><symbol id="zaku-red-symbol" viewBox="0 0 32 32"><rect x="11" y="4" width="10" height="3" fill="#2d1414"/><rect x="8" y="7" width="16" height="3" fill="#1a0808"/><rect x="6" y="10" width="20" height="12" fill="#1a0808"/><rect x="8" y="23" width="16" height="4" fill="#1a0808"/><rect x="9" y="8" width="14" height="3" fill="#8a3030"/><rect x="7" y="11" width="18" height="10" fill="#c0392b"/><rect x="9" y="22" width="14" height="4" fill="#7a2a2a"/><rect x="11" y="14" width="10" height="4" fill="#2a1414"/><rect x="15" y="14" width="2" height="4" fill="#ffd54f"/><rect x="3" y="13" width="4" height="8" fill="#6b2a2a"/><rect x="25" y="13" width="4" height="8" fill="#6b2a2a"/><rect x="11" y="27" width="4" height="3" fill="#562222"/><rect x="17" y="27" width="4" height="3" fill="#562222"/></symbol><symbol id="zaku-purple-symbol" viewBox="0 0 32 32"><rect x="11" y="4" width="10" height="3" fill="#2a1440"/><rect x="8" y="7" width="16" height="3" fill="#0d0616"/><rect x="6" y="10" width="20" height="12" fill="#0d0616"/><rect x="8" y="23" width="16" height="4" fill="#0d0616"/><rect x="9" y="8" width="14" height="3" fill="#7c4aa0"/><rect x="7" y="11" width="18" height="10" fill="#a64fe0"/><rect x="9" y="22" width="14" height="4" fill="#6b3a8a"/><rect x="11" y="14" width="10" height="4" fill="#2a1440"/><rect x="15" y="14" width="2" height="4" fill="#ffd54f"/><rect x="3" y="13" width="4" height="8" fill="#5a3570"/><rect x="25" y="13" width="4" height="8" fill="#5a3570"/><rect x="11" y="27" width="4" height="3" fill="#4e2761"/><rect x="17" y="27" width="4" height="3" fill="#4e2761"/></symbol><symbol id="gm-gold-symbol" viewBox="0 0 32 32"><rect x="10" y="5" width="12" height="3" fill="#111822"/><rect x="7" y="8" width="18" height="4" fill="#111822"/><rect x="6" y="12" width="20" height="13" fill="#111822"/><rect x="9" y="8" width="14" height="4" fill="#f2d878"/><rect x="8" y="12" width="16" height="12" fill="#d4af37"/><rect x="11" y="14" width="10" height="4" fill="#111822"/><rect x="12" y="15" width="8" height="2" fill="#c0392b"/><rect x="7" y="19" width="18" height="2" fill="#ef4b4b"/><rect x="3" y="14" width="4" height="8" fill="#8a6d1f"/><rect x="25" y="14" width="4" height="8" fill="#8a6d1f"/><rect x="12" y="25" width="3" height="5" fill="#2b6de0"/><rect x="17" y="25" width="3" height="5" fill="#2b6de0"/></symbol>
 </svg><script>const GameData = (() => {
   const MAX_ROUNDS = 12;
-  const START_FUNDS = 1000;
+  const START_FUNDS = 500;
   const BASE_POOL = 100;
   const BASE_PRICE = 8;
   const BASE_COST = 6;
@@ -302,18 +435,19 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   const UNIT_TYPES = [
     { id: 'z1', tier:0, cpCost:1, baseCost:3.0, basePrice:5.2, rnd:'low', price:'low', name:'Ball', tag:'โลงศพอวกาศ ต้นทุนต่ำ ผลิตได้จำนวนมาก', primary:'#d7d2c6', visor:'#7cc7ff', hornColor:'#9aa0a6', horn:'ball', kind:'ball' },
     { id: 'z4', tier:1, cpCost:2, baseCost:7.0, basePrice:11.0, rnd:'mid', price:'low', name:'หุ่นรุ่นผลิตจำนวนมาก', tag:'ซาคุมาตรฐาน ใช้ได้ทุกสมรภูมิ', primary:'#4a7a3e', visor:'#c0392b', hornColor:'#33502a', horn:'mono' },
-    { id: 'z5', tier:1, cpCost:2, baseCost:8.5, basePrice:13.0, rnd:'mid', price:'mid', name:'กุ๊กวัน', tag:'รุ่นจู่โจมมาตรฐาน สมดุลราคาและสมรรถนะ', primary:'#6b4c3a', visor:'#c0392b', hornColor:'#432f24', horn:'mono' },
-    { id: 'z6', hidden:true, tier:2, cpCost:3, baseCost:12.0, basePrice:18.0, rnd:'mid', price:'high', name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชา ใช้กำลังผลิตมากขึ้น', primary:'#7d3c98', visor:'#ffd54f', hornColor:'#4e2761', horn:'mono' },
-    { id: 'z7', tier:2, cpCost:3, baseCost:13.0, basePrice:19.5, rnd:'high', price:'low', name:'หุ่นอาร์เอ็กซ์ รุ่นทดสอบ', tag:'ต้นแบบเทคโนโลยีใหม่ ต้นทุนสูง', primary:'#e8e8e8', visor:'#2ecc71', hornColor:'#c0392b', horn:'vfin' },
-    { id: 'z8', tier:3, cpCost:4, baseCost:17.0, basePrice:26.0, rnd:'high', price:'mid', name:'หุ่นอาร์เอ็กซ์ รุ่นเอซ', tag:'รุ่นสมรรถนะสูง ผลิตได้ไม่มาก', primary:'#dfe6f0', visor:'#4a6fa5', hornColor:'#b0bfd6', horn:'vfin' },
-    { id: 'z9', hidden:true, tier:4, cpCost:6, baseCost:25.0, basePrice:40.0, rnd:'high', price:'high', name:'หุ่นอาร์เอ็กซ์ รุ่นลิมิเต็ด', tag:'รุ่นพิเศษผลิตจำกัด ใช้ Capacity สูงมาก', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', horn:'vfin' },
+    { id: 'z7', tier:2, cpCost:2, baseCost:8.5, basePrice:13.0, rnd:'mid', price:'mid', name:'หุ่นอาร์เอ็กซ์ รุ่นทดสอบ', tag:'ต้นแบบเทคโนโลยีใหม่ ต้นทุนสูง', primary:'#e8e8e8', visor:'#2ecc71', hornColor:'#c0392b', horn:'vfin' },
+    { id: 'z5', tier:3, cpCost:3, baseCost:12.0, basePrice:18.0, rnd:'mid', price:'mid', name:'กุ๊กวัน', tag:'รุ่นจู่โจมมาตรฐาน สมดุลราคาและสมรรถนะ', primary:'#6b4c3a', visor:'#c0392b', hornColor:'#432f24', horn:'mono' },
+    { id: 'z6', hidden:true, tier:3, cpCost:3, baseCost:13.0, basePrice:19.5, rnd:'mid', price:'high', name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชา ใช้กำลังผลิตมากขึ้น', primary:'#7d3c98', visor:'#ffd54f', hornColor:'#4e2761', horn:'mono' },
+    { id: 'z8', tier:4, cpCost:5, baseCost:22.0, basePrice:34.0, rnd:'high', price:'high', name:'หุ่นนิวอาร์เอ็กซ์', tag:'หุ่นอาร์เอ็กซ์รุ่นสุดท้าย สมรรถนะสูง ผลิตได้ไม่มาก', primary:'#dfe6f0', visor:'#4a6fa5', hornColor:'#b0bfd6', horn:'vfin' },
+    { id: 'z9', hidden:true, tier:4, cpCost:6, baseCost:25.0, basePrice:40.0, rnd:'high', price:'high', name:'หุ่นนิวอาร์เอ็กซ์ รุ่นทอง', tag:'รุ่นพิเศษผลิตจำกัด ใช้ Capacity สูงมาก', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', horn:'vfin' },
   ];
 
   const TECH_TIERS = [
     { level:0, name:'พื้นฐาน', rpRequired:0, unlockIds:['z1'] },
-    { level:1, name:'Mobile Suit Mass Production', rpRequired:60, unlockIds:['z4','z5'] },
-    { level:2, name:'Commander Platform', rpRequired:140, unlockIds:['z7'] },
-    { level:3, name:'Ace Frame', rpRequired:240, unlockIds:['z8'] },
+    { level:1, name:'Mobile Suit Mass Production', rpRequired:60, unlockIds:['z4'] },
+    { level:2, name:'Commander Platform', rpRequired:120, unlockIds:['z7'] },
+    { level:3, name:'Ace Support Platform', rpRequired:210, unlockIds:['z5'] },
+    { level:4, name:'Ace Frame', rpRequired:340, unlockIds:['z8'] },
   ];
 
   const EVENTS = [
@@ -358,11 +492,11 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       poolMult: 1
     },
     {
-      id:'factory-audit', icon:'!', tone:'warn', priority:4,
-      name: 'ตรวจสอบสายการผลิต',
-      summary: 'บริษัทที่ผลิตมากที่สุดเสี่ยงเสียชื่อเสียง',
-      desc: 'หน่วยตรวจสอบกองทัพจับตาโรงงานที่เร่งผลิตเกินมาตรฐาน บริษัทที่ผลิตมากที่สุดเสียชื่อเสียง',
-      effect: 'Most Production Rep -10', advice: 'อย่าเร่งผลิตสุดตัวถ้าไม่จำเป็น',
+      id:'factory-audit', icon:'✊', tone:'warn', priority:4,
+      name: 'ประชาชนต่อต้านสงคราม',
+      summary: 'สังคมเริ่มต่อต้านบริษัทที่ผลิตอาวุธมากเกินไป',
+      desc: 'กระแสต่อต้านสงครามแพร่กระจายไปทั่วอาณานิคม ประชาชนเริ่มวิจารณ์บริษัทที่เร่งผลิตอาวุธเกินความจำเป็น บริษัทที่ผลิตมากที่สุดจะเสียชื่อเสียง',
+      effect: 'Most Production Rep -10', advice: 'การเร่งผลิตมากเกินไปอาจกระทบภาพลักษณ์ของบริษัท',
       poolMult: 1, penaltyMostProduced: -10
     },
     {
@@ -385,25 +519,28 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 
   const SPECIAL_EVENTS = [
-    { id:'amuro-bay', tier:2, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z7','z8','z9'], targetLabel:'ตระกูลอาร์เอ็กซ์', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
-      pitch:'นักบินระดับตำนานสนใจหุ่นตระกูลอาร์เอ็กซ์ของบริษัทคุณ' },
-    { id:'zaza-impossible', tier:2, name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', unitIds:['z4'], targetLabel:'ดาวตกสีแดง / Commander Type', priceBonus:0.15, duration:3, baseWeight:10, startRound:5, pricePct:0.16,
+    { id:'amuro-bay', tier:4, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
+      pitch:'นักบินระดับตำนานสนใจหุ่นนิวอาร์เอ็กซ์ของบริษัทคุณ' },
+    { id:'zaza-impossible', tier:1, name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', unitIds:['z4'], targetLabel:'ดาวตกสีแดง / Commander Type', priceBonus:0.15, duration:3, baseWeight:10, startRound:5, pricePct:0.16,
       pitch:'นักบินชื่อดังชื่นชอบดาวตกสีแดงและต้องการเป็นพรีเซ็นเตอร์' },
-    { id:'rookie-pilot', tier:1, name:'นักบินดาวรุ่ง', role:'นักบินเอซ', unitIds:['z5','z6'], targetLabel:'กุ๊กวัน / กุ๊กทู', priceBonus:0.08, duration:3, baseWeight:14, startRound:3, pricePct:0.10,
+    { id:'rookie-pilot', tier:3, name:'นักบินดาวรุ่ง', role:'นักบินเอซ', unitIds:['z5'], targetLabel:'กุ๊กวัน / กุ๊กทูตัวลับ', priceBonus:0.08, duration:3, baseWeight:14, startRound:3, pricePct:0.10,
       pitch:'นักบินดาวรุ่งกำลังมองหาบริษัทที่กล้าดันหุ่นสายกุ๊ก' },
-    { id:'military-reviewer', tier:1, name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', unitIds:['z1'], targetLabel:'Ball' , priceBonus:0.07, duration:3, baseWeight:14, startRound:3, pricePct:0.08,
+    { id:'military-reviewer', tier:0, name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', unitIds:['z1'], targetLabel:'Ball' , priceBonus:0.07, duration:3, baseWeight:14, startRound:3, pricePct:0.08,
       pitch:'นักรีวิวภาคสนามสนใจทำแคมเปญให้ Ball' },
-    { id:'legend-test-pilot', tier:3, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'อาร์เอ็กซ์รุ่นเอซ / ลิมิเต็ด', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
-      pitch:'นักบินทดสอบระดับตำนานพร้อมยกระดับภาพลักษณ์ของหุ่นอาร์เอ็กซ์รุ่นสูง' }
+    { id:'legend-test-pilot', tier:4, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
+      pitch:'นักบินทดสอบระดับตำนานพร้อมยกระดับภาพลักษณ์ของหุ่นนิวอาร์เอ็กซ์' }
   ];
 
   function getSpecialEventById(id) { return SPECIAL_EVENTS.find(e => e.id === id); }
-  function activeUnitContractBonus(player, unitId) {
+  function activeUnitContractBonus(player, unitId, baseId = null) {
     const contracts = (player && player.activeContracts) || [];
-    return contracts.filter(c => c.remaining > 0 && c.unitIds && c.unitIds.includes(unitId)).reduce((sum,c)=> sum + (c.priceBonus || 0), 0);
+    const ids = [unitId, baseId].filter(Boolean);
+    return contracts
+      .filter(c => c.remaining > 0 && c.unitIds && ids.some(id => c.unitIds.includes(id)))
+      .reduce((sum,c)=> sum + (c.priceBonus || 0), 0);
   }
 
-  const BOT_NAMES = ['Anaheim', 'Zeonic', 'MIP Works', 'Luna Steel'];
+  const BOT_NAMES = ['Anaheim', 'Zeonic', 'MIP Works', 'Luna Steel', 'Axis Dynamics', 'Jupiter Arsenal', 'Side Seven Works'];
 
   function band(v) { return v < 34 ? 'low' : v < 67 ? 'mid' : 'high'; }
   function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
@@ -450,7 +587,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       } else if (unit.id === 'z5') {
         u = { ...u, id:`${unit.id}-ii`, baseId:unit.id, name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชาจากสายการผลิตคุณภาพสูง', primary:'#a64fe0', visor:'#ffd54f', hornColor:'#4e2761', variantSymbol:'zaku-purple-symbol' };
       } else if (unit.horn === 'vfin') {
-        u = { ...u, id:`${unit.id}-gold`, baseId:unit.id, name: `${unit.name} รุ่นลิมิเต็ด`, tag:'รุ่นคุณภาพสูงจากสายการผลิตระดับ Ace', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', variantSymbol:'gm-gold-symbol' };
+        u = { ...u, id:`${unit.id}-gold`, baseId:unit.id, name: `${unit.name} รุ่นทอง`, tag:'รุ่นคุณภาพสูงจากสายการผลิตระดับ Ace', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', variantSymbol:'gm-gold-symbol' };
       }
     }
     u.variantQuality = q;
@@ -493,70 +630,111 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
     // around Q6 with heavy focus, while still making small R&D budgets meaningful.
     return Math.min(120, Math.round(32 * Math.pow(a / 100, 0.82)));
   }
-  function botDecision(funds, capacity, event = null, player = null) {
+  function botDecision(funds, capacity, event = null, player = null, publicReport = null) {
     const rep = Number((player && player.reputation) || 0);
     const cash = Math.max(0, Number(funds || 0));
     const cap = Math.max(1, Number(capacity || START_CAPACITY));
     const invQty = inventoryTotals(player || {}).qty || 0;
     const available = unlockedUnits(player || { techLevel:0 });
+    const difficulty = (player && player.aiDifficulty) || 'medium';
+    const personality = (player && player.aiStyle) || 'balanced';
+    const publicRows = publicReport && Array.isArray(publicReport.results) ? publicReport.results : [];
 
-    let quality = 38 + Math.random() * 30;
-    let priceStrategy = 42 + Math.random() * 24;
-    let preferred = null;
-    if (event && event.id === 'ace-pilot-trend' && event.rumorUnitId && Math.random() < 0.62) {
-      const ids = new Set(available.map(u=>u.id));
-      if (ids.has(event.rumorUnitId)) preferred = event.rumorUnitId;
-      const target = unitToFocus(event.rumorUnitId);
-      priceStrategy = target.priceStrategy + (Math.random() - 0.5) * 16;
+    let quality, priceStrategy, prodPct, preferred = null;
+
+    if (difficulty === 'easy') {
+      // Easy: ตัดสินใจแบบสุ่มและมีโอกาสพลาด เช่น ผลิตล้นหรือลืมลงทุน
+      quality = 20 + Math.random() * 65;
+      priceStrategy = 20 + Math.random() * 70;
+      preferred = available[Math.floor(Math.random() * available.length)]?.id || available[0]?.id;
+      prodPct = 45 + Math.random() * 85;
+      if (Math.random() < 0.28) prodPct = 110 + Math.random() * 20;
+    } else {
+      quality = 40 + Math.random() * 28;
+      priceStrategy = 42 + Math.random() * 22;
+
+      if (difficulty === 'hard' && publicRows.length) {
+        // Hard อ่านเฉพาะข้อมูลสาธารณะจาก Report รอบก่อน: รุ่น, ราคา, ยอดขาย, ส่วนแบ่ง, โฆษณา
+        const successful = [...publicRows].sort((a,b)=>(b.share||0)-(a.share||0));
+        const best = successful.find(r => available.some(u => u.id === (r.unit?.baseId || r.unit?.id)));
+        if (best) preferred = best.unit?.baseId || best.unit?.id;
+        const comparable = publicRows.filter(r => Number.isFinite(Number(r.unitPrice)));
+        if (comparable.length) {
+          const avgPrice = comparable.reduce((sum,r)=>sum+Number(r.unitPrice),0)/comparable.length;
+          const targetUnit = available.find(u=>u.id===preferred) || available[0];
+          const inferred = ((avgPrice / Math.max(0.1,targetUnit.basePrice) - 0.78) / 0.62) * 100;
+          priceStrategy = inferred - (4 + Math.random()*5); // ตัดราคาจากข้อมูลสาธารณะเล็กน้อย
+        }
+        const badOwn = publicRows.find(r=>r.playerId===player.id && (r.unitsSold||0) < (r.production||0)*0.45);
+        if (badOwn) preferred = successful.find(r=>(r.unitsSold||0)>0 && available.some(u=>u.id===(r.unit?.baseId||r.unit?.id)))?.unit?.baseId || preferred;
+      }
+
+      if (event && event.id === 'ace-pilot-trend' && event.rumorUnitId && Math.random() < (difficulty==='hard'?0.78:0.62)) {
+        const ids = new Set(available.map(u=>u.id));
+        if (ids.has(event.rumorUnitId)) preferred = event.rumorUnitId;
+        const target = unitToFocus(event.rumorUnitId);
+        priceStrategy = target.priceStrategy + (Math.random() - 0.5) * (difficulty==='hard'?8:16);
+      }
+      if (!preferred) {
+        const sorted = [...available].sort((a,b)=>{
+          const score = (b.basePrice-b.baseCost)/(b.cpCost||1) - (a.basePrice-a.baseCost)/(a.cpCost||1);
+          return score + (Math.random()-0.5)*(difficulty==='hard'?0.6:2);
+        });
+        preferred = (event && event.poolMult < 0.8) ? sorted.find(u=>u.cpCost<=2)?.id || sorted[0].id : sorted[0].id;
+      }
+      if (event && event.costMult > 1.1) priceStrategy += difficulty==='hard'?14:10 + Math.random()*8;
+      if (event && event.poolMult < 0.8) priceStrategy -= difficulty==='hard'?12:8 + Math.random()*10;
+      if (event && event.poolMult >= 1.2) quality += 5 + Math.random() * 8;
+
+      prodPct = difficulty==='hard' ? 84 + Math.random()*12 : 76 + Math.random()*24;
+      if (event && event.poolMult >= 1.2) prodPct += difficulty==='hard'?12:10 + Math.random()*12;
+      if (event && event.poolMult < 0.8) prodPct -= difficulty==='hard'?24:16 + Math.random()*10;
+      if (event && event.damageChance) prodPct -= 5 + Math.random()*8;
+      if (invQty > cap * 0.25) prodPct -= difficulty==='hard'?18:10;
+      if (cash < 260) prodPct -= 10;
     }
-    if (!preferred) {
-      const sorted = [...available].sort((a,b)=>{
-        const score = (b.basePrice-b.baseCost)/(b.cpCost||1) - (a.basePrice-a.baseCost)/(a.cpCost||1);
-        return score + (Math.random()-0.5)*2;
-      });
-      preferred = (event && event.poolMult < 0.8) ? sorted.find(u=>u.cpCost<=2)?.id || sorted[0].id : sorted[0].id;
-    }
-    if (event && event.costMult > 1.1) priceStrategy += 10 + Math.random() * 8;
-    if (event && event.poolMult < 0.8) priceStrategy -= 8 + Math.random() * 10;
-    if (event && event.poolMult >= 1.2) quality += 5 + Math.random() * 8;
+
     quality = Math.round(clamp(quality, 12, 92));
-    priceStrategy = Math.round(clamp(priceStrategy, 12, 88));
+    priceStrategy = Math.round(clamp(priceStrategy, 10, 90));
+    prodPct = Math.round(clamp(prodPct, 35, 125));
     const unit = getUnit(quality, priceStrategy, preferred, player);
 
-    let prodPct = 78 + Math.random() * 22;
-    if (event && event.poolMult >= 1.2) prodPct += 10 + Math.random() * 12;
-    if (event && event.poolMult < 0.8) prodPct -= 16 + Math.random() * 10;
-    if (event && event.damageChance) prodPct -= 4 + Math.random() * 8;
-    if (invQty > cap * 0.25) prodPct -= 10;
-    if (cash < 260) prodPct -= 10;
-    prodPct = Math.round(clamp(prodPct, 45, 118));
-
     let production = Math.floor((cap * prodPct / 100) / Math.max(1, unit.cpCost || 1));
-    const econ = unitEconomics(quality, priceStrategy, (event && event.costMult) || 1, prodPct, production, unit.id, player);
+    let econ = unitEconomics(quality, priceStrategy, (event && event.costMult) || 1, prodPct, production, unit.id, player);
     let plannedCost = production * econ.unitCost;
-
-    if (plannedCost > cash * 0.78) {
-      const affordableUnits = Math.max(1, Math.floor((cash * 0.72) / Math.max(1, econ.unitCost)));
+    const safeCashRatio = difficulty==='hard' ? 0.72 : difficulty==='easy' ? 0.95 : 0.78;
+    if (plannedCost > cash * safeCashRatio && difficulty !== 'easy') {
+      const affordableUnits = Math.max(1, Math.floor((cash * (difficulty==='hard'?0.66:0.72)) / Math.max(1, econ.unitCost)));
       const cpUse = affordableUnits * Math.max(1, unit.cpCost || 1);
       prodPct = Math.round(clamp((cpUse / cap) * 100, 25, 105));
       production = Math.floor((cap * prodPct / 100) / Math.max(1, unit.cpCost || 1));
-      plannedCost = Math.round(production * econ.unitCost);
+      econ = unitEconomics(quality, priceStrategy, (event && event.costMult) || 1, prodPct, production, unit.id, player);
+      plannedCost = production * econ.unitCost;
     }
 
-    const lobbyBase = event && event.id === 'ace-pilot-trend' ? 0.045 : 0.028;
-    const lobby = Math.round(clamp(cash * (lobbyBase + rep / 5200) * (0.75 + Math.random() * 0.6), 0, Math.min(50, cash * 0.09)));
+    let lobby;
+    if (difficulty === 'easy') lobby = Math.random()<0.35 ? 0 : Math.round(clamp(cash*(0.02+Math.random()*0.14),0,140));
+    else if (difficulty === 'hard') {
+      const pressure = publicRows.length ? Math.max(...publicRows.map(r=>Number(r.advertising||0))) : 0;
+      lobby = Math.round(clamp(Math.max(18, pressure*0.8, cash*(0.035+rep/7000)),0,Math.min(100,cash*0.14)));
+    } else {
+      const lobbyBase = event && event.id === 'ace-pilot-trend' ? 0.045 : 0.028;
+      lobby = Math.round(clamp(cash * (lobbyBase + rep / 5200) * (0.75 + Math.random() * 0.6), 0, Math.min(70, cash * 0.10)));
+    }
 
-    let factoryInvest = 0;
-    let rndInvest = 0;
+    let factoryInvest = 0, rndInvest = 0;
     const next = nextTechTier(player || {});
     const spareCash = cash - plannedCost - lobby;
-    const personality = (player && player.aiStyle) || (Math.random() < 0.33 ? 'research' : Math.random() < 0.66 ? 'mass' : 'balanced');
-    if (next && spareCash > 180 && personality !== 'mass') rndInvest = Math.round(clamp(spareCash * (personality === 'research' ? 0.16 : 0.08), 0, Math.min(140, spareCash*0.24)));
-    if (spareCash - rndInvest > 420 && cap < 65 && Math.random() < (personality === 'mass' ? 0.58 : 0.34)) {
-      factoryInvest = Math.round(clamp((spareCash-rndInvest) * (0.08 + Math.random() * 0.10), 0, Math.min(90, (spareCash-rndInvest) * 0.20)));
+    if (difficulty === 'easy') {
+      if (next && spareCash>250 && Math.random()<0.30) rndInvest=Math.round(spareCash*0.06);
+      if (spareCash>500 && Math.random()<0.22) factoryInvest=Math.round(spareCash*0.07);
+    } else {
+      const rndRate = difficulty==='hard' ? (personality==='research'?0.18:0.11) : (personality==='research'?0.16:0.08);
+      if (next && spareCash > (difficulty==='hard'?120:180) && personality !== 'mass') rndInvest = Math.round(clamp(spareCash*rndRate,0,Math.min(difficulty==='hard'?160:140,spareCash*0.26)));
+      const factoryChance = difficulty==='hard' ? 0.52 : (personality==='mass'?0.58:0.34);
+      if (spareCash-rndInvest > (difficulty==='hard'?320:420) && cap<70 && Math.random()<factoryChance) factoryInvest=Math.round(clamp((spareCash-rndInvest)*(difficulty==='hard'?0.13:0.10),0,100));
     }
-
-    return { unitId: unit.id, quality, priceStrategy, prodPct, production, lobby, factoryInvest, rndInvest };
+    return { unitId:unit.id, quality, priceStrategy, prodPct, production, lobby, factoryInvest, rndInvest };
   }
   function pickMarketEvent() {
     const total = EVENTS.reduce((s,e)=>s+(e.priority||1),0);
@@ -623,7 +801,9 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       const priceAppeal = (100 - sub.priceStrategy) / 100;
       const qualityAppeal = (sub.quality ?? sub.rndFocus ?? 50) / 100;
       const availableSignal = sub.production + currentStock * 0.6;
-      const appeal = Math.max(0.0001, availableSignal * (0.4 + priceAppeal) + sub.lobby * 2 + qualityAppeal * 35 + p.reputation * 0.3);
+      const baseAppeal = (qualityAppeal * 35) + (p.reputation * 0.3);
+      const adBoost = 1 + Math.min(0.50, Math.max(0, Number(sub.lobby || 0)) / 200);
+      const appeal = Math.max(0.0001, ((availableSignal * 0.4) + (baseAppeal * Math.pow(priceAppeal + 0.5, 1.5))) * adBoost);
       return { player: p, sub, unit, econ, appeal, currentStockBatches, currentStock };
     });
     const crowdKeyFor = (r) => `${r.unit.id}::q${Number(r.sub.quality ?? r.sub.rndFocus ?? 50) >= 70 ? 'high' : 'std'}`;
@@ -651,9 +831,9 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       else delete endingInventory[r.unit.id];
       const tempPlayer = { ...r.player, inventory: endingInventory };
       const holding = inventoryHoldingCost(tempPlayer);
-      const matchedPreferred = !!(event.preferredUnitId && event.preferredUnitId === r.unit.id);
+      const matchedPreferred = !!(event.preferredUnitId && (event.preferredUnitId === r.unit.id || event.preferredUnitId === r.unit.baseId));
       const marketBonus = matchedPreferred ? 0.10 : 0;
-      const contractBonus = activeUnitContractBonus(r.player, r.unit.id);
+      const contractBonus = activeUnitContractBonus(r.player, r.unit.id, r.unit.baseId);
       const revenue = unitsSold * r.econ.unitPrice * (1 + marketBonus + contractBonus);
       const productionCost = r.sub.production * r.econ.unitCost;
       const perfChance = qualityPerformanceChance(r.sub.quality ?? r.sub.rndFocus ?? 50);
@@ -661,7 +841,8 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       const performanceBonus = perfTriggered ? Math.round(revenue * (0.05 + Math.random()*0.10)) : 0;
       const cost = productionCost + r.sub.lobby + (r.sub.factoryInvest || 0) + (r.sub.rndInvest || 0) + holding.cost;
       const profit = revenue + performanceBonus - cost;
-      const repDelta = (share * 100 - 100 / rows.length) * 0.6 + (event.repAll || 0) + (perfTriggered ? 1.5 : 0);
+      const adRepBonus = Math.max(0, Number(r.sub.lobby || 0)) / 25;
+      const repDelta = (share * 100 - 100 / rows.length) * 0.6 + (event.repAll || 0) + (perfTriggered ? 1.5 : 0) + adRepBonus;
       return { ...r, share, contractsWon, adjustedContractsWon, crowdKey, crowdCount, crowdMult, unitsSold, fromStock: stockUse.taken, soldFresh, freshDeliverable, leftoverFresh, leftoverBatches, endingInventory, inventoryQty: holding.qty, inventoryValue: holding.value, inventoryRate: holding.rate, inventoryCost: holding.cost, revenue, productionCost, cost, profit, repDelta, matchedPreferred, marketBonus, contractBonus, performanceBonus, perfTriggered };
     });
     if (event.boostTop) [...results].sort((a,b) => b.share - a.share)[0].repDelta += event.boostTop;
@@ -675,7 +856,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass42-save';
+const KEY = 'mspc-pass60-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -683,8 +864,8 @@ const safeStorage = (() => {
   catch(e){ const mem={}; return { getItem:k=>mem[k]||null, setItem:(k,v)=>{mem[k]=String(v)}, removeItem:k=>{delete mem[k]} }; }
 })();
 let state = {
-  screen:'home', phase:'briefing', name:'', botCount:2, round:1,
-  players:[], currentEvent:null, lastReport:null, history:[], notices:[],
+  screen:'home', phase:'briefing', name:'', botCount:2, aiDifficulty:'medium', round:1,
+  players:[], currentEvent:null, specialOffer:null, special:{offer:null,pending:[],lastNotice:'',processedRound:0,offerRound:0}, lastReport:null, history:[], notices:[],
   decision:{unitId:'z1', quality:50, priceStrategy:50, prodPct:70, lobby:0, factoryInvest:0, rndInvest:0}
 };
 function esc(s){return String(s ?? '').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
@@ -694,7 +875,11 @@ function save(){try{safeStorage.setItem(KEY, JSON.stringify(state));}catch(e){}}
 function load(){try{const s=JSON.parse(safeStorage.getItem(KEY)); if(s && s.players) state={...state,...s};}catch(e){} ensureState();}
 function ensureState(){
   state.decision={unitId:'z1',quality:50,priceStrategy:50,prodPct:70,lobby:0,factoryInvest:0,rndInvest:0,...(state.decision||{})};
-  state.players=(state.players||[]).map((p,i)=>({...p,inventory:p.inventory||{},activeContracts:p.activeContracts||[],techLevel:Number(p.techLevel||0),rp:Number(p.rp||0),aiStyle:p.aiStyle||(i===1?'research':i===2?'mass':'balanced')}));
+  state.aiDifficulty=state.aiDifficulty||'medium';
+  state.players=(state.players||[]).map((p,i)=>({...p,inventory:p.inventory||{},activeContracts:p.activeContracts||[],techLevel:Number(p.techLevel||0),rp:Number(p.rp||0),aiStyle:p.aiStyle||(i===1?'research':i===2?'mass':'balanced'),aiDifficulty:p.aiDifficulty||'medium'}));
+  state.special={offer:null,pending:[],lastNotice:'',processedRound:0,offerRound:0,...(state.special||{})};
+  state.special.pending=Array.isArray(state.special.pending)?state.special.pending:[];
+  if(state.specialOffer && !state.special.offer){ state.special.offer={...state.specialOffer, eventId:state.specialOffer.id}; state.specialOffer=null; }
   if(!state.phase) state.phase='briefing';
 }
 function me(){return state.players[0];}
@@ -711,7 +896,7 @@ function unitSymbol(unit){
   return 'gm-symbol';
 }
 function unitIcon(unit, cls='mech'){
-  const glow = unit?.variantTier === 'high' ? ' variant-glow' : '';
+  const glow = ''; // PASS48: no golden aura on special variants
   return `<svg class="${cls}${glow}" viewBox="0 0 32 32"><use href="#${unitSymbol(unit)}"></use></svg>`;
 }
 function activeUnits(company=me()){return GameData.unlockedUnits(company||{techLevel:0});}
@@ -732,6 +917,153 @@ function prepareMarketEvent(round){
     ev.preferredUnitId = preferred.id; ev.rumorUnitId = rumor.id;
   }
   return ev;
+}
+function specialOfferCost(offer, company=me()){
+  if(!offer) return 0;
+  return Math.max(10, Math.round((Number(company?.funds||0)) * (offer.pricePct || 0.10)));
+}
+function familyMatches(unitId, targetIds=[]){
+  if(!unitId) return false;
+  const ids = new Set(targetIds||[]);
+  if(ids.has(unitId)) return true;
+  const unit = GameData.UNIT_TYPES.find(u=>u.id===unitId);
+  if(unit && ids.has(unit.baseId || unit.id)) return true;
+  if(String(unitId).includes('-')) return ids.has(String(unitId).split('-')[0]);
+  return false;
+}
+function pilotIcon(eventId, cls='pilot-portrait'){
+  const isZaza = eventId === 'zaza-impossible';
+  const isAmuro = eventId === 'amuro-bay';
+  const isLegend = eventId === 'legend-test-pilot';
+  const suit = isZaza ? '#d73535' : isAmuro ? '#1d63d8' : isLegend ? '#7d3c98' : '#6f7b86';
+  const suitDark = isZaza ? '#7d1622' : isAmuro ? '#0b2e78' : isLegend ? '#4e2761' : '#3f4d58';
+  const hair = isZaza ? '#f4d25b' : '#4a2a18';
+  return `<div class="${cls}"><svg class="pilot-svg" viewBox="0 0 16 16">
+    <rect x="3" y="11" width="10" height="4" fill="#05070b"/><rect x="4" y="11" width="8" height="4" fill="${suit}"/><rect x="5" y="13" width="6" height="2" fill="${suitDark}"/>
+    <rect x="4" y="4" width="8" height="7" fill="#05070b"/><rect x="5" y="5" width="6" height="6" fill="#f1c49d"/><rect x="4" y="7" width="1" height="2" fill="#f1c49d"/><rect x="11" y="7" width="1" height="2" fill="#f1c49d"/>
+    <rect x="4" y="3" width="8" height="3" fill="#05070b"/><rect x="5" y="3" width="6" height="3" fill="${hair}"/><rect x="3" y="5" width="2" height="${isZaza?5:3}" fill="${hair}"/><rect x="11" y="5" width="2" height="${isZaza?5:3}" fill="${hair}"/>
+    <rect x="6" y="7" width="1" height="1" fill="#05070b"/><rect x="9" y="7" width="1" height="1" fill="#05070b"/><rect x="7" y="7" width="1" height="1" fill="#39ff88"/><rect x="10" y="7" width="1" height="1" fill="#39ff88"/>
+    <rect x="7" y="9" width="3" height="1" fill="${isZaza?'#7d1622':'#b87b58'}"/><rect x="4" y="10" width="1" height="1" fill="#f4efe1"/><rect x="11" y="10" width="1" height="1" fill="#f4efe1"/>
+  </svg></div>`;
+}
+function reputationWeight(score=0){
+  const v = Number(score||0);
+  if(v < 10) return 0.35;
+  if(v < 25) return 0.50;
+  if(v < 45) return 0.65;
+  if(v < 65) return 0.78;
+  if(v < 85) return 0.90;
+  return 1.05;
+}
+function countProducedHistory(company, unitIds=[]){
+  return (state.history||[]).reduce((sum,rep)=>{
+    return sum + ((rep.results||[]).filter(r=>r.playerId===company.id && familyMatches(r.unit?.baseId || r.unit?.id, unitIds)).reduce((s,r)=>s+Number(r.production||r.unitsSold||0),0));
+  },0);
+}
+function weightedPick(items, weightFn){
+  const weighted = items.map(item=>({item,w:Math.max(0,Number(weightFn(item)||0))})).filter(x=>x.w>0);
+  const total = weighted.reduce((s,x)=>s+x.w,0);
+  if(!total) return null;
+  let roll = Math.random()*total;
+  for(const x of weighted){ roll -= x.w; if(roll <= 0) return x.item; }
+  return weighted[weighted.length-1].item;
+}
+function eventWeightForCompany(ev, company){
+  if(!ev || !company) return 0;
+  const base = ev.baseWeight || 10;
+  const produced = countProducedHistory(company, ev.unitIds||[]);
+  const hasAffinity = produced > 0;
+  const noAffinityPenalty = (ev.tier||1) >= 2 ? 0.06 : 0.28;
+  const productionBonus = hasAffinity ? Math.min(9, 1 + produced/18) : noAffinityPenalty;
+  const already = (company.activeContracts||[]).some(c=>c.id===ev.id || (c.unitIds||[]).some(id=>familyMatches(id, ev.unitIds||[])));
+  return base * reputationWeight(company.reputation) * productionBonus * (already ? 0.15 : 1);
+}
+function maybeCreateSpecialOfferForRound(){
+  ensureState();
+  const sp = state.special;
+  if(state.round < 3 || sp.offer || (sp.pending||[]).some(p=>p.companyId==='you')) return;
+  if(sp.offerRound === state.round) return;
+  const candidates = (GameData.SPECIAL_EVENTS||[]).filter(ev => (ev.startRound||3) <= state.round && Number(me()?.techLevel||0) >= Number(ev.tier||0));
+  if(!candidates.length){ sp.offerRound = state.round; return; }
+  // มีโอกาสเกิด ไม่ใช่ทุกไตรมาส เพื่อให้ยังเป็น "รายงานพิเศษ"
+  if(Math.random() > 0.58){ sp.offerRound = state.round; return; }
+  const pairs=[];
+  candidates.forEach(ev=>state.players.forEach(company=>{
+    const w = eventWeightForCompany(ev, company);
+    if(w>0) pairs.push({ev, company, w});
+  }));
+  const picked = weightedPick(pairs, x=>x.w);
+  sp.offerRound = state.round;
+  if(!picked) return;
+  const offer = {eventId:picked.ev.id, ...picked.ev, companyId:picked.company.id, attempts:0, status:'new'};
+  if(picked.company.id === 'you') sp.offer = offer;
+  else if(Math.random() < 0.66) signSpecialContract(picked.company.id, offer, true);
+  else sp.pending.push(offer);
+}
+function signSpecialContract(companyId, offer, silent=false){
+  ensureState();
+  const company = state.players.find(p=>p.id===companyId);
+  const ev = GameData.getSpecialEventById(offer?.eventId || offer?.id);
+  if(!company || !ev) return false;
+  const o = {...ev, ...offer, eventId:ev.id};
+  const cost = specialOfferCost(o, company);
+  if(company.funds < cost) return false;
+  company.funds = Math.max(0, Math.round(company.funds - cost));
+  company.activeContracts = company.activeContracts || [];
+  company.activeContracts.push({ id:ev.id, eventId:ev.id, type:'pilot', name:ev.name, role:ev.role, unitIds:ev.unitIds, targetLabel:ev.targetLabel, priceBonus:ev.priceBonus, remaining:ev.duration, cost, pricePct:o.pricePct });
+  state.special.offer = null;
+  state.special.pending = (state.special.pending||[]).filter(p=>!(p.eventId===ev.id && p.companyId===companyId));
+  if(companyId === 'you' && !silent) state.special.lastNotice = `เซ็นสัญญากับ ${ev.name} แล้ว มีผลกับ ${ev.targetLabel} ${ev.duration} ไตรมาส`;
+  return true;
+}
+function acceptSpecialOffer(){
+  const offer = state.special?.offer || state.specialOffer;
+  if(!offer) return;
+  if(!signSpecialContract('you', offer)) alert('เงินสดไม่พอสำหรับรับสัญญาพิเศษ');
+  save(); render();
+}
+function declineSpecialOffer(){
+  ensureState();
+  state.special.offer = null;
+  state.specialOffer = null;
+  state.special.lastNotice = 'คุณปฏิเสธข้อเสนอพิเศษในไตรมาสนี้';
+  save(); render();
+}
+function negotiateSpecialOffer(){
+  ensureState();
+  const offer = state.special.offer || state.specialOffer;
+  if(!offer) return;
+  state.special.pending.push({...offer, eventId:offer.eventId || offer.id, companyId:'you', attempts:(offer.attempts||0)+1});
+  state.special.offer = null;
+  state.specialOffer = null;
+  state.special.lastNotice = 'เริ่มการต่อรองแล้ว ผลจะทราบในไตรมาสหน้า';
+  save(); render();
+}
+function resolveSpecialNegotiations(){
+  ensureState();
+  const sp = state.special;
+  if(sp.processedRound === state.round) return;
+  const nextPending=[];
+  (sp.pending||[]).forEach(pend=>{
+    const company = state.players.find(p=>p.id===pend.companyId);
+    const ev = GameData.getSpecialEventById(pend.eventId || pend.id);
+    if(!company || !ev) return;
+    const chance = Math.min(0.82, 0.42 + Number(company.reputation||0)/170);
+    const ok = Math.random() < chance;
+    const oldPct = Number(pend.pricePct || ev.pricePct || 0.10);
+    const newPct = ok ? Math.max(0.06, Math.round((oldPct - 0.02 - Math.random()*0.015)*100)/100) : oldPct;
+    const resolved = {...ev, ...pend, eventId:ev.id, pricePct:newPct, attempts:(pend.attempts||0)+1, status: ok?'success':'same'};
+    if(company.id === 'you'){
+      sp.offer = resolved;
+      sp.lastNotice = ok ? `การต่อรองสำเร็จ ${ev.name} ยอมลดค่าตัวเหลือ ${Math.round(newPct*100)}% ของเงินสด` : `การต่อรองยังไม่คืบหน้า ${ev.name} ยังยืนยันค่าตัวเดิม`;
+    }else{
+      if(ok || Math.random()<0.55) signSpecialContract(company.id, resolved, true);
+      else nextPending.push(resolved);
+    }
+  });
+  sp.pending = nextPending;
+  sp.processedRound = state.round;
+  maybeCreateSpecialOfferForRound();
 }
 function applyResearch(company, invest){
   let rp = Number(company.rp||0) + GameData.rpFromInvestment(invest||0);
@@ -766,11 +1098,13 @@ function techProgress(company=me()){
 }
 function startGame(){
   const name = ($('#companyName')?.value || 'OIL Heavy Industries').trim();
-  const count = clamp($('#botCount')?.value || 2,1,3);
+  const count = clamp($('#botCount')?.value || 2,1,7);
+  const selectedDifficulty = $('#aiDifficulty')?.value || 'medium';
   const styles=['research','mass','balanced'];
-  const bots=Array.from({length:count},(_,i)=>({id:'bot'+i,name:`${GameData.BOT_NAMES[i]} [BOT]`,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:true,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:styles[i%styles.length]}));
-  state={screen:'game',phase:'briefing',name,botCount:count,round:1,history:[],lastReport:null,currentEvent:null,notices:[],players:[{id:'you',name,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:false,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:'player'},...bots],decision:{unitId:'z1',quality:50,priceStrategy:50,prodPct:70,lobby:0,factoryInvest:0,rndInvest:0}};
-  state.currentEvent=prepareMarketEvent(1); save(); render();
+  const levels=['easy','medium','hard'];
+  const bots=Array.from({length:count},(_,i)=>{ const actual=selectedDifficulty==='random'?levels[Math.floor(Math.random()*levels.length)]:selectedDifficulty; return {id:'bot'+i,name:`${GameData.BOT_NAMES[i]||`Colony Works ${i+1}`} [BOT]`,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:true,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:styles[i%styles.length],aiDifficulty:actual}; });
+  state={screen:'game',phase:'briefing',name,botCount:count,aiDifficulty:selectedDifficulty,round:1,history:[],lastReport:null,currentEvent:null,specialOffer:null,special:{offer:null,pending:[],lastNotice:'',processedRound:0,offerRound:0},notices:[],players:[{id:'you',name,funds:GameData.START_FUNDS,reputation:0,debt:0,capacity:GameData.START_CAPACITY,isBot:false,inventory:{},activeContracts:[],techLevel:0,rp:0,aiStyle:'player',aiDifficulty:'player'},...bots],decision:{unitId:'z1',quality:50,priceStrategy:50,prodPct:70,lobby:0,factoryInvest:0,rndInvest:0}};
+  state.currentEvent=prepareMarketEvent(1); state.specialOffer=null; save(); render();
 }
 function setPhase(p){ if(p==='report' && !state.lastReport) return; state.phase=p; save(); render(); }
 function slider(label,key,min,max,hint){ const v=state.decision[key]; return `<div class="slider-card ${key}"><div class="slider-head"><span>${label}</span><b>${v}%</b></div><input data-slider="${key}" type="range" min="${min}" max="${max}" value="${v}"><div class="hint">${hint}</div></div>`; }
@@ -795,6 +1129,9 @@ function bindCommon(){
       updateCommandNumbers(); save();
     };
   });
+  const accept=$('#acceptSpecial'); if(accept) accept.onclick=acceptSpecialOffer;
+  const negotiate=$('#negotiateSpecial'); if(negotiate) negotiate.onclick=negotiateSpecialOffer;
+  const decline=$('#declineSpecial'); if(decline) decline.onclick=declineSpecialOffer;
   const submit=$('#submitOrder'); if(submit) submit.onclick=submitRound;
   const next=$('#nextQuarter'); if(next) next.onclick=nextQuarter;
   const reset=$('#resetGame'); if(reset) reset.onclick=()=>{ if(confirm('เริ่มเกมใหม่?')){safeStorage.removeItem(KEY); location.reload();} };
@@ -803,7 +1140,7 @@ function currentCalc(){
   normalizeUnit(); const p=me(), d=state.decision, base=GameData.getUnit(d.quality,d.priceStrategy,d.unitId,p), unit=GameData.qualityVariant(base,d.quality);
   const prod=plannedUnits(p,d), cpUse=prod*Math.max(1,base.cpCost||1), econ=GameData.unitEconomics(d.quality,d.priceStrategy,state.currentEvent?.costMult||1,d.prodPct,prod,base.id,p);
   const upfront=Math.round((prod*econ.unitCost+d.lobby+d.factoryInvest+d.rndInvest)*10)/10;
-  const deliver=Math.round(prod*(1-(state.currentEvent?.damageChance||0))); const status=upfront>p.funds?'เงินสดไม่พอ':econ.margin<0?'ราคาต่ำกว่าทุน':d.prodPct>115?'OT สูง ต้นทุนบาน':'พร้อมยืนยัน';
+  const deliver=Math.round(prod*(1-(state.currentEvent?.damageChance||0))); const status=upfront>p.funds?'เบิกงบฉุกเฉิน (ดอกเบี้ย 8%)':econ.margin<0?'ราคาต่ำกว่าทุน':d.prodPct>115?'OT สูง ต้นทุนบาน':'พร้อมยืนยัน';
   return {p,d,base,unit,prod,cpUse,econ,upfront,deliver,status};
 }
 function updateCommandNumbers(){
@@ -818,30 +1155,37 @@ function updateCommandNumbers(){
 function submitRound(){
   const p=me(), d=state.decision; normalizeUnit();
   const submissions={}; submissions[p.id]={...d,production:plannedUnits(p,d)};
-  state.players.slice(1).forEach(bot=>submissions[bot.id]=GameData.botDecision(bot.funds,bot.capacity,state.currentEvent,bot));
+  state.players.slice(1).forEach(bot=>submissions[bot.id]=GameData.botDecision(bot.funds,bot.capacity,state.currentEvent,bot,state.lastReport || state.history[state.history.length-1] || null));
   const {event,results}=GameData.resolveRound(state.players,submissions,state.currentEvent);
   const notices=[];
   state.players=state.players.map(pl=>{
     const r=results.find(x=>x.player.id===pl.id); let funds=Number(pl.funds||0)+r.profit; let debt=Number(pl.debt||0);
     if(funds<0){debt+=-funds; funds=0;} if(debt>0 && funds>0){const pay=Math.min(funds,debt); debt-=pay; funds-=pay;} debt=Math.round(debt*1.08*100)/100;
-    let updated={...pl,inventory:r.endingInventory||{},funds:Math.round(funds),debt:Math.round(debt),reputation:Math.round((Number(pl.reputation||0)+r.repDelta)*10)/10,capacity:Math.max(1,(pl.capacity||GameData.START_CAPACITY)+Math.round((r.sub.factoryInvest||0)/GameData.EXPANSION_COST_PER_UNIT))};
+    let updated={...pl,inventory:r.endingInventory||{},funds:Math.round(funds),debt:Math.round(debt),reputation:Math.round((Number(pl.reputation||0)+r.repDelta)*10)/10,capacity:Math.max(1,(pl.capacity||GameData.START_CAPACITY)+Math.round((r.sub.factoryInvest||0)/GameData.EXPANSION_COST_PER_UNIT)),activeContracts:(pl.activeContracts||[]).map(c=>({...c,remaining:Math.max(0,Number(c.remaining||0)-1)})).filter(c=>c.remaining>0)};
     updated=applyResearch(updated,r.sub.rndInvest||0); notices.push(...(updated.techNotices||[])); delete updated.techNotices; return updated;
   });
   state.notices=notices;
-  state.lastReport={event,results:results.map(r=>({playerId:r.player.id,name:r.player.name,unit:r.unit,share:r.share,production:r.sub.production,unitsSold:r.unitsSold,fromStock:r.fromStock,freshDeliverable:r.freshDeliverable,leftoverFresh:r.leftoverFresh,inventoryQty:r.inventoryQty,inventoryCost:r.inventoryCost,inventoryRate:r.inventoryRate,revenue:r.revenue,cost:r.cost,profit:r.profit,repDelta:r.repDelta,marketBonus:r.marketBonus||0,performanceBonus:r.performanceBonus||0,perfTriggered:!!r.perfTriggered,crowdCount:r.crowdCount||1,crowdMult:r.crowdMult||1,matchedPreferred:!!r.matchedPreferred}))};
+  state.lastReport={event,results:results.map(r=>({playerId:r.player.id,name:r.player.name,unit:r.unit,unitPrice:r.econ.unitPrice,advertising:Number(r.sub.lobby||0),priceStrategy:Number(r.sub.priceStrategy||0),share:r.share,production:r.sub.production,unitsSold:r.unitsSold,fromStock:r.fromStock,freshDeliverable:r.freshDeliverable,leftoverFresh:r.leftoverFresh,inventoryQty:r.inventoryQty,inventoryCost:r.inventoryCost,inventoryRate:r.inventoryRate,revenue:r.revenue,cost:r.cost,profit:r.profit,repDelta:r.repDelta,marketBonus:r.marketBonus||0,performanceBonus:r.performanceBonus||0,perfTriggered:!!r.perfTriggered,crowdCount:r.crowdCount||1,crowdMult:r.crowdMult||1,matchedPreferred:!!r.matchedPreferred}))};
   state.history.push(state.lastReport); state.phase='report'; save(); render();
 }
 function nextQuarter(){
   if(state.round>=GameData.MAX_ROUNDS){state.screen='end'; save(); render(); return;}
-  state.round++; state.phase='briefing'; state.currentEvent=prepareMarketEvent(state.round); state.lastReport=null;
+  state.round++; state.phase='briefing'; state.currentEvent=prepareMarketEvent(state.round); state.specialOffer=null; state.lastReport=null;
+  resolveSpecialNegotiations();
   state.decision={unitId:activeUnits(me())[0]?.id||'z1',quality:state.decision.quality,priceStrategy:state.decision.priceStrategy,prodPct:state.decision.prodPct,lobby:0,factoryInvest:0,rndInvest:0};
   save(); render();
 }
 function topHTML(){ const p=me(); return `<header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div>${p?`<div class="hud"><div class="hud-item"><span class="hud-label">QTR</span><span class="hud-value">${String(state.round).padStart(2,'0')}/12</span></div><div class="hud-item"><span class="hud-label">Cash</span><span class="hud-value cash">${fmt(p.funds)}</span></div><div class="hud-item"><span class="hud-label">ชื่อเสียง</span><span class="hud-value rep">${reputationTitle(p.reputation)}</span></div><div class="hud-item"><span class="hud-label">Capacity</span><span class="hud-value cp">${p.capacity}</span></div></div>`:''}</header>
 <nav class="tabs"><button data-phase="briefing" class="tab ${state.phase==='briefing'?'active':''}"><span class="tab-num">1</span>Briefing</button><button data-phase="command" class="tab ${state.phase==='command'?'active':''}"><span class="tab-num">2</span>Command</button><button data-phase="report" class="tab ${state.phase==='report'?'active':''} ${!state.lastReport?'disabled':''}"><span class="tab-num">3</span>Report</button></nav>`; }
 function renderHome(){
-  app.innerHTML=`<main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ตั้งบริษัทผลิต Mobile Suit</h2><input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}"><label class="bot-label">จำนวนคู่แข่ง <b id="botNum">${state.botCount||2}</b></label><input id="botCount" type="range" min="1" max="3" value="${state.botCount||2}"><button id="startBtn" class="btn btn-primary">เริ่มเกม</button><button id="resetGame" class="btn btn-secondary">ล้างเซฟ</button><p class="muted">12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p></section></main><div class="marker">MSPC</div>`;
-  $('#botCount').oninput=e=>$('#botNum').textContent=e.target.value; $('#startBtn').onclick=startGame; const r=$('#resetGame'); if(r) r.onclick=()=>{safeStorage.removeItem(KEY); location.reload();};
+  app.innerHTML=`<main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ตั้งบริษัทผลิต Mobile Suit</h2><input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}"><label class="bot-label">จำนวนคู่แข่ง <b id="botNum">${state.botCount||2}</b> <span class="muted">(รวมผู้เล่น ${Number(state.botCount||2)+1} บริษัท)</span></label><input id="botCount" type="range" min="1" max="7" value="${state.botCount||2}"><label class="bot-label" for="aiDifficulty">ความยาก AI</label><select id="aiDifficulty" class="field"><option value="easy" ${state.aiDifficulty==='easy'?'selected':''}>Easy — สุ่มและพลาดบ่อย</option><option value="medium" ${!state.aiDifficulty||state.aiDifficulty==='medium'?'selected':''}>Medium — อ่าน Event และตลาดพื้นฐาน</option><option value="hard" ${state.aiDifficulty==='hard'?'selected':''}>Hard — วิเคราะห์ Report รอบก่อน</option><option value="random" ${state.aiDifficulty==='random'?'selected':''}>Random — สุ่มระดับรายบริษัท</option></select><button id="startBtn" class="btn btn-primary">เริ่มเกม</button><p class="muted">12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p></section></main><div class="marker">P60 PIE NAME</div>`;
+  $('#botCount').oninput=e=>{
+  $('#botNum').textContent=e.target.value;
+  const total=document.querySelector('.bot-label .muted');
+  if(total) total.textContent=`(รวมผู้เล่น ${Number(e.target.value)+1} บริษัท)`;
+  state.botCount=Number(e.target.value);
+};
+$('#startBtn').onclick=startGame;
 }
 function renderBriefing(){
   const p=me(), ev=state.currentEvent || GameData.getEventById('stable-market'), inv=GameData.inventoryHoldingCost(p), tech=techProgress(p);
@@ -850,6 +1194,30 @@ function renderBriefing(){
     ['ประเภทข่าว','ข่าววงใน','ข้อมูลอาจคลาดเคลื่อน'],['รายงานสายข่าว',rumor?rumor.name:'ไม่ทราบรุ่น','กองทัพอาจสนใจเป็นพิเศษ'],['ถ้าคาดถูก','โบนัสราคาขาย +10%','เฉลยหลังจบไตรมาส']
   ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดเฉลี่ย ${marketAveragePercent(ev)}%`]];
   return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon">${unitIcon(GameData.UNIT_TYPES[0])}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
+}
+function renderSpecialReport(){
+  ensureState();
+  const p = me();
+  const active = (p?.activeContracts || []).filter(c => c.remaining > 0);
+  const offer = state.special?.offer || state.specialOffer;
+  const notice = state.special?.lastNotice ? `<div class="news-line"><b>สถานะ:</b> ${esc(state.special.lastNotice)}</div>` : '';
+  const activeHtml = active.length
+    ? active.map(c=>`<div class="news-line contract-line">${pilotIcon(c.eventId||c.id,'pilot-portrait small')}<span><b>${esc(c.name)}:</b> ${esc(c.targetLabel)} +${Math.round((c.priceBonus||0)*100)}% ราคาขาย · เหลือ ${c.remaining} รอบ</span></div>`).join('')
+    : '<div class="news-line"><b>สัญญาที่ยังผล:</b> ยังไม่มี</div>';
+  const offerHtml = offer
+    ? `<div class="news-line special-offer-row">
+        ${pilotIcon(offer.eventId||offer.id)}
+        <div>
+          <div class="offer-name">${esc(offer.name)}</div>
+          <div class="offer-role">${esc(offer.role || 'สัญญาพิเศษ')}</div>
+          <div class="offer-copy">${esc(offer.pitch)}</div>
+          <div class="muted" style="margin-top:5px;font-size:var(--fs-2xs)">เป้าหมาย ${esc(offer.targetLabel)} · โบนัส +${Math.round((offer.priceBonus||0)*100)}% · ${offer.duration||3} รอบ · ค่าเซ็น ${specialOfferCost(offer,p)} Cr.</div>
+          <div class="offer-actions"><button id="acceptSpecial" class="mini-btn primary">เซ็น</button><button id="negotiateSpecial" class="mini-btn">ต่อรอง</button><button id="declineSpecial" class="mini-btn danger">ปฏิเสธ</button></div>
+          <div class="muted" style="margin-top:4px;font-size:var(--fs-2xs)">ต่อรองใช้เวลา 1 ไตรมาส และยังไม่ได้โบนัสระหว่างรอผล</div>
+        </div>
+      </div>`
+    : '<div class="news-line"><b>ข้อเสนอใหม่:</b> ยังไม่มีรายงานพิเศษในรอบนี้</div>';
+  return `<div class="card special-card"><div class="section-title"><span class="text">รายงานพิเศษ</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${notice}${offerHtml}${activeHtml}</div></div>`;
 }
 function renderCommand(){
   const c=currentCalc(), tech=techProgress(c.p), holding=GameData.inventoryHoldingCost(c.p);
@@ -886,31 +1254,122 @@ function renderCommand(){
     <div class="avail-hint">${esc(tech.detail)}</div>
     <div class="unit-row">${avail.map(u=>{const is=unlocked.has(u.id),active=c.base.id===u.id; return `<button class="unit-card ${active?'active':''} ${is?'':'locked'}" ${is?`data-unit="${u.id}"`:"disabled"}>${is?unitIcon(u,'mini'):'<div class="lock">🔒</div>'}<div class="unit-card-name">${esc(u.name)}</div><div class="unit-card-cp">${u.cpCost} CP</div></button>`}).join('')}</div>
   </div>
+  ${renderSpecialReport()}
   <div class="card summary-card"><span class="stat-label">เงินลงทุนรอบนี้</span><span class="stat-value yellow"><span data-live="invest">${fmt(c.upfront)} Cr.</span> · <span data-live="status">${esc(c.status)}</span></span></div>
   </div><div class="actions"><button class="btn btn-secondary" data-phase="briefing"><span class="arrow">←</span> Briefing</button><button id="submitOrder" class="btn btn-primary">ยืนยันคำสั่ง <span class="arrow">→</span></button></div></section>`;
 }
 function marketPieHTML(sorted){
-  const colors=['#77ff72','#ffd84f','#73d7ff','#ff4fb9','#9b8cff'];
+  const colors=['#77ff72','#ffd84f','#73d7ff','#ff4fb9','#9b8cff','#ff8a5b','#58e0c2','#b8c2d8'];
   const total=sorted.reduce((s,r)=>s+Math.max(0,r.share||0),0)||1;
   let acc=0;
-  const stops=sorted.slice(0,5).map((r,i)=>{ const start=acc/total*100; acc+=Math.max(0,r.share||0); const end=acc/total*100; return `${colors[i]} ${start.toFixed(2)}% ${end.toFixed(2)}%`; }).join(', ');
-  const legend=sorted.slice(0,3).map((r,i)=>`<div class="leg"><span class="dot" style="background:${colors[i]}"></span><span>${esc(r.playerId==='you'?'บริษัทเรา':r.name.replace(' [BOT]',''))}</span><b>${Math.round((r.share||0)*1000)/10}%</b></div>`).join('');
+  const stops=sorted.slice(0,8).map((r,i)=>{ const start=acc/total*100; acc+=Math.max(0,r.share||0); const end=acc/total*100; return `${colors[i]} ${start.toFixed(2)}% ${end.toFixed(2)}%`; }).join(', ');
+  const legend=sorted.slice(0,8).map((r,i)=>`<div class="leg"><span class="dot" style="background:${colors[i]}"></span><span>${esc(r.playerId==='you'?me().name:r.name.replace(' [BOT]',''))}</span><b>${Math.round((r.share||0)*1000)/10}%</b></div>`).join('');
   return `<div class="share-panel"><div class="pie-title">Market Share</div><div class="pie" style="background:conic-gradient(${stops})"></div><div class="legend">${legend}</div></div>`;
+}
+function rivalIntelHTML(rivals){
+  if(!rivals.length) return '';
+  return `<div class="card rival-intel"><div class="section-title"><span class="text">ข้อมูลคู่แข่งไตรมาสล่าสุด</span><span class="badge">${rivals.length} Rivals</span></div><div class="rival-accordion">${rivals.map((r,i)=>`<details class="rival-detail" ${i===0?'open':''}><summary>${unitIcon(r.unit,'rank-mech')}<span class="rival-summary-name">${esc(r.name.replace(' [BOT]',''))}</span><span class="rival-summary-share">${Math.round((r.share||0)*1000)/10}%</span></summary><div class="rival-detail-body"><div><span>รุ่นที่ผลิต</span><b>${esc(r.unit?.name||'ไม่ทราบรุ่น')}</b></div><div><span>ราคาขาย/เครื่อง</span><b class="green">${Number.isFinite(Number(r.unitPrice))?`${Number(r.unitPrice).toFixed(1)} Cr.`:'—'}</b></div><div><span>งบโฆษณา</span><b class="yellow">${Number.isFinite(Number(r.advertising))?`${fmt(r.advertising)} Cr.`:'—'}</b></div><div><span>AI</span><b>${esc(state.players.find(p=>p.id===r.playerId)?.aiDifficulty||'medium')}</b></div></div></details>`).join('')}</div></div>`;
 }
 function renderReport(){
   const rep=state.lastReport;
-  if(!rep) return `<section class="page report"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">ยังไม่มีรายงาน</span></div><div class="intel-list"><div class="intel-item">ยืนยันคำสั่งในหน้า Command ก่อน</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
-  const sorted=[...rep.results].sort((a,b)=>b.share-a.share); const you=sorted.find(r=>r.playerId==='you')||sorted[0]; const rivals=sorted.filter(r=>r.playerId!=='you');
+  if(!rep) return renderBriefing();
+
+  const sorted=[...rep.results].sort((a,b)=>b.share-a.share);
+  const you=sorted.find(r=>r.playerId==='you')||sorted[0];
   const profitClass=you.profit>=0?'green':'red';
-  return `<section class="page report"><div class="page-body"><div class="card result-head"><div class="result-block"><span class="stat-label">ผลประกอบการ</span><span class="big-number ${profitClass}">${you.profit>=0?'+':''}${fmt(you.profit)} Cr.</span></div><div class="result-block"><span class="stat-label">ยอดขาย</span><span class="big-number blue">${you.unitsSold}/${you.production}</span></div></div><div class="card news"><div class="section-title"><span class="text">Report</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="report-board"><div class="news-lines"><div class="news-line"><b>ตลาด:</b> ${esc(rep.event.name)} · ${esc(rep.event.effect||'Normal')}</div><div class="news-line"><b>บริษัทเรา:</b> ${esc(you.unit.name)} ขายได้ ${you.unitsSold} จาก ${you.production} เครื่อง</div><div class="news-line"><b>ส่วนแบ่ง:</b> ${Math.round(you.share*1000)/10}% · ${you.crowdCount>1?`ตลาดชน ${you.crowdCount} บริษัท`:'ไม่มีคู่แข่งผลิตรุ่นเดียวกัน'}</div><div class="news-line"><b>บทเรียน:</b> ${you.matchedPreferred?'อ่านข่าวถูก ได้โบนัสตลาด':'ปรับราคา/คุณภาพ/กำลังผลิตตามข่าวรอบหน้า'}</div></div>${marketPieHTML(sorted)}</div></div><div class="rank-row">${sorted.slice(0,3).map((r,i)=>`<div class="card rank ${r.playerId==='you'?'you-rank':''}">${unitIcon(r.unit,'rank-mech')}<div class="company"><b>#${i+1}</b><strong>${esc(r.playerId==='you'?'บริษัทเรา':r.name.replace(' [BOT]',''))}</strong><small>${r.profit>=0?'+':''}${fmt(r.profit)} Cr. · ${Math.round(r.share*1000)/10}%</small></div></div>`).join('')}</div></div><div class="actions"><button class="btn btn-secondary" data-phase="command"><span class="arrow">←</span> Command</button><button id="nextQuarter" class="btn btn-primary">${state.round>=GameData.MAX_ROUNDS?'ดูผลจบเกม':'ไตรมาสถัดไป'} <span class="arrow">→</span></button></div></section>`;
+
+  const adLevel=(amount)=>{
+    const n=Math.max(0,Number(amount||0));
+    if(n>=100) return 'สูง';
+    if(n>=50) return 'กลาง';
+    return 'ต่ำ';
+  };
+
+  const rows=sorted.map((r,i)=>{
+    const companyName=r.playerId==='you' ? me().name : r.name.replace(' [BOT]','');
+    const price=Number.isFinite(Number(r.unitPrice)) ? Number(r.unitPrice).toFixed(1) : '—';
+    const advertising=Math.max(0,Number(r.advertising||0));
+    const adText = r.playerId==='you'
+      ? `โฆษณา${adLevel(advertising)} ${fmt(advertising)} Cr.`
+      : `โฆษณา${adLevel(advertising)}`;
+    return `<div class="card rank-inline ${r.playerId==='you'?'user-company':''}">
+      <div class="rank-line">
+        <div class="rank-left">
+          ${unitIcon(r.unit,'rank-mech')}
+          <div class="rank-num">#${i+1}</div>
+        </div>
+        <div class="rank-mid">
+          <div class="rank-company">
+            <span>${esc(companyName)}</span>
+            ${r.playerId==='you'?'<span class="you-badge">YOU</span>':''}
+          </div>
+          <div class="rank-intel">
+            ${esc(r.unit?.name||'ไม่ทราบรุ่น')}
+            · <span class="price">ตั้งราคา ${price} Cr.</span>
+            · <span class="ad">${adText}</span>
+          </div>
+        </div>
+        <div class="rank-share">${Math.round((r.share||0)*1000)/10}%</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<section class="page report">
+    <div class="page-body">
+      <div class="card result-head">
+        <div class="result-block">
+          <span class="stat-label">ผลประกอบการ</span>
+          <span class="big-number ${profitClass}">${you.profit>=0?'+':''}${fmt(you.profit)} Cr.</span>
+        </div>
+        <div class="result-block">
+          <span class="stat-label">ยอดขาย</span>
+          <span class="big-number blue">${you.unitsSold}/${you.production}</span>
+        </div>
+      </div>
+
+      <div class="card news">
+        <div class="section-title">
+          <span class="text">Report</span>
+          <span class="badge">QTR ${String(state.round).padStart(2,'0')}</span>
+        </div>
+        <div class="report-board">
+          <div class="news-lines">
+            <div class="news-line"><b>ตลาด:</b> ${esc(rep.event.name)} · ${esc(rep.event.effect||'Normal')}</div>
+            <div class="news-line"><b>${esc(me().name)}:</b> ${esc(you.unit.name)} ขายได้ ${you.unitsSold} จาก ${you.production} เครื่อง</div>
+            <div class="news-line"><b>ส่วนแบ่ง:</b> ${Math.round(you.share*1000)/10}% · ${you.crowdCount>1?`ตลาดชน ${you.crowdCount} บริษัท`:'ไม่มีคู่แข่งผลิตรุ่นเดียวกัน'}</div>
+            <div class="news-line"><b>บทเรียน:</b> ${you.matchedPreferred?'อ่านข่าวถูก ได้โบนัสตลาด':'ปรับราคา/คุณภาพ/กำลังผลิตตามข่าวรอบหน้า'}</div>
+          </div>
+          ${marketPieHTML(sorted)}
+        </div>
+      </div>
+
+      <div class="rank-all">${rows}</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-secondary" data-phase="command"><span class="arrow">←</span> Command</button>
+      <button id="nextQuarter" class="btn btn-primary">${state.round>=GameData.MAX_ROUNDS?'ดูผลจบเกม':'ไตรมาสถัดไป'} <span class="arrow">→</span></button>
+    </div>
+  </section>`;
 }
+
+
 function renderEnd(){
-  const ranks=[...state.players].map(p=>({...p,score:p.funds+p.reputation*20-(p.debt||0)})).sort((a,b)=>b.score-a.score);
-  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">MSPC</div>`; bindCommon();
+  const ranks=[...state.players].map(p=>({
+    ...p,
+    score: p.funds
+      + (p.reputation * 20)
+      + (p.capacity * (GameData.EXPANSION_COST_PER_UNIT * 0.5))
+      + (p.techLevel * 80)
+      + (p.rp * 0.5)
+      - (p.debt || 0)
+  })).sort((a,b)=>b.score-a.score);
+  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P60 PIE NAME</div>`; bindCommon();
 }
 function renderGame(){
   if(!state.currentEvent) state.currentEvent=prepareMarketEvent(state.round||1);
-  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">MSPC</div>`;
+  if(state.round >= 3) resolveSpecialNegotiations();
+  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P60 PIE NAME</div>`;
   bindCommon();
 }
 function render(){ ensureState(); if(state.screen==='end') return renderEnd(); if(!state.players.length || state.screen==='home') renderHome(); else renderGame(); }
