@@ -154,8 +154,14 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 .hero{padding:var(--sp-3);display:flex;align-items:center;gap:var(--sp-3)}
 .hero-text{min-width:0;flex:1}
 .hero-icon{flex:0 0 auto;width:52px;height:52px;display:grid;place-items:center;
-  background:radial-gradient(circle at 50% 35%,rgba(41,146,218,.22),transparent 70%);border-radius:var(--r-sm)}
+  background:radial-gradient(circle at 50% 35%,rgba(41,146,218,.22),transparent 70%);border-radius:var(--r-sm);
+  transition:background .25s ease}
 .hero-icon .mech{width:48px;height:48px;image-rendering:pixelated}
+.hero-icon .event-icon{width:40px;height:40px;image-rendering:pixelated;display:block}
+.hero-icon.tone-good{background:radial-gradient(circle at 50% 35%,rgba(107,220,124,.26),transparent 70%)}
+.hero-icon.tone-bad{background:radial-gradient(circle at 50% 35%,rgba(255,84,112,.26),transparent 70%)}
+.hero-icon.tone-warn{background:radial-gradient(circle at 50% 35%,rgba(255,216,79,.26),transparent 70%)}
+.hero-icon.tone-info{background:radial-gradient(circle at 50% 35%,rgba(41,146,218,.24),transparent 70%)}
 .eyebrow{font-size:var(--fs-xs);letter-spacing:1px;text-transform:uppercase;color:var(--blue);font-weight:800}
 .hero-summary{margin:3px 0 0;font-size:var(--fs-sm);line-height:1.35;color:var(--text)}
 .intel{padding-bottom:var(--sp-3)}
@@ -634,7 +640,67 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   }
 }
 
-</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P65 RELAXED HOME SPACING</div></div>
+
+/* PASS 67: inventory management */
+.inventory-card{padding-bottom:var(--sp-3)}
+.inventory-summary{
+  margin:var(--sp-2) var(--sp-3) 0;
+  padding:8px 10px;
+  border:1px solid rgba(255,216,79,.35);
+  border-radius:var(--r-sm);
+  background:rgba(255,216,79,.055);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  font-size:var(--fs-xs);
+}
+.inventory-summary b{color:var(--gold);white-space:nowrap}
+.inventory-list{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:var(--sp-2) var(--sp-3) 0;
+}
+.inventory-item{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:8px;
+  align-items:center;
+  padding:8px 9px;
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  background:rgba(255,255,255,.02);
+}
+.inventory-main{min-width:0}
+.inventory-name{
+  font-size:var(--fs-xs);
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.inventory-meta{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:8.8px;
+  line-height:1.3;
+}
+.scrap-btn{
+  min-width:72px;
+  min-height:32px;
+  padding:5px 8px;
+  border:1px solid rgba(255,84,112,.65);
+  border-radius:8px;
+  background:#30111c;
+  color:#ffdce5;
+  font-size:9px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.scrap-btn:active{transform:scale(.96)}
+
+</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P67 INVENTORY OVERHAUL</div></div>
 <svg width="0" height="0" style="position:absolute;overflow:hidden">
 <symbol id="ball-symbol" viewBox="0 0 32 32"><rect x="14" y="2" width="4" height="4" fill="#111"/><rect x="13" y="5" width="6" height="2" fill="#1e252e"/><rect x="10" y="7" width="12" height="2" fill="#05070b"/><rect x="8" y="9" width="16" height="3" fill="#05070b"/><rect x="6" y="12" width="20" height="9" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="8" width="10" height="1" fill="#f3efe2"/><rect x="9" y="10" width="14" height="3" fill="#f3efe2"/><rect x="7" y="13" width="18" height="8" fill="#f3efe2"/><rect x="9" y="21" width="14" height="3" fill="#f3efe2"/><rect x="12" y="25" width="8" height="1" fill="#f3efe2"/><rect x="8" y="14" width="4" height="6" fill="#c8d0d6"/><rect x="20" y="14" width="4" height="6" fill="#6f7b86"/><rect x="13" y="12" width="6" height="4" fill="#05070b"/><rect x="14" y="13" width="4" height="2" fill="#7cc7ff"/><rect x="9" y="18" width="14" height="1" fill="#e23a34"/><rect x="3" y="16" width="5" height="2" fill="#05070b"/><rect x="2" y="17" width="2" height="4" fill="#313944"/><rect x="24" y="16" width="5" height="2" fill="#05070b"/><rect x="28" y="17" width="2" height="4" fill="#313944"/><rect x="1" y="20" width="4" height="2" fill="#05070b"/><rect x="27" y="20" width="4" height="2" fill="#05070b"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#145bd8"/><rect x="18" y="28" width="2" height="3" fill="#145bd8"/></symbol>
 <symbol id="ball-kai-symbol" viewBox="0 0 32 32"><rect x="13" y="1" width="6" height="3" fill="#101418"/><rect x="12" y="4" width="8" height="2" fill="#1f2a34"/><rect x="10" y="6" width="12" height="2" fill="#05070b"/><rect x="8" y="8" width="16" height="3" fill="#05070b"/><rect x="5" y="11" width="22" height="10" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="7" width="10" height="1" fill="#24262b"/><rect x="9" y="9" width="14" height="3" fill="#24262b"/><rect x="7" y="12" width="18" height="9" fill="#24262b"/><rect x="9" y="21" width="14" height="3" fill="#24262b"/><rect x="12" y="25" width="8" height="1" fill="#24262b"/><rect x="7" y="13" width="4" height="7" fill="#4a4e56"/><rect x="21" y="13" width="4" height="7" fill="#17181c"/><rect x="12" y="11" width="8" height="5" fill="#05070b"/><rect x="14" y="12" width="5" height="2" fill="#8df7ff"/><rect x="8" y="18" width="16" height="1" fill="#ff4b4b"/><rect x="4" y="11" width="3" height="4" fill="#253142"/><rect x="25" y="11" width="3" height="4" fill="#253142"/><rect x="2" y="16" width="6" height="2" fill="#05070b"/><rect x="24" y="16" width="6" height="2" fill="#05070b"/><rect x="1" y="18" width="4" height="4" fill="#1e2833"/><rect x="27" y="18" width="4" height="4" fill="#1e2833"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#1e7cff"/><rect x="18" y="28" width="2" height="3" fill="#1e7cff"/><rect x="5" y="22" width="3" height="2" fill="#ffd84f"/><rect x="24" y="22" width="3" height="2" fill="#ffd84f"/></symbol>
@@ -783,7 +849,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   }
   function qualityCostMultiplier(quality = 50) {
     const q = clamp(Number(quality || 0), 0, 100) / 100;
-    return 1 + 0.15 * Math.pow(q, 1.6);
+    return 1 + 0.35 * Math.pow(q, 2.0);
   }
   function qualityPerformanceChance(quality = 50) {
     const q = clamp(Number(quality || 0), 0, 100);
@@ -830,7 +896,11 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
     const qMult = qualityCostMultiplier(quality);
     const unitCost = Math.round((unit.baseCost || BASE_COST) * costMult * utilMult * scaleMult * qMult * 10) / 10;
     const pricePolicy = 0.78 + (clamp(priceStrategy || 50, 0, 100) / 100) * 0.62;
-    const unitPrice = Math.round((unit.basePrice || BASE_PRICE) * pricePolicy * 10) / 10;
+    const qualityRatio = clamp(Number(quality || 0), 0, 100) / 100;
+    const qualityPricePremium = qualityRatio > 0.70
+      ? 1.10 + ((qualityRatio - 0.70) / 0.30) * 0.05
+      : 1;
+    const unitPrice = Math.round((unit.basePrice || BASE_PRICE) * pricePolicy * qualityPricePremium * 10) / 10;
     return { unitCost, unitPrice, margin: Math.round((unitPrice - unitCost) * 10) / 10, utilMult: Math.round(utilMult * 100) / 100, scaleMult: Math.round(scaleMult * 100) / 100, qualityCostMult: Math.round(qMult*100)/100, cpCost: unit.cpCost || 1 };
   }
   function unitToFocus(unitId) {
@@ -1016,8 +1086,16 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       const currentStock = currentStockBatches.reduce((s,b)=>s+b.qty,0);
       const priceAppeal = (100 - sub.priceStrategy) / 100;
       const qualityAppeal = (sub.quality ?? sub.rndFocus ?? 50) / 100;
+
       const availableSignal = sub.production + currentStock * 0.6;
-      const baseAppeal = (qualityAppeal * 35) + (p.reputation * 0.3);
+
+      const highQualityAppealBonus = qualityAppeal > 0.70
+
+        ? ((qualityAppeal - 0.70) / 0.30) * 12
+
+        : 0;
+
+      const baseAppeal = (qualityAppeal * 42) + highQualityAppealBonus + (p.reputation * 0.3);
       const adBoost = 1 + Math.min(0.50, Math.max(0, Number(sub.lobby || 0)) / 200);
       const appeal = Math.max(0.0001, ((availableSignal * 0.4) + (baseAppeal * Math.pow(priceAppeal + 0.5, 1.5))) * adBoost);
       return { player: p, sub, unit, econ, appeal, currentStockBatches, currentStock };
@@ -1072,7 +1150,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass65-save';
+const KEY = 'mspc-pass67-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -1110,6 +1188,125 @@ function unitSymbol(unit){
   if(id==='z1' || unit?.kind==='ball') return 'ball-symbol';
   if(id==='z4' || id==='z5' || id.includes('z4') || id.includes('z5')) return 'zaku-symbol';
   return 'gm-symbol';
+}
+const EVENT_ICON_GRIDS = {
+  'frontline-surge':{fg:'#6bdc7c',ac:'#eaffe0',grid:[
+    "............",
+    ".....XX.....",
+    "....XXXX....",
+    "...XXXXXX...",
+    "..XXaXXaXX..",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    "............",
+    "............"]},
+  'temporary-truce':{fg:'#8fa5ba',ac:'#5f7690',grid:[
+    "............",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    ".....XX.....",
+    "..XXaXXaXX..",
+    "...XXXXXX...",
+    "....XXXX....",
+    ".....XX.....",
+    "............",
+    "............"]},
+  'rare-mineral-shortage':{fg:'#ffd84f',ac:'#0b1a2a',grid:[
+    "....XX......",
+    "....XX......",
+    "...XXXX.....",
+    "...XaXX.....",
+    "..XXXXXX....",
+    "..XXaXXX....",
+    ".XXXXXXXX...",
+    ".XXXaXXXX...",
+    "XXXXXXXXXX..",
+    "XXXXaXXXXX..",
+    "............",
+    "............"]},
+  'space-pirates':{fg:'#eef6ff',ac:'#0b1a2a',grid:[
+    "............",
+    "...XXXXXX...",
+    "..XXXXXXXX..",
+    ".XXXXXXXXXX.",
+    ".XXaXXXXaXX.",
+    ".XXXXXXXXXX.",
+    ".XXXXXXXXXX.",
+    "..XXXXXXXX..",
+    "..Xa.XX.aX..",
+    "............",
+    "............",
+    "............"]},
+  'ace-pilot-trend':{fg:'#ffd84f',ac:'#fff4bf',grid:[
+    "......X.....",
+    "......X.....",
+    ".....XXX....",
+    "....XXXXX...",
+    "..XXXXXXXXX.",
+    ".XXXXaXXXXXX",
+    "..XXXXXXXXX.",
+    "...XXX.XXX..",
+    "..XX.....XX.",
+    ".XX.......XX",
+    "............",
+    "............"]},
+  'factory-audit':{fg:'#ff8a5b',ac:'#7a3a1e',grid:[
+    "............",
+    "....XXXX....",
+    "...XXXXXX...",
+    "..XXXXXXXX..",
+    "..XXaXXaXX..",
+    "..XXXXXXXX..",
+    "..XXXXXXXX..",
+    "...XXXXXX...",
+    "....XXXX....",
+    "....XXXX....",
+    "............",
+    "............"]},
+  'annual-expo':{fg:'#5fc3ff',ac:'#ffd84f',grid:[
+    "......X.....",
+    ".....XXX....",
+    "....XaXXX...",
+    "...XXXXXXX..",
+    "..XXXXXXXXX.",
+    ".XXXXXXXXXXX",
+    "..XXXXaXXXX.",
+    "...XXXXXXX..",
+    "....XXXXX...",
+    ".....XXX....",
+    "......X.....",
+    "............"]},
+  'stable-market':{fg:'#5fc3ff',ac:'#eaf6ff',grid:[
+    "............",
+    "............",
+    "....XXXX....",
+    "...XXXXXX...",
+    "..XXXXXXXX..",
+    "..XXXaaXXX..",
+    "..XXXaaXXX..",
+    "..XXXXXXXX..",
+    "...XXXXXX...",
+    "....XXXX....",
+    "............",
+    "............"]},
+};
+function eventIcon(ev){
+  const def=EVENT_ICON_GRIDS[ev?.id]||EVENT_ICON_GRIDS['stable-market'];
+  const rows=def.grid, h=rows.length, w=rows[0].length;
+  let rects='';
+  rows.forEach((row,y)=>{
+    for(let x=0;x<row.length;x++){
+      const ch=row[x];
+      if(ch==='.') continue;
+      rects+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${ch==='a'?def.ac:def.fg}"/>`;
+    }
+  });
+  return `<svg class="event-icon" viewBox="0 0 ${w} ${h}">${rects}</svg>`;
 }
 function unitIcon(unit, cls='mech'){
   const glow = ''; // PASS48: no golden aura on special variants
@@ -1300,11 +1497,84 @@ function inventoryValue(player, unitId){
   const value=batches.reduce((s,b)=>s+Math.max(0,Math.round(b.qty||0))*Number(b.unitCost||0),0);
   return {qty,value,avgCost:qty?value/qty:0};
 }
+function inventoryUnitName(unitId){
+  const base=GameData.UNIT_TYPES.find(u=>u.id===unitId);
+  if(base) return base.name;
+  if(unitId.endsWith('-kai')) return 'Ball Kai';
+  if(unitId.endsWith('-commander')) return 'ดาวตกสีแดง';
+  if(unitId.endsWith('-ii')) return 'กุ๊กทู';
+  if(unitId.endsWith('-gold')){
+    const baseId=unitId.replace(/-gold$/,'');
+    const source=GameData.UNIT_TYPES.find(u=>u.id===baseId);
+    return `${source?.name||'หุ่นพิเศษ'} รุ่นทอง`;
+  }
+  return unitId;
+}
 function inventoryRows(player=me()){
   return Object.entries(player?.inventory||{}).map(([unitId,batches])=>{
-    const unit=GameData.UNIT_TYPES.find(u=>u.id===unitId)||{name:unitId};
-    const stat=inventoryValue(player,unitId); return {...stat,unitId,unit};
+    const stat=inventoryValue(player,unitId);
+    return {...stat,unitId,unit:{name:inventoryUnitName(unitId)}};
   }).filter(x=>x.qty>0);
+}
+function scrapRecoveryForBatches(batches=[]){
+  return Math.round(
+    batches.reduce((sum,b)=>sum+Math.max(0,Math.round(b.qty||0))*Number(b.unitCost||0),0)
+    * GameData.SCRAP_RATE * 10
+  )/10;
+}
+function scrapPlayerInventory(unitId){
+  const player=me();
+  const batches=player?.inventory?.[unitId]||[];
+  const qty=batches.reduce((sum,b)=>sum+Math.max(0,Math.round(b.qty||0)),0);
+  if(qty<=0) return;
+  const recovery=scrapRecoveryForBatches(batches);
+  const label=inventoryUnitName(unitId);
+  if(!confirm(`ขาย ${label} จำนวน ${qty} เครื่องเป็นซาก รับคืน ${fmt(recovery)} Cr.?`)) return;
+  const inventory={...(player.inventory||{})};
+  delete inventory[unitId];
+  state.players=state.players.map(p=>p.id===player.id
+    ? {...p,inventory,funds:Math.round((Number(p.funds||0)+recovery)*10)/10}
+    : p
+  );
+  save();
+  render();
+}
+function autoScrapBotInventory(player){
+  const holding=GameData.inventoryHoldingCost(player);
+  const capacity=Math.max(1,Number(player.capacity||GameData.START_CAPACITY));
+  if(holding.qty<=capacity*0.50) return player;
+
+  const targetQty=Math.floor(capacity*0.30);
+  let removeQty=Math.max(0,holding.qty-targetQty);
+  let recovery=0;
+  const inventory={};
+
+  const groups=Object.entries(player.inventory||{})
+    .map(([unitId,batches])=>({
+      unitId,
+      batches:(batches||[]).map(b=>({...b})),
+      avgCost:inventoryValue(player,unitId).avgCost
+    }))
+    .sort((a,b)=>a.avgCost-b.avgCost);
+
+  for(const group of groups){
+    const kept=[];
+    for(const batch of group.batches){
+      const qty=Math.max(0,Math.round(batch.qty||0));
+      const take=Math.min(qty,removeQty);
+      recovery+=take*Number(batch.unitCost||0)*GameData.SCRAP_RATE;
+      removeQty-=take;
+      const rest=qty-take;
+      if(rest>0) kept.push({...batch,qty:rest});
+    }
+    if(kept.length) inventory[group.unitId]=kept;
+  }
+
+  return {
+    ...player,
+    inventory,
+    funds:Math.round((Number(player.funds||0)+recovery)*10)/10
+  };
 }
 function techProgress(company=me()){
   const next=GameData.nextTechTier(company||{}); const level=Number(company?.techLevel||0); const rp=Number(company?.rp||0);
@@ -1345,6 +1615,9 @@ function bindCommon(){
       updateCommandNumbers(); save();
     };
   });
+  document.querySelectorAll('[data-scrap-unit]').forEach(btn=>{
+    btn.onclick=()=>scrapPlayerInventory(btn.dataset.scrapUnit);
+  });
   const accept=$('#acceptSpecial'); if(accept) accept.onclick=acceptSpecialOffer;
   const negotiate=$('#negotiateSpecial'); if(negotiate) negotiate.onclick=negotiateSpecialOffer;
   const decline=$('#declineSpecial'); if(decline) decline.onclick=declineSpecialOffer;
@@ -1369,6 +1642,7 @@ function updateCommandNumbers(){
   const tag=$('[data-live="unitTag"]'); if(tag) tag.textContent=c.unit.tag;
 }
 function submitRound(){
+  state.players=state.players.map(p=>p.isBot?autoScrapBotInventory(p):p);
   const p=me(), d=state.decision; normalizeUnit();
   const submissions={}; submissions[p.id]={...d,production:plannedUnits(p,d)};
   state.players.slice(1).forEach(bot=>submissions[bot.id]=GameData.botDecision(bot.funds,bot.capacity,state.currentEvent,bot,state.lastReport || state.history[state.history.length-1] || null));
@@ -1525,7 +1799,7 @@ function renderHome(){
       <button id="startBtn" class="btn btn-primary">เริ่มเกม</button>
       <p class="muted home-note">12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p>
     </section>
-  </main><div class="marker">P65 RELAXED HOME SPACING</div>`;
+  </main><div class="marker">P67 INVENTORY OVERHAUL</div>`;
 
   $('#botCount').oninput=e=>{
     $('#botNum').textContent=e.target.value;
@@ -1541,7 +1815,7 @@ function renderBriefing(){
   const cards = ev.id==='ace-pilot-trend' ? [
     ['ประเภทข่าว','ข่าววงใน','ข้อมูลอาจคลาดเคลื่อน'],['รายงานสายข่าว',rumor?rumor.name:'ไม่ทราบรุ่น','กองทัพอาจสนใจเป็นพิเศษ'],['ถ้าคาดถูก','โบนัสราคาขาย +10%','เฉลยหลังจบไตรมาส']
   ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดเฉลี่ย ${marketAveragePercent(ev)}%`]];
-  return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon">${unitIcon(current.unit)}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
+  return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon tone-${esc(ev.tone||'info')}">${eventIcon(ev)}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
 }
 function renderSpecialReport(){
   ensureState();
@@ -1602,6 +1876,28 @@ function renderCommand(){
     <div class="avail-hint">${esc(tech.detail)}</div>
     <div class="unit-row">${avail.map(u=>{const is=unlocked.has(u.id),active=c.base.id===u.id; return `<button class="unit-card ${active?'active':''} ${is?'':'locked'}" ${is?`data-unit="${u.id}"`:"disabled"}>${is?unitIcon(u,'mini'):'<div class="lock">🔒</div>'}<div class="unit-card-name">${esc(u.name)}</div><div class="unit-card-cp">${u.cpCost} CP</div></button>`}).join('')}</div>
   </div>
+  ${(()=>{
+    const rows=inventoryRows(c.p);
+    if(!rows.length) return '';
+    return `<div class="card inventory-card">
+      <div class="section-title"><span class="text">คลังสินค้า</span><span class="badge">${holding.qty} เครื่อง</span></div>
+      <div class="inventory-summary">
+        <span>ค่าจัดเก็บโดยประมาณต่อไตรมาส</span>
+        <b>${fmt(holding.cost)} Cr.</b>
+      </div>
+      <div class="inventory-list">${rows.map(row=>{
+        const batches=c.p.inventory?.[row.unitId]||[];
+        const scrap=scrapRecoveryForBatches(batches);
+        return `<div class="inventory-item">
+          <div class="inventory-main">
+            <div class="inventory-name">${esc(row.unit.name)}</div>
+            <div class="inventory-meta">${row.qty} เครื่อง · ต้นทุนเฉลี่ย ${row.avgCost.toFixed(1)} Cr. · ขายซากได้ ${fmt(scrap)} Cr.</div>
+          </div>
+          <button class="scrap-btn" data-scrap-unit="${esc(row.unitId)}">ขายเป็นซาก</button>
+        </div>`;
+      }).join('')}</div>
+    </div>`;
+  })()}
   ${renderSpecialReport()}
   <div class="card summary-card"><span class="stat-label">เงินลงทุนรอบนี้</span><span class="stat-value yellow"><span data-live="invest">${fmt(c.upfront)} Cr.</span> · <span data-live="status">${esc(c.status)}</span></span></div>
   </div><div class="actions"><button class="btn btn-secondary" data-phase="briefing"><span class="arrow">←</span> Briefing</button><button id="submitOrder" class="btn btn-primary">ยืนยันคำสั่ง <span class="arrow">→</span></button></div></section>`;
@@ -1716,6 +2012,7 @@ function renderReport(){
             <div class="news-line"><b>ตลาด:</b> ${esc(rep.event.name)} · ${esc(rep.event.effect||'Normal')}</div>
             <div class="news-line"><b>${esc(me().name)}:</b> ${esc(you.unit.name)} ขายได้ ${you.unitsSold} จาก ${you.production} เครื่อง</div>
             <div class="news-line"><b>ส่วนแบ่ง:</b> ${Math.round(you.share*1000)/10}% · ${you.crowdCount>1?`ตลาดชน ${you.crowdCount} บริษัท`:'ไม่มีคู่แข่งผลิตรุ่นเดียวกัน'}</div>
+            <div class="news-line"><b>ค่าจัดเก็บ:</b> สินค้าคงคลัง ${you.inventoryQty||0} เครื่อง มีค่าธรรมเนียมรวม ${fmt(you.inventoryCost||0)} Cr. ในไตรมาสนี้</div>
             <div class="news-line"><b>บทเรียน:</b> ${esc(lessonText())}</div>
           </div>
           ${marketPieHTML(sorted)}
@@ -1743,7 +2040,7 @@ function renderEnd(){
       + (p.rp * 0.5)
       - (p.debt || 0)
   })).sort((a,b)=>b.score-a.score);
-  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P65 RELAXED HOME SPACING</div>`; bindCommon();
+  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P67 INVENTORY OVERHAUL</div>`; bindCommon();
 }
 let _lastRenderedPhase=null;
 function renderGame(){
@@ -1751,7 +2048,7 @@ function renderGame(){
   const prevPagesEl=document.querySelector('.pages');
   const prevScroll=prevPagesEl?prevPagesEl.scrollTop:0;
   const samePhase=_lastRenderedPhase===state.phase;
-  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P65 RELAXED HOME SPACING</div>`;
+  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P67 INVENTORY OVERHAUL</div>`;
   const pagesEl=document.querySelector('.pages');
   if(pagesEl && samePhase) pagesEl.scrollTop=prevScroll;
   _lastRenderedPhase=state.phase;
