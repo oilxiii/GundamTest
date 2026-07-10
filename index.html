@@ -287,49 +287,11 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .dot{width:8px;height:8px;border-radius:2px}
 .leg span:nth-child(2){white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
 .leg b{font-size:var(--fs-xs);color:#fff}
-.rank-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.rank{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:8px 5px}
-.rank.you-rank{border-color:var(--gold)}
-.rank-mech{width:30px;height:30px;image-rendering:pixelated}
-.company{min-width:0;width:100%;line-height:1.25}
-.company b{font-size:var(--fs-xs);color:var(--gold);display:block}
-.company strong{display:block;font-size:var(--fs-xs);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.company small{display:block;font-size:8.6px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.variant-glow{filter:none}
-
-/* ---------- competitor intelligence ---------- */
-.rival-intel{padding-bottom:var(--sp-3)}
-.rival-intel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:var(--sp-2) var(--sp-3) 0}
-.rival-intel-card{display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px;align-items:center;padding:8px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:var(--r-sm);min-width:0}
-.rival-intel-card:last-child:nth-child(odd){grid-column:1/-1}
-.rival-intel-card .rank-mech{width:32px;height:32px}
-.rival-intel-main{min-width:0}
-.rival-intel-company{font-size:var(--fs-xs);font-weight:900;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rival-intel-unit{font-size:var(--fs-xs);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
-.rival-intel-stats{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:5px}
-.rival-intel-stat{background:rgba(0,0,0,.18);border-radius:6px;padding:4px 5px;min-width:0}
-.rival-intel-stat span{display:block;font-size:7.8px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rival-intel-stat b{display:block;font-size:var(--fs-xs);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 
 /* ---------- 8-player / AI difficulty ---------- */
 select.field{appearance:none;-webkit-appearance:none;background:#07121d;color:#fff}
-.rival-accordion{display:flex;flex-direction:column;gap:6px;padding:var(--sp-2) var(--sp-3) var(--sp-3)}
-.rival-detail{border:1px solid var(--line);border-radius:var(--r-sm);background:rgba(255,255,255,.02);overflow:hidden}
-.rival-detail summary{list-style:none;display:grid;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 9px;cursor:pointer}
-.rival-detail summary::-webkit-details-marker{display:none}
-.rival-detail .rank-mech{width:28px;height:28px}
-.rival-summary-name{font-size:var(--fs-xs);font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rival-summary-share{font-size:var(--fs-xs);font-weight:900;color:var(--blue)}
-.rival-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 9px 9px}
-.rival-detail-body>div{background:rgba(0,0,0,.18);border-radius:6px;padding:5px 6px;min-width:0}
-.rival-detail-body span{display:block;font-size:7.8px;color:var(--muted)}
-.rival-detail-body b{display:block;font-size:var(--fs-xs);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;text-transform:capitalize}
-.rank-row.rank-all{grid-template-columns:repeat(2,minmax(0,1fr))}
-.rank-row.rank-all .rank{display:grid;grid-template-columns:28px minmax(0,1fr);text-align:left;padding:7px;align-items:center}
-.rank-row.rank-all .rank-mech{grid-row:1;grid-column:1}
-.rank-row.rank-all .company{grid-row:1;grid-column:2}
-@media(max-height:700px){.start-panel{gap:8px;padding:12px 14px}.field{height:40px}.rank-row.rank-all{gap:5px}}
+.field{height:40px}.rank-row.rank-all{gap:5px}}
 
 /* ---------- HOME / END ---------- */
 .start-panel{padding:18px 16px;display:flex;flex-direction:column;gap:12px;margin:auto var(--sp-3)}
@@ -416,7 +378,238 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   z-index:30;
 }
 
-</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P60 PIE NAME</div></div>
+
+/* PASS 61: home hero */
+.home-phone{
+  position:relative;
+  overflow-y:auto;
+}
+.home-hero{
+  margin:0 12px 10px;
+  border:1px solid rgba(86,176,255,.5);
+  border-radius:16px;
+  overflow:hidden;
+  background:#050b13;
+  box-shadow:0 10px 24px rgba(0,0,0,.32),0 0 0 1px rgba(39,128,255,.08) inset;
+}
+.home-war-art{
+  width:100%;
+  height:142px;
+  display:block;
+}
+.home-title-wrap{
+  padding:0 14px 13px;
+  text-align:center;
+  margin-top:-8px;
+  position:relative;
+  z-index:2;
+}
+.home-kicker{
+  font-size:8px;
+  letter-spacing:2.2px;
+  color:var(--blue);
+  font-weight:900;
+  text-transform:uppercase;
+}
+.home-game-title{
+  margin-top:3px;
+  font-size:22px;
+  line-height:.92;
+  font-weight:1000;
+  letter-spacing:.5px;
+  color:#fff4bf;
+  text-shadow:0 2px 0 #7a4d10,0 0 14px rgba(255,216,79,.22);
+}
+.home-game-title span{
+  display:block;
+  color:#ffffff;
+  font-size:13px;
+  letter-spacing:2px;
+  margin-top:7px;
+  text-shadow:none;
+}
+.start-panel{
+  margin:0 12px 12px;
+}
+.start-panel h2{
+  margin-top:0;
+}
+
+
+/* PASS 64: home form layout fix */
+.home-phone{
+  overflow-y:auto;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.home-phone .topbar{
+  padding-bottom:6px;
+}
+.home-hero{
+  flex:0 0 auto;
+  margin-bottom:8px;
+}
+.home-war-art{
+  height:132px;
+}
+.home-title-wrap{
+  padding-bottom:11px;
+}
+.home-game-title{
+  font-size:20px;
+}
+.home-game-title span{
+  font-size:12px;
+  margin-top:6px;
+}
+.home-phone .start-panel{
+  flex:0 0 auto;
+  width:auto;
+  margin:0 12px 12px;
+  padding:14px;
+  gap:9px;
+  overflow:visible;
+}
+.home-phone .start-panel h2{
+  font-size:15px;
+  line-height:1.25;
+  margin:0;
+}
+.home-phone .field{
+  width:100%;
+  min-width:0;
+  height:42px;
+  display:block;
+}
+.home-phone select.field{
+  padding-right:30px;
+  font-size:11px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.home-setting-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.25;
+}
+.home-setting-head .setting-title{
+  min-width:0;
+}
+.home-setting-head .setting-value{
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.home-setting-sub{
+  color:var(--muted);
+  font-size:10px;
+  text-align:right;
+  white-space:nowrap;
+}
+.home-phone #botCount{
+  margin:0;
+}
+.home-phone #startBtn{
+  width:100%;
+  min-height:44px;
+  height:44px;
+  flex:0 0 auto;
+}
+.home-note{
+  font-size:9.5px!important;
+  line-height:1.25!important;
+  text-align:center;
+}
+@media(max-height:650px){
+  .home-war-art{height:116px}
+  .home-title-wrap{padding-bottom:8px}
+  .home-game-title{font-size:18px}
+  .home-phone .start-panel{padding:12px;gap:7px}
+  .home-phone .field{height:39px}
+  .home-phone #startBtn{height:41px;min-height:41px}
+}
+
+
+/* PASS 65: relaxed home spacing */
+.home-phone .topbar{
+  padding-left:16px;
+  padding-right:16px;
+}
+.home-hero{
+  margin-left:16px;
+  margin-right:16px;
+  margin-bottom:12px;
+}
+.home-title-wrap{
+  padding-left:18px;
+  padding-right:18px;
+  padding-bottom:15px;
+}
+.home-kicker{
+  line-height:1.5;
+}
+.home-game-title{
+  line-height:1.02;
+}
+.home-game-title span{
+  line-height:1.35;
+  margin-top:8px;
+}
+.home-phone .start-panel{
+  margin-left:16px;
+  margin-right:16px;
+  margin-bottom:16px;
+  padding:18px 16px;
+  gap:12px;
+}
+.home-phone .start-panel h2{
+  line-height:1.4;
+  margin-bottom:1px;
+}
+.home-phone .field{
+  padding-left:14px;
+  padding-right:14px;
+  line-height:1.35;
+}
+.home-setting-head{
+  line-height:1.4;
+  margin-top:2px;
+}
+.home-setting-sub{
+  line-height:1.45;
+  margin-top:-4px;
+  margin-bottom:1px;
+}
+.home-phone select.field{
+  line-height:1.4;
+}
+.home-phone #startBtn{
+  margin-top:2px;
+}
+.home-note{
+  line-height:1.5!important;
+  padding:0 4px;
+  margin-top:1px!important;
+}
+@media(max-height:650px){
+  .home-hero{
+    margin-left:14px;
+    margin-right:14px;
+  }
+  .home-phone .start-panel{
+    margin-left:14px;
+    margin-right:14px;
+    padding:15px 14px;
+    gap:10px;
+  }
+}
+
+</style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main><div class="marker">P65 RELAXED HOME SPACING</div></div>
 <svg width="0" height="0" style="position:absolute;overflow:hidden">
 <symbol id="ball-symbol" viewBox="0 0 32 32"><rect x="14" y="2" width="4" height="4" fill="#111"/><rect x="13" y="5" width="6" height="2" fill="#1e252e"/><rect x="10" y="7" width="12" height="2" fill="#05070b"/><rect x="8" y="9" width="16" height="3" fill="#05070b"/><rect x="6" y="12" width="20" height="9" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="8" width="10" height="1" fill="#f3efe2"/><rect x="9" y="10" width="14" height="3" fill="#f3efe2"/><rect x="7" y="13" width="18" height="8" fill="#f3efe2"/><rect x="9" y="21" width="14" height="3" fill="#f3efe2"/><rect x="12" y="25" width="8" height="1" fill="#f3efe2"/><rect x="8" y="14" width="4" height="6" fill="#c8d0d6"/><rect x="20" y="14" width="4" height="6" fill="#6f7b86"/><rect x="13" y="12" width="6" height="4" fill="#05070b"/><rect x="14" y="13" width="4" height="2" fill="#7cc7ff"/><rect x="9" y="18" width="14" height="1" fill="#e23a34"/><rect x="3" y="16" width="5" height="2" fill="#05070b"/><rect x="2" y="17" width="2" height="4" fill="#313944"/><rect x="24" y="16" width="5" height="2" fill="#05070b"/><rect x="28" y="17" width="2" height="4" fill="#313944"/><rect x="1" y="20" width="4" height="2" fill="#05070b"/><rect x="27" y="20" width="4" height="2" fill="#05070b"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#145bd8"/><rect x="18" y="28" width="2" height="3" fill="#145bd8"/></symbol>
 <symbol id="ball-kai-symbol" viewBox="0 0 32 32"><rect x="13" y="1" width="6" height="3" fill="#101418"/><rect x="12" y="4" width="8" height="2" fill="#1f2a34"/><rect x="10" y="6" width="12" height="2" fill="#05070b"/><rect x="8" y="8" width="16" height="3" fill="#05070b"/><rect x="5" y="11" width="22" height="10" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="7" width="10" height="1" fill="#24262b"/><rect x="9" y="9" width="14" height="3" fill="#24262b"/><rect x="7" y="12" width="18" height="9" fill="#24262b"/><rect x="9" y="21" width="14" height="3" fill="#24262b"/><rect x="12" y="25" width="8" height="1" fill="#24262b"/><rect x="7" y="13" width="4" height="7" fill="#4a4e56"/><rect x="21" y="13" width="4" height="7" fill="#17181c"/><rect x="12" y="11" width="8" height="5" fill="#05070b"/><rect x="14" y="12" width="5" height="2" fill="#8df7ff"/><rect x="8" y="18" width="16" height="1" fill="#ff4b4b"/><rect x="4" y="11" width="3" height="4" fill="#253142"/><rect x="25" y="11" width="3" height="4" fill="#253142"/><rect x="2" y="16" width="6" height="2" fill="#05070b"/><rect x="24" y="16" width="6" height="2" fill="#05070b"/><rect x="1" y="18" width="4" height="4" fill="#1e2833"/><rect x="27" y="18" width="4" height="4" fill="#1e2833"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#1e7cff"/><rect x="18" y="28" width="2" height="3" fill="#1e7cff"/><rect x="5" y="22" width="3" height="2" fill="#ffd84f"/><rect x="24" y="22" width="3" height="2" fill="#ffd84f"/></symbol>
@@ -437,9 +630,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
     { id: 'z4', tier:1, cpCost:2, baseCost:7.0, basePrice:11.0, rnd:'mid', price:'low', name:'หุ่นรุ่นผลิตจำนวนมาก', tag:'ซาคุมาตรฐาน ใช้ได้ทุกสมรภูมิ', primary:'#4a7a3e', visor:'#c0392b', hornColor:'#33502a', horn:'mono' },
     { id: 'z7', tier:2, cpCost:2, baseCost:8.5, basePrice:13.0, rnd:'mid', price:'mid', name:'หุ่นอาร์เอ็กซ์ รุ่นทดสอบ', tag:'ต้นแบบเทคโนโลยีใหม่ ต้นทุนสูง', primary:'#e8e8e8', visor:'#2ecc71', hornColor:'#c0392b', horn:'vfin' },
     { id: 'z5', tier:3, cpCost:3, baseCost:12.0, basePrice:18.0, rnd:'mid', price:'mid', name:'กุ๊กวัน', tag:'รุ่นจู่โจมมาตรฐาน สมดุลราคาและสมรรถนะ', primary:'#6b4c3a', visor:'#c0392b', hornColor:'#432f24', horn:'mono' },
-    { id: 'z6', hidden:true, tier:3, cpCost:3, baseCost:13.0, basePrice:19.5, rnd:'mid', price:'high', name:'กุ๊กทู', tag:'รุ่นผู้บังคับบัญชา ใช้กำลังผลิตมากขึ้น', primary:'#7d3c98', visor:'#ffd54f', hornColor:'#4e2761', horn:'mono' },
     { id: 'z8', tier:4, cpCost:5, baseCost:22.0, basePrice:34.0, rnd:'high', price:'high', name:'หุ่นนิวอาร์เอ็กซ์', tag:'หุ่นอาร์เอ็กซ์รุ่นสุดท้าย สมรรถนะสูง ผลิตได้ไม่มาก', primary:'#dfe6f0', visor:'#4a6fa5', hornColor:'#b0bfd6', horn:'vfin' },
-    { id: 'z9', hidden:true, tier:4, cpCost:6, baseCost:25.0, basePrice:40.0, rnd:'high', price:'high', name:'หุ่นนิวอาร์เอ็กซ์ รุ่นทอง', tag:'รุ่นพิเศษผลิตจำกัด ใช้ Capacity สูงมาก', primary:'#d4af37', visor:'#c0392b', hornColor:'#8a6d1f', horn:'vfin' },
   ];
 
   const TECH_TIERS = [
@@ -519,7 +710,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 
   const SPECIAL_EVENTS = [
-    { id:'amuro-bay', tier:4, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
+    { id:'amuro-bay', tier:4, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z8'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
       pitch:'นักบินระดับตำนานสนใจหุ่นนิวอาร์เอ็กซ์ของบริษัทคุณ' },
     { id:'zaza-impossible', tier:1, name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', unitIds:['z4'], targetLabel:'ดาวตกสีแดง / Commander Type', priceBonus:0.15, duration:3, baseWeight:10, startRound:5, pricePct:0.16,
       pitch:'นักบินชื่อดังชื่นชอบดาวตกสีแดงและต้องการเป็นพรีเซ็นเตอร์' },
@@ -527,7 +718,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       pitch:'นักบินดาวรุ่งกำลังมองหาบริษัทที่กล้าดันหุ่นสายกุ๊ก' },
     { id:'military-reviewer', tier:0, name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', unitIds:['z1'], targetLabel:'Ball' , priceBonus:0.07, duration:3, baseWeight:14, startRound:3, pricePct:0.08,
       pitch:'นักรีวิวภาคสนามสนใจทำแคมเปญให้ Ball' },
-    { id:'legend-test-pilot', tier:4, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8','z9'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
+    { id:'legend-test-pilot', tier:4, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
       pitch:'นักบินทดสอบระดับตำนานพร้อมยกระดับภาพลักษณ์ของหุ่นนิวอาร์เอ็กซ์' }
   ];
 
@@ -682,13 +873,13 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
         });
         preferred = (event && event.poolMult < 0.8) ? sorted.find(u=>u.cpCost<=2)?.id || sorted[0].id : sorted[0].id;
       }
-      if (event && event.costMult > 1.1) priceStrategy += difficulty==='hard'?14:10 + Math.random()*8;
-      if (event && event.poolMult < 0.8) priceStrategy -= difficulty==='hard'?12:8 + Math.random()*10;
+      if (event && event.costMult > 1.1) priceStrategy += (difficulty==='hard' ? 16 + Math.random()*2 : 10 + Math.random()*8);
+      if (event && event.poolMult < 0.8) priceStrategy -= (difficulty==='hard' ? 16 + Math.random()*2 : 8 + Math.random()*10);
       if (event && event.poolMult >= 1.2) quality += 5 + Math.random() * 8;
 
       prodPct = difficulty==='hard' ? 84 + Math.random()*12 : 76 + Math.random()*24;
-      if (event && event.poolMult >= 1.2) prodPct += difficulty==='hard'?12:10 + Math.random()*12;
-      if (event && event.poolMult < 0.8) prodPct -= difficulty==='hard'?24:16 + Math.random()*10;
+      if (event && event.poolMult >= 1.2) prodPct += (difficulty==='hard' ? 18 + Math.random()*2 : 10 + Math.random()*12);
+      if (event && event.poolMult < 0.8) prodPct -= (difficulty==='hard' ? 24 + Math.random()*2 : 16 + Math.random()*10);
       if (event && event.damageChance) prodPct -= 5 + Math.random()*8;
       if (invQty > cap * 0.25) prodPct -= difficulty==='hard'?18:10;
       if (cash < 260) prodPct -= 10;
@@ -856,7 +1047,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass60-save';
+const KEY = 'mspc-pass65-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -892,7 +1083,7 @@ function unitSymbol(unit){
   if(unit?.variantSymbol) return unit.variantSymbol;
   if(unit?.variantTier === 'high' && (id.includes('z1') || unit?.kind==='ball')) return 'ball-kai-symbol';
   if(id==='z1' || unit?.kind==='ball') return 'ball-symbol';
-  if(id==='z4' || id==='z5' || id==='z6' || id.includes('z4') || id.includes('z5')) return 'zaku-symbol';
+  if(id==='z4' || id==='z5' || id.includes('z4') || id.includes('z5')) return 'zaku-symbol';
   return 'gm-symbol';
 }
 function unitIcon(unit, cls='mech'){
@@ -1178,22 +1369,154 @@ function nextQuarter(){
 function topHTML(){ const p=me(); return `<header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div>${p?`<div class="hud"><div class="hud-item"><span class="hud-label">QTR</span><span class="hud-value">${String(state.round).padStart(2,'0')}/12</span></div><div class="hud-item"><span class="hud-label">Cash</span><span class="hud-value cash">${fmt(p.funds)}</span></div><div class="hud-item"><span class="hud-label">ชื่อเสียง</span><span class="hud-value rep">${reputationTitle(p.reputation)}</span></div><div class="hud-item"><span class="hud-label">Capacity</span><span class="hud-value cp">${p.capacity}</span></div></div>`:''}</header>
 <nav class="tabs"><button data-phase="briefing" class="tab ${state.phase==='briefing'?'active':''}"><span class="tab-num">1</span>Briefing</button><button data-phase="command" class="tab ${state.phase==='command'?'active':''}"><span class="tab-num">2</span>Command</button><button data-phase="report" class="tab ${state.phase==='report'?'active':''} ${!state.lastReport?'disabled':''}"><span class="tab-num">3</span>Report</button></nav>`; }
 function renderHome(){
-  app.innerHTML=`<main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ตั้งบริษัทผลิต Mobile Suit</h2><input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}"><label class="bot-label">จำนวนคู่แข่ง <b id="botNum">${state.botCount||2}</b> <span class="muted">(รวมผู้เล่น ${Number(state.botCount||2)+1} บริษัท)</span></label><input id="botCount" type="range" min="1" max="7" value="${state.botCount||2}"><label class="bot-label" for="aiDifficulty">ความยาก AI</label><select id="aiDifficulty" class="field"><option value="easy" ${state.aiDifficulty==='easy'?'selected':''}>Easy — สุ่มและพลาดบ่อย</option><option value="medium" ${!state.aiDifficulty||state.aiDifficulty==='medium'?'selected':''}>Medium — อ่าน Event และตลาดพื้นฐาน</option><option value="hard" ${state.aiDifficulty==='hard'?'selected':''}>Hard — วิเคราะห์ Report รอบก่อน</option><option value="random" ${state.aiDifficulty==='random'?'selected':''}>Random — สุ่มระดับรายบริษัท</option></select><button id="startBtn" class="btn btn-primary">เริ่มเกม</button><p class="muted">12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p></section></main><div class="marker">P60 PIE NAME</div>`;
+  app.innerHTML=`<main class="phone home-phone">
+    <header class="topbar">
+      <div class="brand">
+        <svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg>
+        <div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div>
+      </div>
+    </header>
+
+    <section class="home-hero" aria-label="สงครามอวกาศ">
+      <svg class="home-war-art" viewBox="0 0 400 170" role="img" aria-label="กองยานรบในอวกาศ" shape-rendering="crispEdges">
+        <rect width="400" height="170" fill="#050b13"/>
+        <g>
+          <rect x="169" y="23" width="3" height="3" fill="#eaf4ff" opacity="0.74"/>
+          <rect x="41" y="72" width="2" height="2" fill="#eaf4ff" opacity="0.57"/>
+          <rect x="33" y="68" width="2" height="2" fill="#eaf4ff" opacity="0.37"/>
+          <rect x="226" y="57" width="2" height="2" fill="#eaf4ff" opacity="0.49"/>
+          <rect x="286" y="58" width="2" height="2" fill="#eaf4ff" opacity="0.85"/>
+          <rect x="67" y="32" width="2" height="2" fill="#eaf4ff" opacity="0.7"/>
+          <rect x="207" y="10" width="2" height="2" fill="#eaf4ff" opacity="0.38"/>
+          <rect x="72" y="41" width="3" height="3" fill="#eaf4ff" opacity="0.44"/>
+          <rect x="64" y="77" width="2" height="2" fill="#eaf4ff" opacity="0.69"/>
+          <rect x="353" y="27" width="2" height="2" fill="#eaf4ff" opacity="0.7"/>
+          <rect x="331" y="28" width="2" height="2" fill="#eaf4ff" opacity="0.41"/>
+          <rect x="368" y="12" width="2" height="2" fill="#eaf4ff" opacity="0.72"/>
+          <rect x="258" y="91" width="3" height="3" fill="#eaf4ff" opacity="0.82"/>
+          <rect x="242" y="78" width="3" height="3" fill="#eaf4ff" opacity="0.57"/>
+          <rect x="131" y="27" width="2" height="2" fill="#eaf4ff" opacity="0.4"/>
+          <rect x="157" y="71" width="3" height="3" fill="#eaf4ff" opacity="0.88"/>
+          <rect x="377" y="61" width="2" height="2" fill="#eaf4ff" opacity="0.72"/>
+          <rect x="41" y="19" width="3" height="3" fill="#eaf4ff" opacity="0.45"/>
+          <rect x="179" y="23" width="3" height="3" fill="#eaf4ff" opacity="0.6"/>
+          <rect x="346" y="13" width="2" height="2" fill="#eaf4ff" opacity="0.55"/>
+          <rect x="183" y="80" width="3" height="3" fill="#eaf4ff" opacity="0.7"/>
+          <rect x="237" y="12" width="2" height="2" fill="#eaf4ff" opacity="0.92"/>
+          <rect x="246" y="93" width="2" height="2" fill="#eaf4ff" opacity="0.39"/>
+          <rect x="363" y="43" width="3" height="3" fill="#eaf4ff" opacity="0.52"/>
+        </g>
+        <g>
+          <rect x="48" y="82" width="30" height="6" fill="#3a6ea8"/>
+          <rect x="36" y="88" width="54" height="6" fill="#3a6ea8"/>
+          <rect x="30" y="94" width="66" height="6" fill="#3a6ea8"/>
+          <rect x="24" y="100" width="78" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="106" width="84" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="112" width="90" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="118" width="90" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="124" width="90" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="130" width="90" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="136" width="90" height="6" fill="#3a6ea8"/>
+          <rect x="18" y="142" width="84" height="6" fill="#3a6ea8"/>
+          <rect x="24" y="148" width="78" height="6" fill="#3a6ea8"/>
+          <rect x="24" y="154" width="72" height="6" fill="#3a6ea8"/>
+          <rect x="30" y="160" width="60" height="6" fill="#3a6ea8"/>
+          <rect x="42" y="166" width="42" height="6" fill="#3a6ea8"/>
+          <rect x="48" y="82" width="12" height="6" fill="#7fb8e8"/>
+          <rect x="36" y="88" width="24" height="6" fill="#7fb8e8"/>
+          <rect x="30" y="94" width="30" height="6" fill="#7fb8e8"/>
+          <rect x="24" y="100" width="30" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="106" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="112" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="118" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="124" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="130" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="136" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="18" y="142" width="36" height="6" fill="#7fb8e8"/>
+          <rect x="24" y="148" width="30" height="6" fill="#7fb8e8"/>
+          <rect x="24" y="154" width="30" height="6" fill="#7fb8e8"/>
+          <rect x="30" y="160" width="24" height="6" fill="#7fb8e8"/>
+          <rect x="42" y="166" width="18" height="6" fill="#7fb8e8"/>
+          <rect x="66" y="82" width="12" height="6" fill="#254a76"/>
+          <rect x="72" y="88" width="18" height="6" fill="#254a76"/>
+          <rect x="78" y="94" width="18" height="6" fill="#254a76"/>
+          <rect x="78" y="100" width="24" height="6" fill="#254a76"/>
+          <rect x="78" y="106" width="24" height="6" fill="#254a76"/>
+          <rect x="84" y="112" width="24" height="6" fill="#254a76"/>
+          <rect x="84" y="118" width="24" height="6" fill="#254a76"/>
+          <rect x="84" y="124" width="24" height="6" fill="#254a76"/>
+          <rect x="84" y="130" width="24" height="6" fill="#254a76"/>
+          <rect x="84" y="136" width="24" height="6" fill="#254a76"/>
+          <rect x="78" y="142" width="24" height="6" fill="#254a76"/>
+          <rect x="78" y="148" width="24" height="6" fill="#254a76"/>
+          <rect x="72" y="154" width="24" height="6" fill="#254a76"/>
+          <rect x="72" y="160" width="18" height="6" fill="#254a76"/>
+          <rect x="72" y="166" width="12" height="6" fill="#254a76"/>
+        </g>
+        <!-- tracer fire between the two suits -->
+        <g fill="#ffcb5c">
+          <rect x="176" y="60" width="6" height="3"/><rect x="188" y="58" width="6" height="3"/><rect x="200" y="56" width="6" height="3"/><rect x="212" y="54" width="6" height="3"/>
+        </g>
+        <g fill="#7fe0ff" opacity=".85">
+          <rect x="182" y="78" width="6" height="3"/><rect x="196" y="76" width="6" height="3"/><rect x="210" y="74" width="6" height="3"/>
+        </g>
+        <!-- rival mobile suits, reusing the same pixel-mech symbols used in-game -->
+        <use href="#gm-symbol" x="150" y="30" width="54" height="54"></use>
+        <g transform="translate(320 0) scale(-1,1)">
+          <use href="#zaku-red-symbol" x="0" y="66" width="60" height="60"></use>
+        </g>
+        <g transform="scale(.6)" opacity=".55">
+          <use href="#zaku-symbol" x="70" y="18" width="32" height="32"></use>
+        </g>
+      </svg>
+
+      <div class="home-title-wrap">
+        <div class="home-kicker">Strategic Corporate Warfare</div>
+        <div class="home-game-title">MOBILE SUIT<span>PRODUCTION COMMAND</span></div>
+      </div>
+    </section>
+
+    <section class="card start-panel">
+      <h2>ตั้งบริษัทผลิต Mobile Suit</h2>
+      <input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}">
+
+      <div class="home-setting-head">
+        <span class="setting-title">จำนวนคู่แข่ง</span>
+        <span class="setting-value"><b id="botNum">${state.botCount||2}</b> บริษัท</span>
+      </div>
+      <div id="companyTotal" class="home-setting-sub">รวมผู้เล่น ${Number(state.botCount||2)+1} บริษัท</div>
+      <input id="botCount" type="range" min="1" max="7" value="${state.botCount||2}">
+
+      <div class="home-setting-head">
+        <label class="setting-title" for="aiDifficulty">ความยาก AI</label>
+      </div>
+      <select id="aiDifficulty" class="field">
+        <option value="easy" ${state.aiDifficulty==='easy'?'selected':''}>Easy — สุ่มและพลาดบ่อย</option>
+        <option value="medium" ${!state.aiDifficulty||state.aiDifficulty==='medium'?'selected':''}>Medium — อ่าน Event และตลาดพื้นฐาน</option>
+        <option value="hard" ${state.aiDifficulty==='hard'?'selected':''}>Hard — วิเคราะห์ Report รอบก่อน</option>
+        <option value="random" ${state.aiDifficulty==='random'?'selected':''}>Random — สุ่มระดับรายบริษัท</option>
+      </select>
+
+      <button id="startBtn" class="btn btn-primary">เริ่มเกม</button>
+      <p class="muted home-note">12 ไตรมาส · Policy ค้าง / Investment รีเซ็ตรายไตรมาส</p>
+    </section>
+  </main><div class="marker">P65 RELAXED HOME SPACING</div>`;
+
   $('#botCount').oninput=e=>{
-  $('#botNum').textContent=e.target.value;
-  const total=document.querySelector('.bot-label .muted');
-  if(total) total.textContent=`(รวมผู้เล่น ${Number(e.target.value)+1} บริษัท)`;
-  state.botCount=Number(e.target.value);
-};
-$('#startBtn').onclick=startGame;
+    $('#botNum').textContent=e.target.value;
+    const total=$('#companyTotal');
+    if(total) total.textContent=`รวมผู้เล่น ${Number(e.target.value)+1} บริษัท`;
+    state.botCount=Number(e.target.value);
+  };
+  $('#startBtn').onclick=startGame;
 }
 function renderBriefing(){
-  const p=me(), ev=state.currentEvent || GameData.getEventById('stable-market'), inv=GameData.inventoryHoldingCost(p), tech=techProgress(p);
+  const p=me(), ev=state.currentEvent || GameData.getEventById('stable-market'), inv=GameData.inventoryHoldingCost(p), tech=techProgress(p), current=currentCalc();
   const rumor = ev.rumorUnitId ? GameData.UNIT_TYPES.find(u=>u.id===ev.rumorUnitId) : null;
   const cards = ev.id==='ace-pilot-trend' ? [
     ['ประเภทข่าว','ข่าววงใน','ข้อมูลอาจคลาดเคลื่อน'],['รายงานสายข่าว',rumor?rumor.name:'ไม่ทราบรุ่น','กองทัพอาจสนใจเป็นพิเศษ'],['ถ้าคาดถูก','โบนัสราคาขาย +10%','เฉลยหลังจบไตรมาส']
   ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดเฉลี่ย ${marketAveragePercent(ev)}%`]];
-  return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon">${unitIcon(GameData.UNIT_TYPES[0])}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
+  return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon">${unitIcon(current.unit)}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
 }
 function renderSpecialReport(){
   ensureState();
@@ -1266,10 +1589,6 @@ function marketPieHTML(sorted){
   const legend=sorted.slice(0,8).map((r,i)=>`<div class="leg"><span class="dot" style="background:${colors[i]}"></span><span>${esc(r.playerId==='you'?me().name:r.name.replace(' [BOT]',''))}</span><b>${Math.round((r.share||0)*1000)/10}%</b></div>`).join('');
   return `<div class="share-panel"><div class="pie-title">Market Share</div><div class="pie" style="background:conic-gradient(${stops})"></div><div class="legend">${legend}</div></div>`;
 }
-function rivalIntelHTML(rivals){
-  if(!rivals.length) return '';
-  return `<div class="card rival-intel"><div class="section-title"><span class="text">ข้อมูลคู่แข่งไตรมาสล่าสุด</span><span class="badge">${rivals.length} Rivals</span></div><div class="rival-accordion">${rivals.map((r,i)=>`<details class="rival-detail" ${i===0?'open':''}><summary>${unitIcon(r.unit,'rank-mech')}<span class="rival-summary-name">${esc(r.name.replace(' [BOT]',''))}</span><span class="rival-summary-share">${Math.round((r.share||0)*1000)/10}%</span></summary><div class="rival-detail-body"><div><span>รุ่นที่ผลิต</span><b>${esc(r.unit?.name||'ไม่ทราบรุ่น')}</b></div><div><span>ราคาขาย/เครื่อง</span><b class="green">${Number.isFinite(Number(r.unitPrice))?`${Number(r.unitPrice).toFixed(1)} Cr.`:'—'}</b></div><div><span>งบโฆษณา</span><b class="yellow">${Number.isFinite(Number(r.advertising))?`${fmt(r.advertising)} Cr.`:'—'}</b></div><div><span>AI</span><b>${esc(state.players.find(p=>p.id===r.playerId)?.aiDifficulty||'medium')}</b></div></div></details>`).join('')}</div></div>`;
-}
 function renderReport(){
   const rep=state.lastReport;
   if(!rep) return renderBriefing();
@@ -1277,6 +1596,20 @@ function renderReport(){
   const sorted=[...rep.results].sort((a,b)=>b.share-a.share);
   const you=sorted.find(r=>r.playerId==='you')||sorted[0];
   const profitClass=you.profit>=0?'green':'red';
+
+  const lessonText=()=>{
+    if(rep.event.id==='ace-pilot-trend'){
+      return you.matchedPreferred
+        ? 'ข่าววงในถูกต้อง ได้โบนัสราคาขายจากรุ่นที่กองทัพสนใจ'
+        : 'ข่าววงในไม่ตรงกับความต้องการจริง ควรใช้เป็นข้อมูลประกอบเท่านั้น';
+    }
+    const sellRate=you.production>0 ? you.unitsSold/you.production : 0;
+    if(you.profit<0) return 'ผลประกอบการติดลบ ควรทบทวนต้นทุน ราคา และปริมาณการผลิต';
+    if(sellRate>=0.95) return 'สินค้าขายเกือบหมด รอบหน้าอาจเพิ่มราคา หรือเพิ่มการผลิตอย่างระมัดระวัง';
+    if(sellRate<0.5) return 'สินค้าคงเหลือสูง ควรลดการผลิต ปรับราคา หรือเปลี่ยนรุ่น';
+    if(you.crowdCount>2) return 'มีคู่แข่งผลิตรุ่นเดียวกันหลายบริษัท ควรสร้างความแตกต่างด้านราคา คุณภาพ หรือรุ่นสินค้า';
+    return 'ผลลัพธ์อยู่ในระดับสมดุล ใช้ข้อมูลรอบนี้ปรับแผนในไตรมาสถัดไป';
+  };
 
   const adLevel=(amount)=>{
     const n=Math.max(0,Number(amount||0));
@@ -1337,7 +1670,7 @@ function renderReport(){
             <div class="news-line"><b>ตลาด:</b> ${esc(rep.event.name)} · ${esc(rep.event.effect||'Normal')}</div>
             <div class="news-line"><b>${esc(me().name)}:</b> ${esc(you.unit.name)} ขายได้ ${you.unitsSold} จาก ${you.production} เครื่อง</div>
             <div class="news-line"><b>ส่วนแบ่ง:</b> ${Math.round(you.share*1000)/10}% · ${you.crowdCount>1?`ตลาดชน ${you.crowdCount} บริษัท`:'ไม่มีคู่แข่งผลิตรุ่นเดียวกัน'}</div>
-            <div class="news-line"><b>บทเรียน:</b> ${you.matchedPreferred?'อ่านข่าวถูก ได้โบนัสตลาด':'ปรับราคา/คุณภาพ/กำลังผลิตตามข่าวรอบหน้า'}</div>
+            <div class="news-line"><b>บทเรียน:</b> ${esc(lessonText())}</div>
           </div>
           ${marketPieHTML(sorted)}
         </div>
@@ -1364,12 +1697,11 @@ function renderEnd(){
       + (p.rp * 0.5)
       - (p.debt || 0)
   })).sort((a,b)=>b.score-a.score);
-  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P60 PIE NAME</div>`; bindCommon();
+  app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P65 RELAXED HOME SPACING</div>`; bindCommon();
 }
 function renderGame(){
   if(!state.currentEvent) state.currentEvent=prepareMarketEvent(state.round||1);
-  if(state.round >= 3) resolveSpecialNegotiations();
-  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P60 PIE NAME</div>`;
+  app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P65 RELAXED HOME SPACING</div>`;
   bindCommon();
 }
 function render(){ ensureState(); if(state.screen==='end') return renderEnd(); if(!state.players.length || state.screen==='home') renderHome(); else renderGame(); }
