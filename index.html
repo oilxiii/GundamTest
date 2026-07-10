@@ -1191,7 +1191,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass74-save';
+const KEY = 'mspc-pass75-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -1358,11 +1358,16 @@ function normalizeUnit(){ const ids=new Set(activeUnits().map(u=>u.id)); if(!ids
 function cpBudget(company, prodPct){return Math.max(0, Math.floor((company.capacity||GameData.START_CAPACITY)*Math.max(0,Number(prodPct||0))/100));}
 function plannedUnits(company=me(), d=state.decision){ const u=GameData.getUnit(d.quality,d.priceStrategy,d.unitId,company); return Math.max(0, Math.floor(cpBudget(company,d.prodPct)/Math.max(1,u.cpCost||1))); }
 function marketAveragePercent(event){
+  if(Number.isFinite(Number(event?.marketAveragePct))) return Number(event.marketAveragePct);
   const t={'frontline-surge':56,'temporary-truce':42,'rare-mineral-shortage':61,'space-pirates':52,'ace-pilot-trend':50,'factory-audit':48,'annual-expo':54,'stable-market':50};
   return t[event?.id] || 50;
 }
 function prepareMarketEvent(round){
   let ev = round<=1 ? {...GameData.getEventById('stable-market')} : GameData.pickMarketEvent();
+  const baseMarket = marketAveragePercent(ev);
+  ev.marketAveragePct = round<=1
+    ? Math.max(46,Math.min(54,baseMarket + Math.floor(Math.random()*7)-3))
+    : baseMarket;
   if(ev.id==='ace-pilot-trend'){
     const pool = GameData.UNIT_TYPES.filter(u=>!u.hidden && u.tier<=3);
     const preferred = pool[Math.floor(Math.random()*pool.length)] || pool[0];
@@ -1895,7 +1900,7 @@ function renderBriefing(){
   const rumor = ev.rumorUnitId ? GameData.UNIT_TYPES.find(u=>u.id===ev.rumorUnitId) : null;
   const cards = ev.id==='ace-pilot-trend' ? [
     ['ประเภทข่าว','ข่าววงใน','ข้อมูลอาจคลาดเคลื่อน'],['รายงานสายข่าว',rumor?rumor.name:'ไม่ทราบรุ่น','กองทัพอาจสนใจเป็นพิเศษ'],['ถ้าคาดถูก','โบนัสราคาขาย +10%','เฉลยหลังจบไตรมาส']
-  ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดเฉลี่ย ${marketAveragePercent(ev)}%`]];
+  ] : [['สถานการณ์',ev.name,ev.summary],['ผลกระทบ',ev.effect||'Normal',ev.desc],['คำแนะนำ',ev.advice||'วางแผนตามปกติ',`ราคาตลาดในขณะนี้คือ ${marketAveragePercent(ev)}%`]];
   return `<section class="page brief"><div class="page-body"><div class="card hero"><div class="hero-icon tone-${esc(ev.tone||'info')}">${eventIcon(ev)}</div><div class="hero-text"><span class="eyebrow">Briefing · QTR ${String(state.round).padStart(2,'0')}</span><p class="hero-summary">${esc(ev.summary)}</p></div></div><div class="card intel"><div class="section-title"><span class="text">Market Intel</span><span class="badge">QTR ${String(state.round).padStart(2,'0')}</span></div><div class="intel-list">${cards.map(c=>`<div class="intel-item"><b>${esc(c[0])}: ${esc(c[1])}</b><br>${esc(c[2])}</div>`).join('')}</div></div><div class="stat-grid brief-summary"><div class="card"><div class="label">Cash</div><div class="value cash">${fmt(p.funds)}</div></div><div class="card"><div class="label">Stock</div><div class="value">${inv.qty}</div></div><div class="card"><div class="label">R&D</div><div class="value cp">${p.rp||0}</div></div><div class="card"><div class="label">Debt</div><div class="value red">${fmt(p.debt||0)}</div></div></div></div><div class="actions single"><button class="btn btn-primary" data-phase="command">ไป Command <span class="arrow">→</span></button></div></section>`;
 }
 function renderSpecialReport(){
@@ -1944,7 +1949,7 @@ function renderCommand(){
   <div class="card policy-card">
     <div class="section-title"><span class="text">นโยบายการผลิต</span></div>
     ${slider('✨ คุณภาพ','quality',0,100,'70%+ มีโอกาสเป็น Variant พิเศษ')}
-    ${slider('💰 ราคา','priceStrategy',0,100,`ตลาดเฉลี่ย ${marketAveragePercent(state.currentEvent)}%`)}
+    ${slider('💰 ราคา','priceStrategy',0,100,`ราคาตลาดในขณะนี้คือ ${marketAveragePercent(state.currentEvent)}%`)}
     ${slider('🏭 การผลิต','prodPct',0,150,'90% คือต้นทุน/เครื่องดีที่สุด')}
   </div>
   <div class="card invest-card">
