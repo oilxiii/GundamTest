@@ -1826,7 +1826,30 @@ function investmentPreview(c){
     adText:`บูสต์ยอดขาย +${adPct}%`,
     adPct:Math.round(adPct/50*100),
     facText:`รอบหน้าผลิตหุ่นได้ ${nextUnits} ตัว`,
-    facPct:Math.round(nextCapacity/GameData.MAX_CAPACITY*100)
+    facPct:(()=>{
+      const milestones=[25,50,75,100];
+
+      let previous = 0;
+      let target = 25;
+
+      for(const step of milestones){
+        if(nextUnits < step){
+          target = step;
+          break;
+        }
+        previous = step;
+      }
+
+      if(nextUnits >= 100) return 100;
+
+      return Math.max(
+        0,
+        Math.min(
+          100,
+          Math.round(((nextUnits - previous) / (target - previous)) * 100)
+        )
+      );
+    })()
   };
 }
 function currentCalc(){
