@@ -34,12 +34,17 @@
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#12181f;color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;}
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 body{position:fixed;inset:0}
 button,input{font:inherit;color:inherit}
-button{border:0;background:none;cursor:pointer}
+button{border:0;background:none;cursor:pointer;transition:transform .12s ease,filter .12s ease,background-color .12s ease,box-shadow .12s ease}
 input[type=number]{-moz-appearance:textfield}
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+::selection{background:rgba(255,216,79,.35);color:#fff}
+.pages::-webkit-scrollbar{width:5px}
+.pages::-webkit-scrollbar-track{background:transparent}
+.pages::-webkit-scrollbar-thumb{background:rgba(94,180,255,.35);border-radius:99px}
 
 .phone{
   width:min(430px,100vw);height:100vh;height:100dvh;margin:0 auto;
@@ -55,7 +60,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 .card{
   background:linear-gradient(180deg,rgba(17,42,64,.85),rgba(6,16,27,.95));
   border:1px solid var(--line-strong);border-radius:var(--r-md);
-  box-shadow:0 0 0 1px rgba(0,0,0,.35) inset;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35) inset,0 1px 0 rgba(255,255,255,.05) inset,0 8px 20px -12px rgba(0,0,0,.6);
   overflow:hidden;min-width:0;
 }
 .section-title{
@@ -86,7 +91,8 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 .brand-title{font-size:12.5px;font-weight:900;letter-spacing:.4px;line-height:1.15}
 .hud{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .hud-item{
-  background:var(--panel2);border:1px solid var(--line);border-radius:var(--r-sm);
+  background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);background-color:var(--panel2);
+  border:1px solid var(--line);border-radius:var(--r-sm);
   padding:5px 6px;display:flex;flex-direction:column;gap:2px;min-width:0;
 }
 .hud-label{font-size:8.4px;color:var(--muted);font-weight:800;letter-spacing:.8px;text-transform:uppercase;line-height:1}
@@ -101,14 +107,17 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
   height:38px;display:flex;align-items:center;justify-content:center;gap:5px;
   font-size:var(--fs-sm);font-weight:800;letter-spacing:.15px;color:var(--muted);
   background:var(--panel2);border:1px solid var(--line);border-radius:var(--r-sm);
+  transition:transform .12s ease,filter .12s ease,background-color .15s ease,box-shadow .15s ease;
 }
+.tab:active{transform:scale(.97)}
 .tab-num{
   width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.08);
   display:grid;place-items:center;font-size:9px;font-weight:900;color:var(--muted);flex:0 0 auto;
+  transition:background-color .15s ease,color .15s ease;
 }
 .tab.active{
   color:#0c0a04;background:linear-gradient(180deg,#ffe66b,#f0b52f);border-color:#ffe66b;
-  box-shadow:0 2px 10px rgba(255,216,79,.25);
+  box-shadow:0 2px 10px rgba(255,216,79,.3),0 0 0 1px rgba(255,255,255,.15) inset;
 }
 .tab.active .tab-num{background:rgba(0,0,0,.18);color:#3a2a03}
 .tab.disabled{opacity:.4;pointer-events:none}
@@ -131,14 +140,15 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 }
 .btn-primary{
   background:linear-gradient(180deg,#ffe066,#e2a72a);color:#241a02;
-  box-shadow:0 3px 12px rgba(226,167,42,.35);
+  box-shadow:0 3px 12px rgba(226,167,42,.4),0 1px 0 rgba(255,255,255,.35) inset;
 }
-.btn-primary:active{filter:brightness(.95)}
+.btn-primary:active{filter:brightness(.95);transform:scale(.98);box-shadow:0 1px 6px rgba(226,167,42,.35),0 1px 0 rgba(255,255,255,.25) inset}
 .btn-secondary{
   background:var(--panel2);color:var(--text);border:1px solid var(--line-strong);
 }
-.btn-secondary:active{background:var(--panel-raised)}
-.arrow{opacity:.85}
+.btn-secondary:active{background:var(--panel-raised);transform:scale(.98)}
+.arrow{opacity:.85;transition:transform .15s ease}
+.btn:active .arrow{transform:translateX(2px)}
 
 /* ---------- BRIEFING ---------- */
 .hero{padding:var(--sp-3);display:flex;align-items:center;gap:var(--sp-3)}
@@ -198,7 +208,9 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:26px;margin:6px 0 0;background:transparent}
 input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:99px;background:linear-gradient(90deg,var(--accent,var(--gold-deep)),rgba(255,255,255,.12));}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-8px;border-radius:50%;
-  background:var(--accent,var(--gold));border:3px solid #10151b;box-shadow:0 1px 5px rgba(0,0,0,.5)}
+  background:var(--accent,var(--gold));border:3px solid #10151b;box-shadow:0 1px 5px rgba(0,0,0,.5),0 0 0 4px rgba(255,255,255,.04);
+  transition:transform .12s ease,box-shadow .12s ease}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12);box-shadow:0 1px 6px rgba(0,0,0,.55),0 0 0 6px rgba(255,255,255,.07)}
 input[type=range]::-moz-range-track{height:6px;border-radius:99px;background:rgba(255,255,255,.12)}
 input[type=range]::-moz-range-progress{height:6px;border-radius:99px;background:var(--accent,var(--gold-deep))}
 input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--accent,var(--gold));border:3px solid #10151b}
@@ -230,8 +242,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;
   border:1px solid var(--line);border-radius:var(--r-sm);min-width:0;min-height:66px;
   color:var(--muted);padding:5px 3px;background:rgba(255,255,255,.02);
+  transition:transform .12s ease,border-color .15s ease,background-color .15s ease;
 }
-.unit-card.active{border:2px solid var(--gold);color:#fff;background:rgba(255,216,79,.1)}
+.unit-card:active:not(.locked){transform:scale(.96)}
+.unit-card.active{border:2px solid var(--gold);color:#fff;background:rgba(255,216,79,.1);box-shadow:0 0 0 1px rgba(255,216,79,.15) inset}
 .unit-card.locked{opacity:.55}
 .unit-card .mini{width:24px;height:24px;image-rendering:pixelated}
 .unit-card-name{font-size:8.4px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;line-height:1.15;margin-top:1px}
@@ -265,6 +279,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   min-height:31px;border:1px solid var(--line-strong);border-radius:8px;background:var(--panel2);
   color:#fff;font-size:var(--fs-2xs);font-weight:900;padding:5px 3px;
 }
+.mini-btn:active{transform:scale(.96)}
 .mini-btn.primary{border-color:rgba(255,216,79,.9);background:linear-gradient(180deg,#ffe066,#c58a1f);color:#231901}
 .mini-btn.danger{border-color:rgba(255,84,112,.75);background:#30111c;color:#ffdce5}
 .contract-line{display:flex;align-items:center;gap:5px}
@@ -281,9 +296,18 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .share-panel{display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid var(--line);
   border-radius:var(--r-sm);padding:10px;background:rgba(255,255,255,.02)}
 .pie-title{font-size:var(--fs-xs);color:var(--gold);font-weight:800;letter-spacing:.3px}
-.pie{width:96px;height:96px;border-radius:50%;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 4px rgba(0,0,0,.18) inset}
+.pie-wrap{position:relative;width:112px;height:112px}
+.pie-svg{width:100%;height:100%;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.pie-svg path{transition:transform .18s ease}
+.pie-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center}
+.pie-center-label{font-size:7.5px;color:var(--muted);font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.pie-center-value{font-size:14px;font-weight:900;color:var(--text);line-height:1.15}
 .legend{width:100%;max-width:220px;display:grid;gap:4px;font-size:var(--fs-xs)}
-.leg{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:6px;align-items:center;min-width:0}
+.leg{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:6px;align-items:center;min-width:0;
+  padding:3px 6px;border-radius:7px;border:1px solid transparent}
+.leg.you{background:rgba(255,216,79,.1);border-color:rgba(255,216,79,.4)}
+.leg.you span:nth-child(2){color:var(--gold);font-weight:900}
+.leg.you b{color:var(--gold)}
 .dot{width:8px;height:8px;border-radius:2px}
 .leg span:nth-child(2){white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
 .leg b{font-size:var(--fs-xs);color:#fff}
@@ -291,7 +315,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 
 /* ---------- 8-player / AI difficulty ---------- */
 select.field{appearance:none;-webkit-appearance:none;background:#07121d;color:#fff}
-.field{height:40px}.rank-row.rank-all{gap:5px}}
+.field{height:40px}
 
 /* ---------- HOME / END ---------- */
 .start-panel{padding:18px 16px;display:flex;flex-direction:column;gap:12px;margin:auto var(--sp-3)}
@@ -417,8 +441,9 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   line-height:.92;
   font-weight:1000;
   letter-spacing:.5px;
-  color:#fff4bf;
-  text-shadow:0 2px 0 #7a4d10,0 0 14px rgba(255,216,79,.22);
+  background:linear-gradient(180deg,#fff9e0,#ffd84f 65%,#e2a72a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 2px 0 #7a4d10,0 0 18px rgba(255,216,79,.3);
 }
 .home-game-title span{
   display:block;
@@ -1337,7 +1362,7 @@ function currentCalc(){
 function updateCommandNumbers(){
   const c=currentCalc();
   const invNow = inventoryValue(c.p,c.unit.id).qty;
-  const map={prod:`${c.prod} เครื่อง`,cp:`${c.cpUse}/${c.p.capacity} CP`,cost:`${c.econ.unitCost} Cr.`,price:`${c.econ.unitPrice} Cr.`,invest:`${fmt(c.upfront)} Cr.`,status:c.status,stock:String(invNow)};
+  const map={prod:`${c.prod} เครื่อง`,cp:`${c.cpUse}/${c.p.capacity} CP`,cost:`${c.econ.unitCost} Cr.`,price:`${c.econ.unitPrice} Cr.`,invest:`${fmt(c.upfront)} Cr.`,status:c.status,stock:String(invNow),rndGain:String(GameData.rpFromInvestment(c.d.rndInvest))};
   Object.entries(map).forEach(([k,v])=>{ document.querySelectorAll(`[data-live="${k}"]`).forEach(el=>el.textContent=v); });
   const icon=$('[data-live="unitIcon"]'); if(icon) icon.innerHTML=unitIcon(c.unit);
   const name=$('[data-live="unitName"]'); if(name) name.textContent=c.unit.name;
@@ -1570,7 +1595,7 @@ function renderCommand(){
   <div class="card invest-card">
     <div class="section-title"><span class="text">การลงทุน</span></div>
     <div class="invest-grid">${numberBox('R&D','rndInvest')}${numberBox('โฆษณา','lobby')}${numberBox('โรงงาน','factoryInvest')}</div>
-    <div class="rnd-bar"><div class="rnd-label"><b>${esc(tech.label)}</b><span>${esc(tech.detail)}</span></div><div class="rnd-track"><div class="rnd-fill" style="width:${tech.pct}%"></div></div><div class="rnd-gain">รอบนี้ +${GameData.rpFromInvestment(c.d.rndInvest)} RP</div></div>
+    <div class="rnd-bar"><div class="rnd-label"><b>${esc(tech.label)}</b><span>${esc(tech.detail)}</span></div><div class="rnd-track"><div class="rnd-fill" style="width:${tech.pct}%"></div></div><div class="rnd-gain">รอบนี้ +<span data-live="rndGain">${GameData.rpFromInvestment(c.d.rndInvest)}</span> RP</div></div>
   </div>
   <div class="card avail-card">
     <div class="section-title"><span class="text">Available Production</span></div>
@@ -1584,10 +1609,31 @@ function renderCommand(){
 function marketPieHTML(sorted){
   const colors=['#77ff72','#ffd84f','#73d7ff','#ff4fb9','#9b8cff','#ff8a5b','#58e0c2','#b8c2d8'];
   const total=sorted.reduce((s,r)=>s+Math.max(0,r.share||0),0)||1;
+  const top=sorted.slice(0,8);
+  const cx=60,cy=60,rOuter=54,rInner=32;
+  const toXY=(r,deg)=>{ const rad=(deg-90)*Math.PI/180; return {x:cx+r*Math.cos(rad),y:cy+r*Math.sin(rad)}; };
   let acc=0;
-  const stops=sorted.slice(0,8).map((r,i)=>{ const start=acc/total*100; acc+=Math.max(0,r.share||0); const end=acc/total*100; return `${colors[i]} ${start.toFixed(2)}% ${end.toFixed(2)}%`; }).join(', ');
-  const legend=sorted.slice(0,8).map((r,i)=>`<div class="leg"><span class="dot" style="background:${colors[i]}"></span><span>${esc(r.playerId==='you'?me().name:r.name.replace(' [BOT]',''))}</span><b>${Math.round((r.share||0)*1000)/10}%</b></div>`).join('');
-  return `<div class="share-panel"><div class="pie-title">Market Share</div><div class="pie" style="background:conic-gradient(${stops})"></div><div class="legend">${legend}</div></div>`;
+  const you=top.find(r=>r.playerId==='you');
+  const slices=top.map((r,i)=>{
+    const share=Math.max(0,r.share||0);
+    const startAngle=acc/total*360; acc+=share; const endAngle=acc/total*360;
+    const isYou=r.playerId==='you';
+    const largeArc=(endAngle-startAngle)>180?1:0;
+    const midAngle=(startAngle+endAngle)/2;
+    const off=isYou?toXY(5,midAngle):{x:cx,y:cy}; const dx=off.x-cx, dy=off.y-cy;
+    const p1=toXY(rOuter,endAngle),p2=toXY(rOuter,startAngle),p3=toXY(rInner,startAngle),p4=toXY(rInner,endAngle);
+    const d=`M${p1.x.toFixed(2)},${p1.y.toFixed(2)} A${rOuter},${rOuter} 0 ${largeArc} 0 ${p2.x.toFixed(2)},${p2.y.toFixed(2)} L${p3.x.toFixed(2)},${p3.y.toFixed(2)} A${rInner},${rInner} 0 ${largeArc} 1 ${p4.x.toFixed(2)},${p4.y.toFixed(2)} Z`;
+    const fill=colors[i];
+    return `<path d="${d}" fill="${fill}" transform="translate(${dx.toFixed(2)},${dy.toFixed(2)})"/>`;
+  }).join('');
+  const legend=top.map((r,i)=>{
+    const isYou=r.playerId==='you';
+    const name=esc(isYou?me().name:r.name.replace(' [BOT]',''));
+    const pct=Math.round((r.share||0)*1000)/10;
+    return `<div class="leg ${isYou?'you':''}"><span class="dot" style="background:${colors[i]}"></span><span>${name}</span><b>${pct}%</b></div>`;
+  }).join('');
+  const youPct=you?Math.round((you.share||0)*1000)/10:0;
+  return `<div class="share-panel"><div class="pie-title">Market Share</div><div class="pie-wrap"><svg class="pie-svg" viewBox="0 0 120 120">${slices}</svg><div class="pie-center"><span class="pie-center-label">คุณ</span><span class="pie-center-value">${youPct}%</span></div></div><div class="legend">${legend}</div></div>`;
 }
 function renderReport(){
   const rep=state.lastReport;
@@ -1699,9 +1745,16 @@ function renderEnd(){
   })).sort((a,b)=>b.score-a.score);
   app.innerHTML=`<main class="phone end-phone">${topHTML()}<section class="pages"><div class="page end-page"><div class="page-body"><div class="card news"><div class="section-title"><span class="text">Final Ranking</span><span class="badge">END</span></div><div class="news-lines" style="padding:var(--sp-2) var(--sp-3) var(--sp-3)">${ranks.map((p,i)=>`<div class="news-line"><b>#${i+1} ${esc(p.name)}</b> · Score ${fmt(p.score)} · Cash ${fmt(p.funds)} · ${reputationTitle(p.reputation)}</div>`).join('')}</div></div></div><div class="actions single"><button id="resetGame" class="btn btn-primary">เริ่มเกมใหม่</button></div></div></section></main><div class="marker">P65 RELAXED HOME SPACING</div>`; bindCommon();
 }
+let _lastRenderedPhase=null;
 function renderGame(){
   if(!state.currentEvent) state.currentEvent=prepareMarketEvent(state.round||1);
+  const prevPagesEl=document.querySelector('.pages');
+  const prevScroll=prevPagesEl?prevPagesEl.scrollTop:0;
+  const samePhase=_lastRenderedPhase===state.phase;
   app.innerHTML=`<main class="phone">${topHTML()}<section class="pages">${state.phase==='briefing'?renderBriefing():state.phase==='command'?renderCommand():renderReport()}</section></main><div class="marker">P65 RELAXED HOME SPACING</div>`;
+  const pagesEl=document.querySelector('.pages');
+  if(pagesEl && samePhase) pagesEl.scrollTop=prevScroll;
+  _lastRenderedPhase=state.phase;
   bindCommon();
 }
 function render(){ ensureState(); if(state.screen==='end') return renderEnd(); if(!state.players.length || state.screen==='home') renderHome(); else renderGame(); }
