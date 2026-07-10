@@ -1808,7 +1808,7 @@ function investmentPreview(c){
   let rndText='ปลดล็อกครบแล้ว', rndPct=100;
   if(nextTech){
     const remaining=Math.max(0,nextTech.rpRequired-projectedRp);
-    rndText=remaining>0 ? `อีก ${remaining} RP เลื่อนระดับเทคโนโลยี` : `พร้อมเลื่อน Lv.${nextTech.level}`;
+    rndText=remaining>0 ? `อีก ${remaining} RP อัพเกรดเทคโนโลยี` : `พร้อมเลื่อน Lv.${nextTech.level}`;
     rndPct=Math.max(0,Math.min(100,Math.round(projectedRp/nextTech.rpRequired*100)));
   }
 
