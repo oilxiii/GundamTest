@@ -699,6 +699,11 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 }
 .scrap-btn:active{transform:scale(.96)}
 
+
+.company-name-input::placeholder{
+  color:rgba(238,246,255,.38);
+  font-weight:700;
+}
 </style></head><body><div id="app"><main class="phone home-phone"><header class="topbar"><div class="brand"><svg class="star" viewBox="0 0 100 100"><path fill="#ffd84f" d="M50 5l12 31 33 2-26 21 9 33-28-18-28 18 9-33L5 38l33-2z"/></svg><div class="brand-title">MOBILE SUIT<br>PRODUCTION COMMAND</div></div></header><section class="card start-panel"><h2>ต้องเปิดผ่าน Browser ที่รัน JavaScript</h2><p class="muted">ถ้าเห็นหน้านี้ แปลว่าไฟล์กำลังถูกเปิดใน Preview/Quick Look ของแอป ซึ่งไม่รัน JavaScript เกมจึงเล่นไม่ได้</p><p class="muted">วิธีทดสอบบนมือถือ: อัปไฟล์นี้ขึ้น GitHub Pages / Netlify / เว็บเซิร์ฟเวอร์เล็ก ๆ แล้วเปิดลิงก์ผ่าน Safari หรือ Chrome</p><p class="yellow">ตัว UI พร้อมแล้ว แต่เกมจริงต้องใช้ JavaScript เพื่อคำนวณรอบ/ตลาด/AI</p></section></main></div>
 <svg width="0" height="0" style="position:absolute;overflow:hidden">
 <symbol id="ball-symbol" viewBox="0 0 32 32"><rect x="14" y="2" width="4" height="4" fill="#111"/><rect x="13" y="5" width="6" height="2" fill="#1e252e"/><rect x="10" y="7" width="12" height="2" fill="#05070b"/><rect x="8" y="9" width="16" height="3" fill="#05070b"/><rect x="6" y="12" width="20" height="9" fill="#05070b"/><rect x="8" y="21" width="16" height="4" fill="#05070b"/><rect x="12" y="25" width="8" height="2" fill="#05070b"/><rect x="11" y="8" width="10" height="1" fill="#f3efe2"/><rect x="9" y="10" width="14" height="3" fill="#f3efe2"/><rect x="7" y="13" width="18" height="8" fill="#f3efe2"/><rect x="9" y="21" width="14" height="3" fill="#f3efe2"/><rect x="12" y="25" width="8" height="1" fill="#f3efe2"/><rect x="8" y="14" width="4" height="6" fill="#c8d0d6"/><rect x="20" y="14" width="4" height="6" fill="#6f7b86"/><rect x="13" y="12" width="6" height="4" fill="#05070b"/><rect x="14" y="13" width="4" height="2" fill="#7cc7ff"/><rect x="9" y="18" width="14" height="1" fill="#e23a34"/><rect x="3" y="16" width="5" height="2" fill="#05070b"/><rect x="2" y="17" width="2" height="4" fill="#313944"/><rect x="24" y="16" width="5" height="2" fill="#05070b"/><rect x="28" y="17" width="2" height="4" fill="#313944"/><rect x="1" y="20" width="4" height="2" fill="#05070b"/><rect x="27" y="20" width="4" height="2" fill="#05070b"/><rect x="13" y="27" width="3" height="4" fill="#05070b"/><rect x="17" y="27" width="3" height="4" fill="#05070b"/><rect x="14" y="28" width="2" height="3" fill="#145bd8"/><rect x="18" y="28" width="2" height="3" fill="#145bd8"/></symbol>
@@ -1156,7 +1161,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass71-save';
+const KEY = 'mspc-pass72-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -1589,7 +1594,7 @@ function techProgress(company=me()){
   return {label:`R&D Lv.${level}: ${rp}/${next.rpRequired} RP`, detail:`อีก ${Math.max(0,next.rpRequired-rp)} RP ปลดล็อก ${names}`, pct:Math.max(0,Math.min(100,Math.round(rp/next.rpRequired*100)))};
 }
 function startGame(){
-  const name = ($('#companyName')?.value || 'OIL Heavy Industries').trim();
+  const name = ($('#companyName')?.value || 'บริษัทของคุณ').trim();
   const count = clamp($('#botCount')?.value || 2,1,7);
   const selectedDifficulty = $('#aiDifficulty')?.value || 'medium';
   const styles=['research','mass','balanced'];
@@ -1783,7 +1788,7 @@ function renderHome(){
 
     <section class="card start-panel">
       <h2>ตั้งบริษัทผลิต Mobile Suit</h2>
-      <input id="companyName" class="field" placeholder="ชื่อบริษัท" value="${esc(state.name||'OIL Heavy Industries')}">
+      <input id="companyName" class="field company-name-input" placeholder="พิมพ์ชื่อบริษัทของคุณที่นี่" value="${esc(state.name||'')}" onfocus="this.dataset.placeholder=this.placeholder;this.placeholder='';" onblur="if(!this.value)this.placeholder=this.dataset.placeholder||'พิมพ์ชื่อบริษัทของคุณที่นี่';">
 
       <div class="home-setting-head">
         <span class="setting-title">จำนวนคู่แข่ง</span>
