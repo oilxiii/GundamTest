@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="format-detection" content="telephone=no"><title>Mobile Suit Production Command PASS 46 Original Assets Restore</title><style>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="format-detection" content="telephone=no"><title>Mobile Suit Production Command PASS 90 Pilot Event Rework</title><style>
 :root{
   --bg:#050b13;
   --panel:#0b1a2a;
@@ -768,6 +768,45 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
   background:rgba(255,216,79,.16);
 }
 
+.audio-controls{
+  position:absolute;
+  top:calc(env(safe-area-inset-top,0px) + 8px);
+  right:10px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.audio-controls .new-game-mini,
+.audio-controls .sound-mini{
+  position:static;
+}
+.sound-mini{
+  height:28px;
+  min-width:28px;
+  padding:0 8px;
+  border:1px solid rgba(95,195,255,.55);
+  border-radius:999px;
+  background:rgba(5,11,19,.88);
+  color:var(--blue);
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.sound-mini.muted{
+  color:var(--muted);
+  border-color:rgba(143,165,186,.35);
+}
+.sound-mini:active{
+  transform:scale(.95);
+  background:rgba(95,195,255,.14);
+}
+
 
 /* PASS 76: industrial scale and production efficiency */
 .bulk-discount-badge{
@@ -900,26 +939,58 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
 
   const SPECIAL_EVENTS = [
-    { id:'amuro-bay', tier:4, name:'อามุโล่ เบย์', role:'นักบินเอซ', unitIds:['z8'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.10, duration:3, baseWeight:10, startRound:5, pricePct:0.15,
-      pitch:'นักบินระดับตำนานสนใจหุ่นนิวอาร์เอ็กซ์ของบริษัทคุณ' },
-    { id:'zaza-impossible', tier:1, name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', unitIds:['z4'], targetLabel:'ดาวตกสีแดง / Commander Type', priceBonus:0.15, duration:3, baseWeight:10, startRound:5, pricePct:0.16,
-      pitch:'นักบินชื่อดังชื่นชอบดาวตกสีแดงและต้องการเป็นพรีเซ็นเตอร์' },
-    { id:'rookie-pilot', tier:3, name:'นักบินดาวรุ่ง', role:'นักบินเอซ', unitIds:['z5'], targetLabel:'กุ๊กวัน / กุ๊กทูตัวลับ', priceBonus:0.08, duration:3, baseWeight:14, startRound:3, pricePct:0.10,
-      pitch:'นักบินดาวรุ่งกำลังมองหาบริษัทที่กล้าดันหุ่นสายกุ๊ก' },
-    { id:'military-reviewer', tier:0, name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', unitIds:['z1'], targetLabel:'Ball' , priceBonus:0.07, duration:3, baseWeight:14, startRound:3, pricePct:0.08,
-      pitch:'นักรีวิวภาคสนามสนใจทำแคมเปญให้ Ball' },
-    { id:'legend-test-pilot', tier:4, name:'นักบินทดสอบระดับตำนาน', role:'นักบินเอซ', unitIds:['z8'], targetLabel:'หุ่นนิวอาร์เอ็กซ์ / รุ่นทอง', priceBonus:0.18, duration:3, baseWeight:8, startRound:8, pricePct:0.20,
-      pitch:'นักบินทดสอบระดับตำนานพร้อมยกระดับภาพลักษณ์ของหุ่นนิวอาร์เอ็กซ์' }
+    { id:'rookie-pilot', name:'นักบินดาวรุ่ง', role:'นักบินดาวรุ่ง', effectType:'allPrice', effectValue:0.10, effectText:'ราคาขายหุ่นทุกตัว +10%', targetLabel:'หุ่นทุกตัว', duration:3, baseWeight:18, startRound:2, pricePct:0.08,
+      pitch:'นักบินดาวรุ่งสนใจร่วมโปรโมตหุ่นทุกแบบของบริษัทคุณ' },
+    { id:'military-reviewer', name:'นักรีวิวสายทหาร', role:'ผู้เชี่ยวชาญภาคสนาม', effectType:'priorityFlat', effectValue:1, effectText:'Priority หุ่นทุกตัว +1', targetLabel:'หุ่นทุกตัวได้รับความสนใจจากกองทัพเพิ่มขึ้น', duration:3, baseWeight:18, startRound:2, pricePct:0.08,
+      pitch:'นักรีวิวสายทหารพร้อมทดสอบหุ่นของบริษัทและช่วยดึงความสนใจจากกองทัพ' },
+    { id:'recycler', name:'นักรีไซเคิล', role:'ผู้เชี่ยวชาญการกู้ซาก', effectType:'scrapRate', effectValue:0.50, effectText:'ราคาขายซากเพิ่มจาก 25% เป็น 50%', targetLabel:'สินค้าคงคลังทุกชนิด', duration:2, baseWeight:18, startRound:5, pricePct:0.06,
+      pitch:'เครือข่ายรีไซเคิลเสนอรับซื้อซากและอะไหล่จากบริษัทคุณในราคาพิเศษ' },
+
+    { id:'amuro-bay', name:'อามุโล่ เบย์', role:'นักบินเอซ', effectType:'qualityFree', effectValue:1, effectText:'Quality 70%+ ไม่เสียต้นทุน Quality เพิ่ม', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.15,
+      pitch:'อามุโล่ เบย์พร้อมช่วยปรับสายการผลิตหุ่นคุณภาพสูงของบริษัทคุณ' },
+    { id:'zaza-impossible', name:'ซาซ่า อิมพอสสิเบิล', role:'นักบินเอซ', effectType:'specialPrice', effectValue:0.20, effectText:'ราคาขายหุ่นรุ่นพิเศษ +20%', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.16,
+      pitch:'ซาซ่า อิมพอสสิเบิลต้องการเป็นพรีเซ็นเตอร์ให้หุ่นรุ่นพิเศษของบริษัทคุณ' },
+    { id:'kira-yamato', name:'คิละ ยามาโต้', role:'นักบินเอซ', effectType:'qualityFree', effectValue:1, effectText:'Quality 70%+ ไม่เสียต้นทุน Quality เพิ่ม', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.15,
+      pitch:'คิละ ยามาโต้พร้อมถ่ายทอดข้อมูลการบินเพื่อยกระดับสายการผลิตคุณภาพสูง' },
+    { id:'mu-la-flaga-cappuccino', name:'มูราฟาก้า คาปูชิโน่', role:'นักบินเอซ', effectType:'specialPrice', effectValue:0.20, effectText:'ราคาขายหุ่นรุ่นพิเศษ +20%', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.16,
+      pitch:'มูราฟาก้า คาปูชิโน่สนใจช่วยสร้างมูลค่าให้หุ่นรุ่นพิเศษของบริษัทคุณ' },
+    { id:'setsu-fzk', name:'เซ็ทซึ เอฟแซดเค', role:'นักบินเอซ', effectType:'qualityFree', effectValue:1, effectText:'Quality 70%+ ไม่เสียต้นทุน Quality เพิ่ม', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.15,
+      pitch:'เซ็ทซึ เอฟแซดเคเสนอข้อมูลภาคสนามเพื่อลดความสูญเสียในการผลิตหุ่นคุณภาพสูง' },
+    { id:'catone-daimun', name:'แคทวัน ไดมุน', role:'นักบินเอซ', effectType:'specialPrice', effectValue:0.20, effectText:'ราคาขายหุ่นรุ่นพิเศษ +20%', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:3, baseWeight:14, startRound:5, pricePct:0.16,
+      pitch:'แคทวัน ไดมุนพร้อมผลักดันหุ่นรุ่นพิเศษของบริษัทสู่ตลาดระดับเอซ' },
+
+    { id:'legendary-pilot', name:'นักบินระดับตำนาน', role:'ตำนานแห่งสมรภูมิ', effectType:'specialPrice', effectValue:0.50, effectText:'ราคาขายหุ่นรุ่นพิเศษ +50%', targetLabel:'หุ่นคุณภาพ 70% ขึ้นไป', duration:1, baseWeight:10, startRound:7, pricePct:0.20,
+      pitch:'ตำนานแห่งสมรภูมิเลือกหุ่นรุ่นพิเศษของบริษัทคุณสำหรับภารกิจเพียงหนึ่งไตรมาส' }
   ];
 
   function getSpecialEventById(id) { return SPECIAL_EVENTS.find(e => e.id === id); }
-  function activeUnitContractBonus(player, unitId, baseId = null) {
-    const contracts = (player && player.activeContracts) || [];
-    const ids = [unitId, baseId].filter(Boolean);
-    return contracts
-      .filter(c => c.remaining > 0 && c.unitIds && ids.some(id => c.unitIds.includes(id)))
-      .reduce((sum,c)=> sum + (c.priceBonus || 0), 0);
+  function activePilotEffects(player, effectType) {
+    return ((player && player.activeContracts) || []).filter(c => c.remaining > 0 && c.effectType === effectType);
   }
+  function activeUnitContractBonus(player, unitId, baseId = null, quality = 0) {
+    const q = clamp(Number(quality || 0), 0, 100);
+    return ((player && player.activeContracts) || [])
+      .filter(c => c.remaining > 0)
+      .reduce((sum,c)=> {
+        if(c.effectType === 'allPrice') return sum + Number(c.effectValue || c.priceBonus || 0);
+        if(c.effectType === 'specialPrice' && q >= 70) return sum + Number(c.effectValue || c.priceBonus || 0);
+        // compatibility with contracts from older saves
+        const ids = [unitId, baseId].filter(Boolean);
+        if(c.unitIds && ids.some(id => c.unitIds.includes(id))) return sum + Number(c.priceBonus || 0);
+        return sum;
+      }, 0);
+  }
+  function hasQualityFreeContract(player, quality = 0) {
+    return Number(quality || 0) >= 70 && activePilotEffects(player, 'qualityFree').length > 0;
+  }
+  function activePriorityBonus(player) {
+    return activePilotEffects(player, 'priorityFlat').reduce((sum,c)=>sum + Number(c.effectValue || 0), 0);
+  }
+  function activeScrapRate(player) {
+    const rates = activePilotEffects(player, 'scrapRate').map(c=>Number(c.effectValue || SCRAP_RATE));
+    return rates.length ? Math.max(SCRAP_RATE, ...rates) : SCRAP_RATE;
+  }
+
 
   const BOT_NAMES = ['Anaheim', 'Zeonic', 'MIP Works', 'Luna Steel', 'Axis Dynamics', 'Jupiter Arsenal', 'Side Seven Works'];
 
@@ -999,7 +1070,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
     const unit = getUnit(quality, priceStrategy, unitId, player);
     const utilMult = utilizationMultiplier(prodPct);
     const scaleMult = volumeDiscount(productionUnits);
-    const qMult = qualityCostMultiplier(quality);
+    const qMult = hasQualityFreeContract(player, quality) ? 1 : qualityCostMultiplier(quality);
     const unitCost = Math.round((unit.baseCost || BASE_COST) * costMult * utilMult * scaleMult * qMult * 10) / 10;
     const pricePolicy = 0.78 + (clamp(priceStrategy || 50, 0, 100) / 100) * 0.62;
     const qualityRatio = clamp(Number(quality || 0), 0, 100) / 100;
@@ -1203,7 +1274,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
 
       const baseAppeal = (qualityAppeal * 42) + highQualityAppealBonus + (p.reputation * 0.3);
       const tierBias = { 0:1.0, 1:1.5, 2:2.0, 3:2.5, 4:3.0 };
-      const priorityMultiplier = tierBias[unit.tier] || 1.0;
+      const priorityMultiplier = (tierBias[unit.tier] || 1.0) + activePriorityBonus(p);
       const adBoost = 1 + Math.min(0.50, Math.max(0, Number(sub.lobby || 0)) / 200);
       const appeal = Math.max(
         0.0001,
@@ -1240,7 +1311,7 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
       const holding = inventoryHoldingCost(tempPlayer);
       const matchedPreferred = !!(event.preferredUnitId && (event.preferredUnitId === r.unit.id || event.preferredUnitId === r.unit.baseId));
       const marketBonus = matchedPreferred ? 0.10 : 0;
-      const contractBonus = activeUnitContractBonus(r.player, r.unit.id, r.unit.baseId);
+      const contractBonus = activeUnitContractBonus(r.player, r.unit.id, r.unit.baseId, r.sub.quality ?? r.sub.rndFocus ?? 50);
       const revenue = unitsSold * r.econ.unitPrice * (1 + marketBonus + contractBonus);
       const productionCost = r.sub.production * r.econ.unitCost;
       const perfChance = qualityPerformanceChance(r.sub.quality ?? r.sub.rndFocus ?? 50);
@@ -1257,13 +1328,13 @@ pre{white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.3}
     return { event, results };
   }
 
-  return { MAX_ROUNDS, START_FUNDS, BASE_POOL, BASE_PRICE, BASE_COST, START_CAPACITY, MAX_CAPACITY, EXPANSION_COST_PER_UNIT, SCRAP_RATE, UNIT_TYPES, TECH_TIERS, EVENTS, SPECIAL_EVENTS, BOT_NAMES, getUnit, unitEconomics, getBulkDiscount, qualityVariant, qualityPerformanceChance, rpFromInvestment, unlockedUnits, unlockedUnitIds, nextTechTier, botDecision, pickMarketEvent, getEventById, getSpecialEventById, inventoryTotals, inventoryRate, inventoryHoldingCost, resolveRound };
+  return { MAX_ROUNDS, START_FUNDS, BASE_POOL, BASE_PRICE, BASE_COST, START_CAPACITY, MAX_CAPACITY, EXPANSION_COST_PER_UNIT, SCRAP_RATE, UNIT_TYPES, TECH_TIERS, EVENTS, SPECIAL_EVENTS, BOT_NAMES, getUnit, unitEconomics, getBulkDiscount, qualityVariant, qualityPerformanceChance, rpFromInvestment, unlockedUnits, unlockedUnitIds, nextTechTier, botDecision, pickMarketEvent, getEventById, getSpecialEventById, activeScrapRate, inventoryTotals, inventoryRate, inventoryHoldingCost, resolveRound };
 })();
 
 
 (function(){
 'use strict';
-const KEY = 'mspc-pass87-save';
+const KEY = 'mspc-pass89-save';
 const $ = (sel, root=document) => root.querySelector(sel);
 const app = $('#app');
 const safeStorage = (() => {
@@ -1465,7 +1536,7 @@ function familyMatches(unitId, targetIds=[]){
 function pilotIcon(eventId, cls='pilot-portrait'){
   const isZaza = eventId === 'zaza-impossible';
   const isAmuro = eventId === 'amuro-bay';
-  const isLegend = eventId === 'legend-test-pilot';
+  const isLegend = eventId === 'legendary-pilot' || eventId === 'legend-test-pilot';
   const suit = isZaza ? '#d73535' : isAmuro ? '#1d63d8' : isLegend ? '#7d3c98' : '#6f7b86';
   const suitDark = isZaza ? '#7d1622' : isAmuro ? '#0b2e78' : isLegend ? '#4e2761' : '#3f4d58';
   const hair = isZaza ? '#f4d25b' : '#4a2a18';
@@ -1499,25 +1570,36 @@ function weightedPick(items, weightFn){
   for(const x of weighted){ roll -= x.w; if(roll <= 0) return x.item; }
   return weighted[weighted.length-1].item;
 }
+function companyHasPilotCommitment(companyId){
+  const company = state.players.find(p=>p.id===companyId);
+  const active = (company?.activeContracts||[]).some(c=>c.remaining>0 && c.type==='pilot');
+  const negotiating = (state.special?.pending||[]).some(p=>p.companyId===companyId);
+  const offered = (state.special?.offer?.companyId===companyId) || (state.specialOffer?.companyId===companyId);
+  return active || negotiating || offered;
+}
+function allocatedPilotIds(){
+  const ids = new Set();
+  state.players.forEach(company=>(company.activeContracts||[]).forEach(c=>{if(c.remaining>0 && c.type==='pilot') ids.add(c.eventId||c.id);}));
+  (state.special?.pending||[]).forEach(p=>ids.add(p.eventId||p.id));
+  if(state.special?.offer) ids.add(state.special.offer.eventId||state.special.offer.id);
+  if(state.specialOffer) ids.add(state.specialOffer.eventId||state.specialOffer.id);
+  return ids;
+}
 function eventWeightForCompany(ev, company){
   if(!ev || !company) return 0;
-  const base = ev.baseWeight || 10;
-  const produced = countProducedHistory(company, ev.unitIds||[]);
-  const hasAffinity = produced > 0;
-  const noAffinityPenalty = (ev.tier||1) >= 2 ? 0.06 : 0.28;
-  const productionBonus = hasAffinity ? Math.min(9, 1 + produced/18) : noAffinityPenalty;
-  const already = (company.activeContracts||[]).some(c=>c.id===ev.id || (c.unitIds||[]).some(id=>familyMatches(id, ev.unitIds||[])));
-  return base * reputationWeight(company.reputation) * productionBonus * (already ? 0.15 : 1);
+  const occupiedMult = companyHasPilotCommitment(company.id) ? 0.50 : 1;
+  return Number(ev.baseWeight || 10) * reputationWeight(company.reputation) * occupiedMult;
 }
 function maybeCreateSpecialOfferForRound(){
   ensureState();
   const sp = state.special;
-  if(state.round < 3 || sp.offer || (sp.pending||[]).some(p=>p.companyId==='you')) return;
+  if(state.round < 2 || sp.offer || (sp.pending||[]).some(p=>p.companyId==='you')) return;
   if(sp.offerRound === state.round) return;
-  const candidates = (GameData.SPECIAL_EVENTS||[]).filter(ev => (ev.startRound||3) <= state.round && Number(me()?.techLevel||0) >= Number(ev.tier||0));
+  const allocated = allocatedPilotIds();
+  const candidates = (GameData.SPECIAL_EVENTS||[]).filter(ev => (ev.startRound||2) <= state.round && !allocated.has(ev.id));
   if(!candidates.length){ sp.offerRound = state.round; return; }
-  // มีโอกาสเกิด ไม่ใช่ทุกไตรมาส เพื่อให้ยังเป็น "รายงานพิเศษ"
-  if(Math.random() > 0.58){ sp.offerRound = state.round; return; }
+  // PASS 90: เพิ่มความถี่เป็นโอกาสเกิด 82% ต่อไตรมาส
+  if(Math.random() > 0.82){ sp.offerRound = state.round; return; }
   const pairs=[];
   candidates.forEach(ev=>state.players.forEach(company=>{
     const w = eventWeightForCompany(ev, company);
@@ -1541,10 +1623,10 @@ function signSpecialContract(companyId, offer, silent=false){
   if(company.funds < cost) return false;
   company.funds = Math.max(0, Math.round(company.funds - cost));
   company.activeContracts = company.activeContracts || [];
-  company.activeContracts.push({ id:ev.id, eventId:ev.id, type:'pilot', name:ev.name, role:ev.role, unitIds:ev.unitIds, targetLabel:ev.targetLabel, priceBonus:ev.priceBonus, remaining:ev.duration, cost, pricePct:o.pricePct });
+  company.activeContracts.push({ id:ev.id, eventId:ev.id, type:'pilot', name:ev.name, role:ev.role, effectType:ev.effectType, effectValue:ev.effectValue, effectText:ev.effectText, unitIds:ev.unitIds||[], targetLabel:ev.targetLabel, priceBonus:ev.priceBonus||0, remaining:ev.duration, cost, pricePct:o.pricePct });
   state.special.offer = null;
   state.special.pending = (state.special.pending||[]).filter(p=>!(p.eventId===ev.id && p.companyId===companyId));
-  if(companyId === 'you' && !silent) state.special.lastNotice = `เซ็นสัญญากับ ${ev.name} แล้ว มีผลกับ ${ev.targetLabel} ${ev.duration} ไตรมาส`;
+  if(companyId === 'you' && !silent) state.special.lastNotice = `เซ็นสัญญากับ ${ev.name} แล้ว: ${ev.effectText} เป็นเวลา ${ev.duration} ไตรมาส`;
   return true;
 }
 function acceptSpecialOffer(){
@@ -1634,10 +1716,11 @@ function inventoryRows(player=me()){
     return {...stat,unitId,unit:{name:inventoryUnitName(unitId)}};
   }).filter(x=>x.qty>0);
 }
-function scrapRecoveryForBatches(batches=[]){
+function scrapRecoveryForBatches(batches=[], player=me()){
+  const rate = GameData.activeScrapRate(player);
   return Math.round(
     batches.reduce((sum,b)=>sum+Math.max(0,Math.round(b.qty||0))*Number(b.unitCost||0),0)
-    * GameData.SCRAP_RATE * 10
+    * rate * 10
   )/10;
 }
 function scrapPlayerInventory(unitId){
@@ -1646,8 +1729,6 @@ function scrapPlayerInventory(unitId){
   const qty=batches.reduce((sum,b)=>sum+Math.max(0,Math.round(b.qty||0)),0);
   if(qty<=0) return;
   const recovery=scrapRecoveryForBatches(batches);
-  const label=inventoryUnitName(unitId);
-  if(!confirm(`ขาย ${label} จำนวน ${qty} เครื่องเป็นซาก รับคืน ${fmt(recovery)} Cr.?`)) return;
   const inventory={...(player.inventory||{})};
   delete inventory[unitId];
   state.players=state.players.map(p=>p.id===player.id
@@ -1680,7 +1761,7 @@ function autoScrapBotInventory(player){
     for(const batch of group.batches){
       const qty=Math.max(0,Math.round(batch.qty||0));
       const take=Math.min(qty,removeQty);
-      recovery+=take*Number(batch.unitCost||0)*GameData.SCRAP_RATE;
+      recovery+=take*Number(batch.unitCost||0)*GameData.activeScrapRate(player);
       removeQty-=take;
       const rest=qty-take;
       if(rest>0) kept.push({...batch,qty:rest});
@@ -1694,6 +1775,196 @@ function autoScrapBotInventory(player){
     funds:Math.round((Number(player.funds||0)+recovery)*10)/10
   };
 }
+const AudioEngine=(()=>{
+  let ctx=null;
+  let master=null;
+  let musicGain=null;
+  let sfxGain=null;
+  let enabled=true;
+  let started=false;
+  let musicTimer=null;
+  let musicStep=0;
+  let lastTickAt=0;
+
+  const melody=[
+    64,67,71,76, 74,71,67,64,
+    66,69,73,78, 76,73,69,66,
+    67,71,74,79, 78,74,71,67,
+    62,66,69,74, 73,69,66,62
+  ];
+  const bass=[40,40,43,43,45,45,47,47, 38,38,42,42,43,43,35,35];
+  const chordTones=[
+    [52,55,59],
+    [55,59,62],
+    [57,60,64],
+    [59,62,66]
+  ];
+  const AudioCtx=window.AudioContext||window.webkitAudioContext;
+
+  function ensure(){
+    if(!AudioCtx) return false;
+    if(!ctx){
+      ctx=new AudioCtx();
+      master=ctx.createGain();
+      musicGain=ctx.createGain();
+      sfxGain=ctx.createGain();
+      master.gain.value=enabled?0.70:0;
+      musicGain.gain.value=0.14;
+      sfxGain.gain.value=0.32;
+      musicGain.connect(master);
+      sfxGain.connect(master);
+      master.connect(ctx.destination);
+    }
+    if(ctx.state==='suspended') ctx.resume().catch(()=>{});
+    return true;
+  }
+
+  function midi(n){ return 440*Math.pow(2,(n-69)/12); }
+
+  function tone(freq,duration=0.08,type='square',volume=0.15,delay=0,destination=sfxGain){
+    if(!enabled||!ensure()) return;
+    const now=ctx.currentTime+delay;
+    const osc=ctx.createOscillator();
+    const gain=ctx.createGain();
+    osc.type=type;
+    osc.frequency.setValueAtTime(freq,now);
+    gain.gain.setValueAtTime(0.0001,now);
+    gain.gain.exponentialRampToValueAtTime(Math.max(0.0002,volume),now+0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0001,now+duration);
+    osc.connect(gain);
+    gain.connect(destination||sfxGain);
+    osc.start(now);
+    osc.stop(now+duration+0.03);
+  }
+
+  function noise(duration=0.09,volume=0.08){
+    if(!enabled||!ensure()) return;
+    const length=Math.max(1,Math.floor(ctx.sampleRate*duration));
+    const buffer=ctx.createBuffer(1,length,ctx.sampleRate);
+    const data=buffer.getChannelData(0);
+    for(let i=0;i<length;i++) data[i]=(Math.random()*2-1)*(1-i/length);
+    const source=ctx.createBufferSource();
+    const gain=ctx.createGain();
+    source.buffer=buffer;
+    gain.gain.value=volume;
+    source.connect(gain);
+    gain.connect(sfxGain);
+    source.start();
+  }
+
+  function sfx(name){
+    if(!enabled) return;
+    ensure();
+    switch(name){
+      case 'click':
+        tone(620,0.045,'square',0.055);
+        break;
+      case 'select':
+        tone(520,0.055,'square',0.08);
+        tone(780,0.07,'square',0.06,0.045);
+        break;
+      case 'start':
+        [48,55,60,64].forEach((n,i)=>tone(midi(n),0.13,'square',0.09,i*0.075));
+        break;
+      case 'submit':
+        tone(180,0.10,'sawtooth',0.10);
+        tone(260,0.12,'square',0.10,0.07);
+        noise(0.10,0.045);
+        break;
+      case 'report':
+        [67,71,74].forEach((n,i)=>tone(midi(n),0.13,'square',0.075,i*0.07));
+        break;
+      case 'next':
+        [60,64,67].forEach((n,i)=>tone(midi(n),0.09,'square',0.065,i*0.05));
+        break;
+      case 'scrap':
+        tone(180,0.12,'square',0.09);
+        tone(110,0.17,'sawtooth',0.08,0.07);
+        noise(0.12,0.05);
+        break;
+      case 'special':
+        [72,76,79,84].forEach((n,i)=>tone(midi(n),0.12,'square',0.07,i*0.055));
+        break;
+      case 'error':
+        tone(150,0.18,'sawtooth',0.10);
+        tone(105,0.22,'sawtooth',0.09,0.10);
+        break;
+    }
+  }
+
+  function musicPulse(){
+    if(!enabled||!ctx) return;
+    const step=musicStep++;
+    const note=melody[step%melody.length];
+    const bassNote=bass[Math.floor(step/2)%bass.length];
+    const chord=chordTones[Math.floor(step/8)%chordTones.length];
+
+    tone(midi(note),0.085,'square',0.045,0,musicGain);
+    if(step%2===0){
+      tone(midi(bassNote),0.16,'sawtooth',0.042,0,musicGain);
+      tone(midi(bassNote+12),0.07,'square',0.020,0.025,musicGain);
+    }
+    if(step%4===0){
+      chord.forEach((n,i)=>tone(midi(n),0.07,'square',0.014,i*0.008,musicGain));
+    }
+    if(step%4===2) noise(0.045,0.018);
+    if(step%2===1) tone(4200,0.018,'square',0.008,0,musicGain);
+    if(step%8===7){
+      tone(midi(note+12),0.10,'square',0.030,0.015,musicGain);
+    }
+  }
+
+  function startMusic(){
+    if(!enabled||!ensure()||musicTimer) return;
+    musicPulse();
+    musicTimer=setInterval(musicPulse,135);
+  }
+
+  function stopMusic(){
+    if(musicTimer){
+      clearInterval(musicTimer);
+      musicTimer=null;
+    }
+  }
+
+  function userGesture(){
+    if(!ensure()) return;
+    if(!started){
+      started=true;
+      startMusic();
+    }
+  }
+
+  function toggle(){
+    ensure();
+    enabled=!enabled;
+    if(master) master.gain.setTargetAtTime(enabled?0.70:0,ctx.currentTime,0.02);
+    if(enabled) startMusic(); else stopMusic();
+    updateButtons();
+    return enabled;
+  }
+
+  function updateButtons(){
+    document.querySelectorAll('[data-sound-toggle]').forEach(btn=>{
+      btn.textContent=enabled?'♪':'×';
+      btn.classList.toggle('muted',!enabled);
+      btn.setAttribute('aria-label',enabled?'ปิดเสียง':'เปิดเสียง');
+      btn.title=enabled?'ปิดเสียง':'เปิดเสียง';
+    });
+  }
+
+  function sliderTick(value){
+    const now=performance.now();
+    if(now-lastTickAt<45) return;
+    lastTickAt=now;
+    tone(300+Number(value||0)*4,0.025,'square',0.025);
+  }
+
+  return {userGesture,toggle,updateButtons,sfx,sliderTick,startMusic};
+})();
+
+document.addEventListener('pointerdown',()=>AudioEngine.userGesture(),{once:true,capture:true});
+
 function techProgress(company=me()){
   const next=GameData.nextTechTier(company||{}); const level=Number(company?.techLevel||0); const rp=Number(company?.rp||0);
   if(!next) return {label:`R&D Lv.${level}`, detail:'ปลดล็อกครบแล้ว', pct:100};
@@ -1726,10 +1997,15 @@ function numberBox(label,key,previewText,previewPct){
   </div>`;
 }
 function bindCommon(){
+  document.querySelectorAll('[data-sound-toggle]').forEach(btn=>btn.onclick=(e)=>{
+    e.stopPropagation();
+    AudioEngine.toggle();
+  });
+  AudioEngine.updateButtons();
   document.querySelectorAll('[data-new-game]').forEach(btn=>btn.onclick=startNewGame);
-  document.querySelectorAll('[data-phase]').forEach(el=>el.onclick=()=>setPhase(el.dataset.phase));
+  document.querySelectorAll('[data-phase]').forEach(el=>el.onclick=()=>{AudioEngine.sfx('click');setPhase(el.dataset.phase);});
   document.querySelectorAll('[data-slider]').forEach(el=>{
-    el.oninput=()=>{ state.decision[el.dataset.slider]=Number(el.value); const b=el.closest('.slider-card')?.querySelector('.slider-head b'); if(b)b.textContent=el.value+'%'; updateCommandNumbers(); };
+    el.oninput=()=>{ AudioEngine.sliderTick(el.value); state.decision[el.dataset.slider]=Number(el.value); const b=el.closest('.slider-card')?.querySelector('.slider-head b'); if(b)b.textContent=el.value+'%'; updateCommandNumbers(); };
     el.onchange=()=>{ save(); render(); };
   });
   document.querySelectorAll('[data-num]').forEach(el=>{
@@ -1755,13 +2031,13 @@ function bindCommon(){
       render();
     };
   });
-  document.querySelectorAll('[data-unit]').forEach(btn=>btn.onclick=()=>{state.decision.unitId=btn.dataset.unit; save(); render();});
+  document.querySelectorAll('[data-unit]').forEach(btn=>btn.onclick=()=>{AudioEngine.sfx('select');state.decision.unitId=btn.dataset.unit; save(); render();});
   document.querySelectorAll('[data-scrap-unit]').forEach(btn=>{
-    btn.onclick=()=>scrapPlayerInventory(btn.dataset.scrapUnit);
+    btn.onclick=()=>{AudioEngine.sfx('scrap');scrapPlayerInventory(btn.dataset.scrapUnit);};
   });
-  const accept=$('#acceptSpecial'); if(accept) accept.onclick=acceptSpecialOffer;
-  const negotiate=$('#negotiateSpecial'); if(negotiate) negotiate.onclick=negotiateSpecialOffer;
-  const decline=$('#declineSpecial'); if(decline) decline.onclick=declineSpecialOffer;
+  const accept=$('#acceptSpecial'); if(accept) accept.onclick=()=>{AudioEngine.sfx('special');acceptSpecialOffer();};
+  const negotiate=$('#negotiateSpecial'); if(negotiate) negotiate.onclick=()=>{AudioEngine.sfx('click');negotiateSpecialOffer();};
+  const decline=$('#declineSpecial'); if(decline) decline.onclick=()=>{AudioEngine.sfx('click');declineSpecialOffer();};
   const submit=$('#submitOrder'); if(submit) submit.onclick=submitRound;
   const next=$('#nextQuarter'); if(next) next.onclick=nextQuarter;
   const reset=$('#resetGame'); if(reset) reset.onclick=()=>{ if(confirm('เริ่มเกมใหม่?')){safeStorage.removeItem(KEY); location.reload();} };
@@ -1881,6 +2157,7 @@ function updateCommandNumbers(){
   const tag=$('[data-live="unitTag"]'); if(tag) tag.textContent=c.unit.tag;
 }
 function submitRound(){
+  AudioEngine.sfx('submit');
   state.players=state.players.map(p=>p.isBot?autoScrapBotInventory(p):p);
   const p=me(), d=state.decision; normalizeUnit();
   const submissions={}; submissions[p.id]={...d,production:plannedUnits(p,d)};
@@ -1895,9 +2172,10 @@ function submitRound(){
   });
   state.notices=notices;
   state.lastReport={event,results:results.map(r=>({playerId:r.player.id,name:r.player.name,unit:r.unit,unitPrice:r.econ.unitPrice,advertising:Number(r.sub.lobby||0),priceStrategy:Number(r.sub.priceStrategy||0),share:r.share,production:r.sub.production,unitsSold:r.unitsSold,fromStock:r.fromStock,freshDeliverable:r.freshDeliverable,leftoverFresh:r.leftoverFresh,inventoryQty:r.inventoryQty,inventoryCost:r.inventoryCost,inventoryRate:r.inventoryRate,revenue:r.revenue,cost:r.cost,profit:r.profit,repDelta:r.repDelta,marketBonus:r.marketBonus||0,performanceBonus:r.performanceBonus||0,perfTriggered:!!r.perfTriggered,crowdCount:r.crowdCount||1,crowdMult:r.crowdMult||1,matchedPreferred:!!r.matchedPreferred}))};
-  state.history.push(state.lastReport); state.phase='report'; save(); render();
+  state.history.push(state.lastReport); state.phase='report'; AudioEngine.sfx('report'); save(); render();
 }
 function nextQuarter(){
+  AudioEngine.sfx('next');
   if(state.round>=GameData.MAX_ROUNDS){state.screen='end'; save(); render(); return;}
   const lastUnitId=state.decision?.unitId||'z1';
   state.round++; state.phase='briefing'; state.currentEvent=prepareMarketEvent(state.round); state.specialOffer=null; state.lastReport=null;
@@ -1915,7 +2193,10 @@ function nextQuarter(){
   save(); render();
 }
 function newGameButtonHTML(){
-  return `<button type="button" class="new-game-mini" data-new-game aria-label="เริ่มเกมใหม่" title="เริ่มเกมใหม่">↻ ใหม่</button>`;
+  return `<div class="audio-controls">
+    <button type="button" class="sound-mini" data-sound-toggle aria-label="ปิดเสียง" title="ปิดเสียง">♪</button>
+    <button type="button" class="new-game-mini" data-new-game aria-label="เริ่มเกมใหม่" title="เริ่มเกมใหม่">↻ ใหม่</button>
+  </div>`;
 }
 function startNewGame(){
   if(!confirm('เริ่มเกมใหม่และล้างความคืบหน้าปัจจุบัน?')) return;
@@ -2065,8 +2346,10 @@ function renderHome(){
     if(total) total.textContent=`รวมผู้เล่น ${Number(e.target.value)+1} บริษัท`;
     state.botCount=Number(e.target.value);
   };
-  $('#startBtn').onclick=startGame;
+  $('#startBtn').onclick=()=>{AudioEngine.sfx('start');startGame();};
   document.querySelectorAll('[data-new-game]').forEach(btn=>btn.onclick=startNewGame);
+  document.querySelectorAll('[data-sound-toggle]').forEach(btn=>btn.onclick=(e)=>{e.stopPropagation();AudioEngine.toggle();});
+  AudioEngine.updateButtons();
 }
 function renderBriefing(){
   const p=me(), ev=state.currentEvent || GameData.getEventById('stable-market'), inv=GameData.inventoryHoldingCost(p), tech=techProgress(p), current=currentCalc();
@@ -2083,7 +2366,7 @@ function renderSpecialReport(){
   const offer = state.special?.offer || state.specialOffer;
   const notice = state.special?.lastNotice ? `<div class="news-line"><b>สถานะ:</b> ${esc(state.special.lastNotice)}</div>` : '';
   const activeHtml = active.length
-    ? active.map(c=>`<div class="news-line contract-line">${pilotIcon(c.eventId||c.id,'pilot-portrait small')}<span><b>${esc(c.name)}:</b> ${esc(c.targetLabel)} +${Math.round((c.priceBonus||0)*100)}% ราคาขาย · เหลือ ${c.remaining} รอบ</span></div>`).join('')
+    ? active.map(c=>`<div class="news-line contract-line">${pilotIcon(c.eventId||c.id,'pilot-portrait small')}<span><b>${esc(c.name)}:</b> ${esc(c.effectText || c.targetLabel || 'โบนัสสัญญาพิเศษ')} · เหลือ ${c.remaining} รอบ</span></div>`).join('')
     : '<div class="news-line"><b>สัญญาที่ยังผล:</b> ยังไม่มี</div>';
   const offerHtml = offer
     ? `<div class="news-line special-offer-row">
@@ -2092,7 +2375,7 @@ function renderSpecialReport(){
           <div class="offer-name">${esc(offer.name)}</div>
           <div class="offer-role">${esc(offer.role || 'สัญญาพิเศษ')}</div>
           <div class="offer-copy">${esc(offer.pitch)}</div>
-          <div class="muted" style="margin-top:5px;font-size:var(--fs-2xs)">เป้าหมาย ${esc(offer.targetLabel)} · โบนัส +${Math.round((offer.priceBonus||0)*100)}% · ${offer.duration||3} รอบ · ค่าเซ็น ${specialOfferCost(offer,p)} Cr.</div>
+          <div class="muted" style="margin-top:5px;font-size:var(--fs-2xs)">${esc(offer.effectText || offer.targetLabel)} · ${offer.duration||3} รอบ · ค่าเซ็น ${specialOfferCost(offer,p)} Cr.</div>
           <div class="offer-actions"><button id="acceptSpecial" class="mini-btn primary">เซ็น</button><button id="negotiateSpecial" class="mini-btn">ต่อรอง</button><button id="declineSpecial" class="mini-btn danger">ปฏิเสธ</button></div>
           <div class="muted" style="margin-top:4px;font-size:var(--fs-2xs)">ต่อรองใช้เวลา 1 ไตรมาส และยังไม่ได้โบนัสระหว่างรอผล</div>
         </div>
@@ -2327,7 +2610,14 @@ function renderGame(){
   bindCommon();
 }
 function render(){ ensureState(); if(state.screen==='end') return renderEnd(); if(!state.players.length || state.screen==='home') renderHome(); else renderGame(); }
-window.addEventListener('error', e=>{app.innerHTML=`<main class="phone">${newGameButtonHTML()}<section class="card start-panel"><h2 class="red">Game Error</h2><pre>${esc(e.message)}\n${esc(e.filename)}:${e.lineno}</pre><button id="resetGame" class="btn btn-primary">ล้างเซฟ</button></section></main>`; const b=$('#resetGame'); if(b)b.onclick=()=>{safeStorage.removeItem(KEY); location.reload();}; document.querySelectorAll('[data-new-game]').forEach(btn=>btn.onclick=startNewGame);});
+window.addEventListener('error', e=>{app.innerHTML=`<main class="phone">${newGameButtonHTML()}<section class="card start-panel"><h2 class="red">Game Error</h2><pre>${esc(e.message)}\n${esc(e.filename)}:${e.lineno}</pre><button id="resetGame" class="btn btn-primary">ล้างเซฟ</button></section></main>`; const b=$('#resetGame'); if(b)b.onclick=()=>{safeStorage.removeItem(KEY); location.reload();}; document.querySelectorAll('[data-new-game]').forEach(btn=>btn.onclick=startNewGame); document.querySelectorAll('[data-sound-toggle]').forEach(btn=>btn.onclick=()=>AudioEngine.toggle()); AudioEngine.updateButtons();});
+
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('button');
+  if(!btn || btn.matches('[data-sound-toggle],[data-unit],[data-phase],[data-scrap-unit],#startBtn,#submitOrder,#nextQuarter,#acceptSpecial,#negotiateSpecial,#declineSpecial')) return;
+  AudioEngine.sfx('click');
+});
+
 load(); render();
 })();
 </script></body></html>
